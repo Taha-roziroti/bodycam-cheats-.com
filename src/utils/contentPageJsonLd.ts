@@ -39,12 +39,14 @@ export function breadcrumbsForRoute(route: string): BreadcrumbItem[] {
   if (route === '/guides/cloud-dma-setup/') {
     return [
       { name: 'Home', path: '/' },
-      { name: 'Cloud DMA setup guide', path: '/guides/cloud-dma-setup/' },
+      { name: 'Cloud DMA', path: '/cloud-dma/' },
+      { name: 'Setup guide', path: '/guides/cloud-dma-setup/' },
     ];
   }
   if (route === '/guides/borderlands-3-cheat-system-requirements/') {
     return [
       { name: 'Home', path: '/' },
+      { name: 'Cheat plans', path: '/pricing/' },
       { name: 'System requirements', path: '/guides/borderlands-3-cheat-system-requirements/' },
     ];
   }

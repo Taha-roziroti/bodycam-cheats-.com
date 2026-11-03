@@ -293,6 +293,16 @@ html.dark a.nav-link[data-nav-link]:hover .icon-app {
   color: currentColor;
 }
 
+.site-breadcrumbs [data-slot='breadcrumb-list'] {
+  flex-wrap: wrap;
+}
+
+.site-breadcrumbs [data-slot='breadcrumb-link']:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 55%, transparent);
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
 /* Starwind select / dropdown portals above floating header (z-50) */
 [data-sw-select-positioner] {
   z-index: 60;

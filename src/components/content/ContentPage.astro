@@ -73,6 +73,9 @@ const logoAlt = logoAltByRoute[data.route];
   {
     data.layout === 'product' && data.checkout ? (
       <section class="border-b border-border bg-muted/20 py-10 md:py-14">
+        <div class="mx-auto max-w-6xl px-5">
+          <Breadcrumbs items={breadcrumbs} class="mb-6 md:mb-8" />
+        </div>
         <div class="mx-auto grid max-w-6xl items-start gap-10 px-5 lg:grid-cols-[1fr_minmax(18rem,22rem)]">
           <div class="min-w-0">
             <div class:list={['content-markdown', data.heroImage && data.route === '/' && 'product-hero-after-h1']}>
@@ -110,8 +113,8 @@ const logoAlt = logoAltByRoute[data.route];
     ) : (
       <article class="py-10 md:py-14">
         <div class="mx-auto max-w-3xl px-5">
-          <Breadcrumbs items={breadcrumbs} />
-          <div class="content-markdown mt-8">
+          <Breadcrumbs items={breadcrumbs} class="mb-2" />
+          <div class="content-markdown mt-6">
             {FullContent ? <FullContent /> : null}
             <ContentFigures figures={data.figures} />
             {data.showAdditionalCostsCallout ? (
