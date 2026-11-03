@@ -3,9 +3,10 @@ import { t } from '../i18n';
 import { Separator } from '@/components/starwind/separator';
 
 const resourceLinks = [
-  { href: '/blog/', label: 'Blog archive', ariaLabel: 'Blog' },
-  { href: '/products/dota-2-cheats/elite/', label: 'Elite cheats', ariaLabel: 'Elite cheats' },
-  { href: '/products/dota-2-cheats/', label: 'Products & utilities', ariaLabel: 'Products' },
+  { href: '/pricing/', label: 'Borderlands 3 cheat pricing', ariaLabel: 'Pricing' },
+  { href: '/cloud-dma/', label: 'Cloud DMA license', ariaLabel: 'Cloud DMA' },
+  { href: '/guides/cloud-dma-setup/', label: 'Cloud DMA setup guide', ariaLabel: 'Setup guide' },
+  { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'System requirements', ariaLabel: 'Requirements' },
   { href: '/support/', label: t.footer.support },
 ];
 
@@ -20,21 +21,21 @@ const legalLinks = [
   <div class="mx-auto max-w-6xl px-5">
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <div class="space-y-4">
-        <a href="/" class="inline-flex items-center gap-2.5 font-[family-name:var(--font-heading)] text-lg font-bold" aria-label={t.ui.homeAria}>
+        <a href="/" class="inline-flex items-center gap-2.5 font-[family-name:var(--font-heading)] text-lg font-semibold" aria-label={t.ui.homeAria}>
           <img src="/logo.svg" alt="" width="32" height="32" class="rounded-md" />
-          <span aria-hidden="true">Dota<span class="text-primary">Cheats</span></span>
+          <span aria-hidden="true">Borderlands 3 <span class="text-muted-foreground">Cheats</span></span>
         </a>
         <p class="text-sm text-muted-foreground">{t.footer.tagline}</p>
       </div>
 
       <nav aria-label={t.footer.explore}>
-        <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t.footer.explore}</p>
+        <p class="text-sm font-medium text-muted-foreground">{t.footer.explore}</p>
         <ul class="mt-3 space-y-2">
           {t.footer.exploreLinks.map((link) => (
             <li>
               <a
                 href={link.href}
-                class="text-sm text-muted-foreground hover:text-primary"
+                class="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 aria-label={link.ariaLabel}
                 {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
               >
@@ -46,11 +47,11 @@ const legalLinks = [
       </nav>
 
       <nav aria-label={t.footer.support}>
-        <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t.footer.support}</p>
+        <p class="text-sm font-medium text-muted-foreground">{t.footer.support}</p>
         <ul class="mt-3 space-y-2">
           {resourceLinks.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-muted-foreground hover:text-primary" aria-label={link.ariaLabel}>
+              <a href={link.href} class="text-sm text-muted-foreground transition-colors hover:text-foreground" aria-label={link.ariaLabel}>
                 {link.label}
               </a>
             </li>
@@ -59,11 +60,11 @@ const legalLinks = [
       </nav>
 
       <nav aria-label={t.footer.legal}>
-        <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t.footer.legal}</p>
+        <p class="text-sm font-medium text-muted-foreground">{t.footer.legal}</p>
         <ul class="mt-3 space-y-2">
           {legalLinks.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-muted-foreground hover:text-primary">{link.label}</a>
+              <a href={link.href} class="text-sm text-muted-foreground transition-colors hover:text-foreground">{link.label}</a>
             </li>
           ))}
         </ul>

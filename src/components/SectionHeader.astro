@@ -4,11 +4,14 @@ interface Props {
   title: string;
   desc?: string;
   titleId?: string;
+  /** Page hero uses h1; secondary sections should use h2 for one-h1 discipline. */
+  titleAs?: 'h1' | 'h2';
   centered?: boolean;
   wide?: boolean;
 }
 
-const { eyebrow, title, desc, titleId, centered = false, wide = false } = Astro.props;
+const { eyebrow, title, desc, titleId, titleAs = 'h1', centered = false, wide = false } = Astro.props;
+const TitleTag = titleAs;
 ---
 
 <header
@@ -19,6 +22,6 @@ const { eyebrow, title, desc, titleId, centered = false, wide = false } = Astro.
   ]}
 >
   <p class="section-header__eyebrow">{eyebrow}</p>
-  <h1 id={titleId} class="section-header__title">{title}</h1>
+  <TitleTag id={titleId} class="section-header__title">{title}</TitleTag>
   {desc ? <p class="section-header__subtitle">{desc}</p> : null}
 </header>

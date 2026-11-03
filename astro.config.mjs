@@ -4,13 +4,23 @@ import sitemap from '@astrojs/sitemap';
 import { sitemapSerialize } from './src/config/sitemap.ts';
 
 export default defineConfig({
-  site: 'https://dotacheats.com',
+  site: 'https://borderlands3cheats.com',
   trailingSlash: 'always',
   redirects: {
-    '/cheats/': '/products/dota-2-cheats/',
-    '/cheats/lite/': '/products/dota-2-cheats/',
-    '/cheats/pro/': '/products/dota-2-cheats/',
-    '/cheats/elite/': '/products/dota-2-cheats/elite/',
+    '/buy-borderlands-3-cheats/': '/',
+    '/buy-borderlands-3-cheat/': '/',
+    '/borderlands-3-cheats/': '/',
+    '/borderlands-3-cheats-price/': '/pricing/',
+    '/borderlands-3-esp/': '/',
+    '/borderlands-3-aimbot/': '/',
+    '/cloud-dma-setup/': '/guides/cloud-dma-setup/',
+    '/cheats/': '/',
+    '/products/dota-2-cheats/': '/',
+    '/products/dota-2-cheats/elite/': '/',
+    '/products/dota-2-cheats/utilities/': '/',
+    '/cheats/lite/': '/',
+    '/cheats/pro/': '/',
+    '/cheats/elite/': '/',
     '/cheats/compare/': '/blog/dota-2-lite-vs-pro/',
     '/contact/': '/support/',
   },
@@ -30,6 +40,11 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      watch: {
+        ignored: ['**/unslop/**'],
+      },
+    },
     build: {
       cssMinify: true,
       minify: 'esbuild',

@@ -9,6 +9,8 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
+  borderlands3: 'borderlands-3',
+  cloudDma: 'cloud-dma',
   dota2: 'dota-2',
   skinChanger: 'skin-changer',
   hwidSpoofer: 'hwid-spoofer',
@@ -20,12 +22,12 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
 ) as Record<string, CheckoutProduct>;
 
 /** Internal checkout path shown to users (hides external URL on hover). */
-export function checkoutPath(product: CheckoutProduct = 'dota2'): string {
+export function checkoutPath(product: CheckoutProduct = 'borderlands3'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('dota2');
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('borderlands3');
 
 /** Map internal product slugs to checkout redirect paths. */
 export function checkoutForSlug(slug: string): string {
@@ -40,8 +42,12 @@ export function checkoutForSlug(slug: string): string {
     case 'lite':
     case 'pro':
     case 'elite':
+    case 'borderlands-3':
+      return checkoutPath('borderlands3');
+    case 'cloud-dma':
+      return checkoutPath('cloudDma');
     default:
-      return checkoutPath('dota2');
+      return checkoutPath('borderlands3');
   }
 }
 
@@ -59,7 +65,10 @@ export function resolveCheckoutHref(href: string): string {
 
   // Legacy / encoded product paths → internal checkout
   if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-    return checkoutPath('dota2');
+    return checkoutPath('cloudDma');
+  }
+  if (href.includes('borderlands-3') || href.includes('/products/borderlands-3')) {
+    return checkoutPath('borderlands3');
   }
   if (href.includes('%2Fproducts%2Fskin-changer') || href.includes('/products/skin-changer')) {
     return checkoutPath('skinChanger');

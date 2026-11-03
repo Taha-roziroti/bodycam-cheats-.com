@@ -21,9 +21,9 @@ const faqs = getAllFaqs();
   description={seo.description}
   jsonLd={[
     webPageSchema({
-      name: 'FAQ — Dota 2 Cheats & Products',
+      name: 'FAQ — Borderlands 3 Cheats & Cloud DMA',
       description:
-        'Answers about Dota 2 cheat tiers, map hack, scripts, HWID tools, blog guides and checkout at dotacheats.com.',
+        'Answers about Borderlands 3 cheat plans, Cloud DMA, Windows requirements, pricing, and checkout at borderlands3cheats.com.',
       url: '/faq/',
     }),
     faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),
@@ -36,8 +36,8 @@ const faqs = getAllFaqs();
       <div class="mt-6">
         <SectionHeader
           eyebrow="Help center"
-          title="FAQ for cheats, products & guides"
-          desc="Everything about Lite, Pro, Elite tiers, utilities, safety and blog topics—in one place."
+          title="Borderlands 3 cheats & Cloud DMA FAQ"
+          desc="Pricing, monthly and lifetime plans, Cloud DMA setup costs, Windows requirements, and checkout—in one place."
           titleId="faq-page-title"
         />
       </div>

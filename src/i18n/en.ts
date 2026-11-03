@@ -6,18 +6,18 @@ const productBase = PRODUCT_BASE;
 
 export const en: Translations = {
   site: {
-    name: 'DotaCheats',
-    domain: 'dotacheats.com',
-    title: 'Dota Cheats & Hacks | Dota 2 Scripts, Map Hack & ESP',
+    name: 'Borderlands 3 Cheats',
+    domain: 'borderlands3cheats.com',
+    title: 'Borderlands 3 Cheats for PC | ESP & Soft Aim',
     description:
-      'Undetected dota 2 cheats with scripts, map hack, zoom hack and skin changer for PC ranked—updated every patch at dotacheats.com.',
+      'Borderlands 3 PC cheat features: soft aim, enemy and loot ESP, radar and recoil options. Review plans, Cloud DMA requirements, and checkout details.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
-    { href: `${productBase}`, label: 'Products' },
-    { href: '/blog/', label: 'Blog' },
-    { href: '/forum/', label: 'Forum' },
-    { href: '/faq/', label: 'FAQ' },
+    { href: '/pricing/', label: 'Pricing' },
+    { href: '/cloud-dma/', label: 'Cloud DMA' },
+    { href: '/guides/cloud-dma-setup/', label: 'Setup guide' },
+    { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'Requirements' },
     { href: '/support/', label: 'Support' },
   ],
   hero: {
@@ -602,13 +602,14 @@ export const en: Translations = {
     ],
   },
   footer: {
-    tagline: 'Dota 2 cheats — scripts, map hack and tools for PC. dotacheats.com',
     explore: 'Explore',
+    tagline:
+      'Borderlands 3 PC cheat features, Cloud DMA infrastructure, and setup guides at borderlands3cheats.com.',
     exploreLinks: [
-      { href: '/', label: 'Feature overview', ariaLabel: 'Features', scrollTarget: 'features' },
-      { href: '/products/dota-2-cheats/elite/', label: 'Elite dota cheats', ariaLabel: 'Elite cheats' },
-      { href: '/products/dota-2-cheats/', label: 'All products & utilities', ariaLabel: 'Products' },
-      { href: '/blog/', label: 'Read patch guides', ariaLabel: 'Blog' },
+      { href: '/', label: 'Borderlands 3 cheats', ariaLabel: 'Home' },
+      { href: '/pricing/', label: 'Plans & pricing', ariaLabel: 'Pricing' },
+      { href: '/cloud-dma/', label: 'Cloud DMA license', ariaLabel: 'Cloud DMA' },
+      { href: '/guides/cloud-dma-setup/', label: 'Cloud DMA setup', ariaLabel: 'Setup guide' },
       { href: '/faq/', label: 'Pre-purchase FAQ', ariaLabel: 'FAQ' },
     ],
     support: 'Support',
@@ -744,8 +745,8 @@ export const en: Translations = {
   },
   ui: {
     skipLink: 'Skip to main content',
-    browseCheats: 'Try Now',
-    browseCheatsMobile: 'Start checkout',
+    browseCheats: 'View plans',
+    browseCheatsMobile: 'View plans',
     homeAria: 'DotaCheats home',
     checkoutAria: 'Start checkout',
     discordAria: 'Join DotaCheats on Discord',

@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import type { BreadcrumbItem } from '../utils/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  intro: string;
+  breadcrumbs: BreadcrumbItem[];
+  jsonLd: Record<string, unknown> | Record<string, unknown>[];
+  ogType?: 'website' | 'article';
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
+}
+
+const {
+  title,
+  description,
+  h1,
+  intro,
+  breadcrumbs,
+  jsonLd,
+  ogType = 'website',
+  articlePublishedTime,
+  articleModifiedTime,
+} = Astro.props;
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {jsonLd}
+  ogType={ogType}
+  articlePublishedTime={articlePublishedTime}
+  articleModifiedTime={articleModifiedTime}
+>
+  <article class="py-10 md:py-14">
+    <div class="mx-auto max-w-3xl px-5">
+      <Breadcrumbs items={breadcrumbs} />
+      <header class="mt-6 space-y-4">
+        <h1 class="text-3xl font-bold tracking-tight md:text-4xl">{h1}</h1>
+        <p class="text-lg leading-relaxed text-muted-foreground">{intro}</p>
+      </header>
+      <div class="prose-bl3 mt-10 space-y-12">
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .prose-bl3 :global(p + p) {
+    margin-top: 1rem;
+  }
+  .prose-bl3 :global(ul) {
+    margin-top: 0.75rem;
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .prose-bl3 :global(li + li) {
+    margin-top: 0.35rem;
+  }
+  .prose-bl3 :global(ol) {
+    margin-top: 0.75rem;
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+</style>

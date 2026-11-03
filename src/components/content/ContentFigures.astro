@@ -1,0 +1,61 @@
+---
+import {
+  CARD_IMAGE_SIZES,
+  CARD_IMAGE_WIDTHS,
+  defaultWebpSrc,
+  responsiveSrcSet,
+} from '../../utils/responsiveImage';
+
+interface Figure {
+  src?: string;
+  alt: string;
+  filename?: string;
+}
+
+interface Props {
+  figures?: Figure[];
+}
+
+const { figures = [] } = Astro.props;
+if (figures.length === 0) return;
+---
+
+<div class="not-prose my-10 grid gap-4 sm:grid-cols-2">
+  {
+    figures.map((figure) => {
+      const hasSrc = Boolean(figure.src);
+      const imgSrc = hasSrc ? defaultWebpSrc(figure.src!, CARD_IMAGE_WIDTHS) : null;
+      const srcSet = hasSrc ? responsiveSrcSet(figure.src!, CARD_IMAGE_WIDTHS) : null;
+
+      return (
+        <figure class="overflow-hidden rounded-xl border border-border bg-muted/20">
+          {hasSrc ? (
+            <img
+              src={imgSrc!}
+              srcset={srcSet!}
+              sizes={CARD_IMAGE_SIZES}
+              alt={figure.alt}
+              width={640}
+              height={360}
+              loading="lazy"
+              decoding="async"
+              class="aspect-video w-full object-cover"
+            />
+          ) : (
+            <div
+              class="flex aspect-video w-full items-center justify-center px-4 text-center text-sm text-muted-foreground"
+              role="img"
+              aria-label={figure.alt}
+            >
+              {figure.alt}
+              {figure.filename ? (
+                <span class="mt-1 block text-xs opacity-70">Expected file: {figure.filename}</span>
+              ) : null}
+            </div>
+          )}
+          <figcaption class="border-t border-border px-3 py-2 text-xs text-muted-foreground">{figure.alt}</figcaption>
+        </figure>
+      );
+    })
+  }
+</div>

@@ -1,0 +1,213 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import CheckoutPanel from '../borderlands3/CheckoutPanel.astro';
+import AdditionalCostsCallout from '../borderlands3/AdditionalCostsCallout.astro';
+import ContentFigures from './ContentFigures.astro';
+import ContentHeroImage from './ContentHeroImage.astro';
+import { defaultWebpSrc, HERO_IMAGE_WIDTHS } from '../../utils/responsiveImage';
+import { BL3_CHECKOUT, CLOUD_DMA_CHECKOUT, PUBLISHER_DISCLAIMER } from '../../data/borderlands3Site';
+import {
+  breadcrumbsForRoute,
+  defaultEndCtaHref,
+  jsonLdForContentPage,
+} from '../../utils/contentPageJsonLd';
+import { Button } from '@/components/starwind/button';
+import { loadContentPage } from '../../utils/loadContentPage';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const entry = await loadContentPage(id);
+
+const data = entry.data;
+const { Content: FullContent } = await render(entry);
+
+const breadcrumbs = breadcrumbsForRoute(data.route);
+const jsonLd = jsonLdForContentPage({
+  route: data.route,
+  seoTitle: data.seoTitle,
+  metaDescription: data.metaDescription,
+  schemaTypes: data.schemaTypes,
+  articlePublished: data.articlePublished,
+});
+const ctaHref = data.endCtaHref ?? defaultEndCtaHref(data.route, data.checkout);
+const buyUrl = data.checkout === 'cloud-dma' ? CLOUD_DMA_CHECKOUT : BL3_CHECKOUT;
+const ogType = data.layout === 'article' ? 'article' : 'website';
+const lcpPreload =
+  data.route === '/' && data.heroImage
+    ? defaultWebpSrc(data.heroImage.src, HERO_IMAGE_WIDTHS)
+    : null;
+---
+
+<BaseLayout
+  title={data.seoTitle}
+  description={data.metaDescription}
+  jsonLd={jsonLd}
+  ogType={ogType}
+  ogImage={data.ogImage}
+  ogImageAlt={data.heroImage?.alt ?? data.seoTitle}
+  articlePublishedTime={data.articlePublished}
+>
+  {lcpPreload ? (
+    <link slot="head" rel="preload" as="image" href={lcpPreload} type="image/webp" fetchpriority="high" />
+  ) : null}
+  {
+    data.layout === 'product' && data.checkout ? (
+      <section class="border-b border-border bg-muted/20 py-10 md:py-14">
+        <div class="mx-auto grid max-w-6xl items-start gap-10 px-5 lg:grid-cols-[1fr_minmax(18rem,22rem)]">
+          <div class:list={['content-markdown min-w-0', data.heroImage && data.route === '/' && 'product-hero-after-h1']}>
+            {data.heroImage && data.route === '/' ? (
+              <ContentHeroImage
+                src={data.heroImage.src}
+                alt={data.heroImage.alt}
+                priority={true}
+                class="hero-after-title"
+              />
+            ) : null}
+            {FullContent ? <FullContent /> : null}
+            {data.heroImage && data.route !== '/' ? (
+              <ContentHeroImage
+                src={data.heroImage.src}
+                alt={data.heroImage.alt}
+                priority={false}
+                class="mt-8"
+              />
+            ) : null}
+            <ContentFigures figures={data.figures} />
+            <div class="not-prose mt-8 lg:hidden">
+              <CheckoutPanel
+                productSlug={data.checkout === 'cloud-dma' ? 'cloud-dma' : 'borderlands-3'}
+                buyUrl={buyUrl}
+                heading={data.checkout === 'cloud-dma' ? 'Cloud DMA license' : 'Borderlands 3 cheat plans'}
+              />
+            </div>
+            {data.showAdditionalCostsCallout ? (
+              <AdditionalCostsCallout class="not-prose mt-8" />
+            ) : null}
+          </div>
+          <div class="hidden lg:block">
+            <CheckoutPanel
+              productSlug={data.checkout === 'cloud-dma' ? 'cloud-dma' : 'borderlands-3'}
+              buyUrl={buyUrl}
+              heading={data.checkout === 'cloud-dma' ? 'Cloud DMA license' : 'Borderlands 3 cheat plans'}
+            />
+          </div>
+        </div>
+      </section>
+    ) : (
+      <article class="py-10 md:py-14">
+        <div class="mx-auto max-w-3xl px-5">
+          <Breadcrumbs items={breadcrumbs} />
+          <div class="content-markdown mt-8">
+            {FullContent ? <FullContent /> : null}
+            <ContentFigures figures={data.figures} />
+            {data.showAdditionalCostsCallout ? (
+              <AdditionalCostsCallout class="not-prose my-10" />
+            ) : null}
+          </div>
+        </div>
+      </article>
+    )
+  }
+
+  {
+    data.endCtaLabel ? (
+      <div class="border-t border-border bg-muted/20 py-10">
+        <div class="mx-auto flex max-w-3xl flex-col items-start gap-4 px-5">
+          <p class="text-lg font-semibold text-foreground">{data.endCtaLabel}</p>
+          <Button as="a" href={ctaHref} variant="primary" size="lg" class="rounded-xl">
+            Get started
+          </Button>
+        </div>
+      </div>
+    ) : null
+  }
+
+  <div class="mx-auto max-w-3xl px-5 pb-12 text-sm text-muted-foreground">
+    <p>{PUBLISHER_DISCLAIMER}</p>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .content-markdown :where(h1) {
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .content-markdown :where(h2) {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    scroll-margin-top: 7rem;
+  }
+  .content-markdown :where(h3) {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .content-markdown :where(p, ul, ol) {
+    color: var(--muted-foreground);
+    line-height: 1.7;
+    margin-top: 0.75rem;
+  }
+  .content-markdown :where(ul) {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .content-markdown :where(ol) {
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+  .content-markdown :where(li + li) {
+    margin-top: 0.35rem;
+  }
+  .content-markdown :where(a) {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-markdown :where(strong) {
+    color: var(--foreground);
+    font-weight: 600;
+  }
+  .content-markdown :where(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+  }
+  .content-markdown :where(th, td) {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .content-markdown :where(th) {
+    background: color-mix(in oklab, var(--muted) 50%, transparent);
+    color: var(--foreground);
+    font-weight: 600;
+  }
+  .product-hero-after-h1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-hero-after-h1 h1 {
+    order: 1;
+    margin-bottom: 0.75rem;
+  }
+  .product-hero-after-h1 .hero-after-title {
+    order: 2;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  .product-hero-after-h1 h1 ~ * {
+    order: 3;
+  }
+</style>

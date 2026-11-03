@@ -10,10 +10,29 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    // gscNote: Keep primary keyword "dota 2 cheats" near front; trim if title truncates in SERP.
-    title: 'Dota 2 Cheats & Hacks | Scripts, Map Hack & ESP',
+    title: 'Borderlands 3 Cheats for PC | ESP & Soft Aim',
     description:
-      'Dota 2 cheats for PC ranked: scripts, map hack, zoom hack, and skin changer tiers updated every patch at dotacheats.com.',
+      'Explore Borderlands 3 PC cheats with soft aim, enemy and loot ESP, radar, recoil control and more. Discover the features and get started.',
+  },
+  '/pricing/': {
+    title: 'Borderlands 3 Cheats Price & Subscription Plans',
+    description:
+      'Compare Borderlands 3 cheat prices and monthly or lifetime plans. Explore available features and choose your preferred access option.',
+  },
+  '/cloud-dma/': {
+    title: 'Cloud DMA for Game Cheats | Single-PC Setup',
+    description:
+      'Explore Cloud DMA software, its single-PC Hyper-V environment, Windows requirements and lifetime license. Discover the complete setup.',
+  },
+  '/guides/cloud-dma-setup/': {
+    title: 'Cloud DMA Setup Guide | Hyper-V Requirements',
+    description:
+      'Learn about Cloud DMA setup, Hyper-V, Windows compatibility, CPU virtualization and RAM requirements with our complete setup overview.',
+  },
+  '/guides/borderlands-3-cheat-system-requirements/': {
+    title: 'Borderlands 3 Cheat System Requirements',
+    description:
+      'Explore Borderlands 3 cheat system requirements, Windows compatibility, supported PC clients, RAM and Cloud DMA setup specifications.',
   },
   '/products/dota-2-cheats/': {
     title: 'Dota 2 Elite Cheats & Utility Products',

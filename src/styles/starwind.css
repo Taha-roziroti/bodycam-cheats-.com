@@ -73,87 +73,88 @@
   --color-sidebar-outline: var(--sidebar-outline);
 }
 
+@import "./codcheat-palette.css";
+
 :root {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
-  --background: var(--color-white);
-  --foreground: var(--color-neutral-950);
-  --card: var(--color-white);
-  --card-foreground: var(--color-neutral-950);
-  --popover: var(--color-white);
-  --popover-foreground: var(--color-neutral-950);
-  --primary: #7f3dee;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Bebas Neue", ui-sans-serif, system-ui, sans-serif;
+  /* Light — same accent family as codcheat.org */
+  --background: var(--cod-ink);
+  --foreground: var(--cod-bg);
+  --card: #ffffff;
+  --card-foreground: var(--cod-bg);
+  --popover: #ffffff;
+  --popover-foreground: var(--cod-bg);
+  --primary: var(--cod-cta);
   --primary-foreground: #ffffff;
-  --primary-accent: #9654ff;
-  --secondary: var(--color-neutral-200);
-  --secondary-foreground: var(--color-neutral-950);
-  --secondary-accent: var(--color-neutral-950);
-  --muted: var(--color-neutral-100);
-  --muted-foreground: var(--color-neutral-600);
-  --accent: var(--color-neutral-100);
-  --accent-foreground: var(--color-neutral-900);
-  --info: var(--color-sky-300);
-  --info-foreground: var(--color-sky-950);
-  --success: var(--color-green-300);
-  --success-foreground: var(--color-green-950);
-  --warning: var(--color-amber-300);
-  --warning-foreground: var(--color-amber-950);
-  --error: var(--color-red-700);
-  --error-foreground: var(--color-neutral-50);
-  --border: var(--color-neutral-200);
-  --input: var(--color-neutral-200);
-  --outline: var(--color-neutral-400);
+  --primary-accent: var(--cod-magenta);
+  --secondary: #ececef;
+  --secondary-foreground: var(--cod-bg);
+  --secondary-accent: var(--cod-bg);
+  --muted: #ececef;
+  --muted-foreground: var(--cod-ink-faint);
+  --accent: #f4f4f5;
+  --accent-foreground: var(--cod-bg);
+  --info: var(--cod-magenta-soft);
+  --info-foreground: var(--cod-bg);
+  --success: var(--cod-ok);
+  --success-foreground: #042f1a;
+  --warning: var(--cod-orange);
+  --warning-foreground: var(--cod-bg);
+  --error: var(--cod-warn);
+  --error-foreground: #ffffff;
+  --border: #0d0a1414;
+  --input: #0d0a141f;
+  --outline: var(--cod-ink-muted);
   --radius: 0.625rem;
 
-  /* sidebar variables */
-  --sidebar-background: var(--color-neutral-50);
-  --sidebar-foreground: var(--color-neutral-950);
-  --sidebar-primary: #7f3dee;
+  --sidebar-background: #fafafa;
+  --sidebar-foreground: var(--cod-bg);
+  --sidebar-primary: var(--cod-cta);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--color-neutral-100);
-  --sidebar-accent-foreground: var(--color-neutral-900);
-  --sidebar-border: var(--color-neutral-200);
-  --sidebar-outline: var(--color-neutral-400);
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: var(--cod-bg);
+  --sidebar-border: #0d0a1414;
+  --sidebar-outline: var(--cod-ink-muted);
 }
 
 .dark {
-  --background: var(--color-neutral-950);
-  --foreground: var(--color-neutral-50);
-  --card: var(--color-neutral-900);
-  --card-foreground: var(--color-neutral-50);
-  --popover: var(--color-neutral-900);
-  --popover-foreground: var(--color-neutral-50);
-  --primary: #7f3dee;
+  --background: var(--cod-bg);
+  --foreground: var(--cod-ink);
+  --card: var(--cod-bg-panel);
+  --card-foreground: var(--cod-ink);
+  --popover: var(--cod-bg-panel);
+  --popover-foreground: var(--cod-ink);
+  --primary: var(--cod-cta);
   --primary-foreground: #ffffff;
-  --primary-accent: #9654ff;
-  --secondary: var(--color-neutral-800);
-  --secondary-foreground: var(--color-neutral-50);
-  --secondary-accent: var(--color-neutral-50);
-  --muted: var(--color-neutral-800);
-  --muted-foreground: var(--color-neutral-400);
-  --accent: var(--color-neutral-700);
-  --accent-foreground: var(--color-neutral-50);
-  --info: var(--color-sky-300);
-  --info-foreground: var(--color-sky-950);
-  --success: var(--color-green-300);
-  --success-foreground: var(--color-green-950);
-  --warning: var(--color-amber-300);
-  --warning-foreground: var(--color-amber-950);
-  --error: var(--color-red-800);
-  --error-foreground: var(--color-neutral-50);
-  --border: --alpha(var(--color-neutral-50) / 10%);
-  --input: --alpha(var(--color-neutral-50) / 15%);
-  --outline: var(--color-neutral-500);
+  --primary-accent: var(--cod-magenta);
+  --secondary: var(--cod-bg-elevated);
+  --secondary-foreground: var(--cod-ink);
+  --secondary-accent: var(--cod-ink);
+  --muted: var(--cod-bg-hover);
+  --muted-foreground: var(--cod-ink-muted);
+  --accent: var(--cod-bg-elevated);
+  --accent-foreground: var(--cod-ink);
+  --info: var(--cod-magenta-soft);
+  --info-foreground: var(--cod-bg);
+  --success: var(--cod-ok);
+  --success-foreground: #042f1a;
+  --warning: var(--cod-orange);
+  --warning-foreground: var(--cod-bg);
+  --error: var(--cod-warn);
+  --error-foreground: #ffffff;
+  --border: var(--cod-line);
+  --input: #f5f5f51f;
+  --outline: var(--cod-ink-faint);
 
-  /* sidebars variables */
-  --sidebar-background: var(--color-neutral-900);
-  --sidebar-foreground: var(--color-neutral-50);
-  --sidebar-primary: #7f3dee;
+  --sidebar-background: var(--cod-bg-panel);
+  --sidebar-foreground: var(--cod-ink);
+  --sidebar-primary: var(--cod-cta);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--color-neutral-800);
-  --sidebar-accent-foreground: var(--color-neutral-100);
-  --sidebar-border: var(--color-neutral-800);
-  --sidebar-outline: var(--color-neutral-600);
+  --sidebar-accent: var(--cod-bg-hover);
+  --sidebar-accent-foreground: var(--cod-ink);
+  --sidebar-border: var(--cod-line);
+  --sidebar-outline: var(--cod-ink-faint);
 }
 
 @layer base {
@@ -169,6 +170,8 @@
   h4 {
     font-family: var(--font-heading);
     letter-spacing: 0.02em;
+    font-weight: 400;
+    text-transform: none;
   }
   button {
     @apply cursor-pointer;

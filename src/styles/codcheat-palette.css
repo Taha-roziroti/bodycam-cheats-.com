@@ -1,0 +1,25 @@
+/**
+ * Color + type tokens aligned with https://codcheat.org/ (Layout CSS :root).
+ * Do not introduce alternate accent hues outside this palette.
+ */
+:root {
+  --cod-bg: #0d0a14;
+  --cod-bg-panel: #0f0c18;
+  --cod-bg-elevated: #0f0c19;
+  --cod-bg-hover: #0e0b17;
+  --cod-ink: #f5f5f5;
+  --cod-ink-heading: #ffffff;
+  --cod-ink-secondary: #d4d4d8;
+  --cod-ink-muted: #a1a1aa;
+  --cod-ink-faint: #71717a;
+  --cod-line: #f5f5f514;
+  --cod-line-soft: #f5f5f50f;
+  --cod-magenta: #a855f7;
+  --cod-magenta-soft: #c084fc;
+  --cod-magenta-deep: #7e22ce;
+  --cod-accent-hover: #b47fff;
+  --cod-cta: #7505e0;
+  --cod-ok: #34d399;
+  --cod-warn: #f43f5e;
+  --cod-orange: #ff6b2c;
+}

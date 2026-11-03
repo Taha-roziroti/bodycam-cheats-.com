@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
+Allow: /og/
 
 Disallow: /go/
 
-Sitemap: https://dotacheats.com/sitemap.xml
+User-agent: Googlebot
+Allow: /
 
-# RSS: https://dotacheats.com/rss.xml
+Sitemap: https://borderlands3cheats.com/sitemap.xml

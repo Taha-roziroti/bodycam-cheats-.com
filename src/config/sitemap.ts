@@ -53,6 +53,18 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return item;
   }
 
+  if (path === '/pricing/' || path === '/cloud-dma/') {
+    item.priority = 0.9;
+    item.changefreq = 'weekly';
+    return item;
+  }
+
+  if (path.startsWith('/guides/')) {
+    item.priority = 0.75;
+    item.changefreq = 'monthly';
+    return item;
+  }
+
   if (path.startsWith('/products/')) {
     item.priority = 0.8;
     item.changefreq = 'weekly';

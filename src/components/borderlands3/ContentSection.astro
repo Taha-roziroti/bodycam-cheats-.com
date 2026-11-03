@@ -1,0 +1,17 @@
+---
+interface Props {
+  id?: string;
+  title: string;
+  class?: string;
+}
+
+const { id, title, class: className = '' } = Astro.props;
+const headingId = id ?? title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+---
+
+<section class={`scroll-mt-28 space-y-4 ${className}`} aria-labelledby={headingId}>
+  <h2 id={headingId} class="text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+  <div class="space-y-4 text-base leading-relaxed text-muted-foreground [&_a]:text-primary [&_a]:underline-offset-2 [&_a:hover]:underline [&_strong]:text-foreground">
+    <slot />
+  </div>
+</section>

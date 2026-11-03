@@ -6,12 +6,13 @@ import {
   TWITTER_CREATOR,
   TWITTER_SITE,
   canonicalUrl,
-  DEFAULT_OG_IMAGE,
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
   GA_MEASUREMENT_ID,
   absoluteAssetUrl,
 } from '../config/seo';
+import { ogImageForPath } from '../data/site';
+import { siteIdentityGraph } from '../utils/siteIdentityGraph';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
@@ -31,7 +32,7 @@ interface Props {
 const {
   title = t.site.title,
   description = t.site.description,
-  ogImage = DEFAULT_OG_IMAGE,
+  ogImage: ogImageProp,
   ogImageAlt = title,
   ogType = 'website',
   articlePublishedTime,
@@ -40,11 +41,24 @@ const {
   jsonLd,
 } = Astro.props;
 
-const canonical = canonicalUrl(Astro.url.pathname);
-const ogImageUrl = absoluteAssetUrl(ogImage);
-const robotsContent = noindex
+const pathname = Astro.url.pathname;
+const routeOgImage = ogImageForPath(pathname);
+const ogImage = ogImageProp ?? routeOgImage;
+const legacyNoindex =
+  pathname.startsWith('/blog') ||
+  pathname.startsWith('/forum') ||
+  pathname.startsWith('/products/dota-2-cheats');
+const resolvedNoindex = noindex || legacyNoindex;
+const robotsContent = resolvedNoindex
   ? 'noindex, nofollow'
   : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
+const canonical = canonicalUrl(pathname);
+const ogImageUrl = absoluteAssetUrl(ogImage);
+const identityGraph = siteIdentityGraph();
+const mergedJsonLd = jsonLd
+  ? [...identityGraph, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])]
+  : identityGraph;
 ---
 
 <!doctype html>
@@ -67,8 +81,9 @@ const robotsContent = noindex
     <meta name="author" content={t.site.name} />
     <meta name="robots" content={robotsContent} />
     <meta name="googlebot" content={robotsContent} />
-    <meta name="theme-color" content="#7F3DEE" />
+    <meta name="theme-color" content="#0d0a14" />
     <link rel="canonical" href={canonical} />
+    <link rel="image_src" href={ogImageUrl} />
     <link rel="alternate" hreflang="en" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
     <link
@@ -121,19 +136,19 @@ const robotsContent = noindex
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Manrope:wght@400;500;600&display=optional"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Bebas+Neue&display=optional"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Manrope:wght@400;500;600&display=optional"
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Bebas+Neue&display=optional"
         rel="stylesheet"
       />
     </noscript>
 
-    {jsonLd && <JsonLd data={jsonLd} />}
+    <JsonLd data={mergedJsonLd} />
     <slot name="head" />
 
   </head>

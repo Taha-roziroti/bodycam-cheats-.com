@@ -38,7 +38,7 @@
 .forum-flair.tone-blue { color:#68b9f5;background:color-mix(in oklch,#2686d5 15%,transparent) }.forum-flair.tone-orange { color:#f3a85e;background:color-mix(in oklch,#d97536 15%,transparent) }.forum-flair.tone-green { color:#58ce91;background:color-mix(in oklch,#29a66c 15%,transparent) }
 .forum-sidebar { display:grid; gap:.75rem; }
 .forum-side-card { overflow:hidden; border:1px solid var(--border); border-radius:var(--radius-xl); background:color-mix(in oklch,var(--card) 96%,transparent); }
-.forum-side-card__banner { height:3.3rem; background:linear-gradient(105deg,#45236b,#7f3dee 55%,#3c255d); }
+.forum-side-card__banner { height:3.3rem; background:linear-gradient(105deg,var(--cod-magenta-deep),var(--cod-cta) 55%,var(--cod-bg)); }
 .forum-about__content { padding:0 1rem 1rem; }
 .forum-about__title { display:flex; align-items:center; gap:.55rem; margin-top:-.85rem; }
 .forum-about__title .forum-community-avatar { width:2.6rem; height:2.6rem; border:3px solid var(--card); font-size:1.2rem; }

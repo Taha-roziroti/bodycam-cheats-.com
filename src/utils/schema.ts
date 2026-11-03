@@ -1,6 +1,13 @@
 import type { FaqItem } from '../i18n/types';
-import { SUPPORT_EMAIL } from '../config/site';
+import { SITE_BRAND, SUPPORT_EMAIL } from '../config/site';
 import { SITE_ORIGIN, absoluteAssetUrl, canonicalUrl, getOrganizationSameAs } from '../config/seo';
+
+export interface ProductOfferInput {
+  name: string;
+  priceUsd: number;
+  priceCurrency?: string;
+  url: string;
+}
 
 export interface BreadcrumbItem {
   name: string;
@@ -24,11 +31,11 @@ export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'DotaCheats',
+    name: SITE_BRAND,
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'Dota 2 cheats with scripts, map hack, zoom hack, Skin Changer and ranked-safe tiers for PC.',
+      'Borderlands 3 PC cheat features including soft aim, enemy and loot ESP, radar, and recoil options.',
   };
 }
 
@@ -38,7 +45,7 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'DotaCheats',
+    name: SITE_BRAND,
     url: `${SITE_ORIGIN}/`,
     logo: `${SITE_ORIGIN}/logo.svg`,
     email: SUPPORT_EMAIL,
@@ -66,7 +73,7 @@ export function collectionPageSchema(input: { name: string; description: string;
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'DotaCheats',
+      name: SITE_BRAND,
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -82,7 +89,7 @@ export function webPageSchema(input: { name: string; description: string; url: s
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'DotaCheats',
+      name: SITE_BRAND,
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -131,13 +138,28 @@ export function discussionForumPostingSchema(input: {
     url: canonicalUrl(input.url),
     author: { '@type': 'Person', name: input.author },
     commentCount: input.comments,
-    isPartOf: { '@type': 'CollectionPage', name: 'DotaCheats Community Forum', url: canonicalUrl('/forum/') },
+    isPartOf: { '@type': 'CollectionPage', name: `${SITE_BRAND} Community Forum`, url: canonicalUrl('/forum/') },
   };
 }
 
 function offerUrl(path: string): string {
   if (path.startsWith('http://') || path.startsWith('https://')) return path;
   return canonicalUrl(path);
+}
+
+function buildOffer(offer: ProductOfferInput) {
+  return {
+    '@type': 'Offer' as const,
+    name: offer.name,
+    url: offerUrl(offer.url),
+    price: offer.priceUsd.toFixed(2),
+    priceCurrency: offer.priceCurrency ?? 'USD',
+    availability: 'https://schema.org/InStock',
+    seller: {
+      '@type': 'Organization',
+      name: SITE_BRAND,
+    },
+  };
 }
 
 export function productSchema(input: {
@@ -147,27 +169,73 @@ export function productSchema(input: {
   offerUrl: string;
   image?: string;
   sku?: string;
+  offers?: ProductOfferInput[];
+  productId?: string;
 }) {
+  const offersBlock =
+    input.offers && input.offers.length > 0
+      ? input.offers.length === 1
+        ? buildOffer(input.offers[0]!)
+        : input.offers.map((o) => buildOffer(o))
+      : {
+          '@type': 'Offer',
+          url: offerUrl(input.offerUrl),
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          seller: {
+            '@type': 'Organization',
+            name: SITE_BRAND,
+          },
+        };
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    ...(input.productId ? { '@id': input.productId } : {}),
     name: input.name,
     description: input.description,
     sku: input.sku ?? input.url.replace(/\//g, '-'),
     brand: {
       '@type': 'Brand',
-      name: 'DotaCheats',
+      name: SITE_BRAND,
     },
     ...(input.image ? { image: absoluteAssetUrl(input.image) } : {}),
-    offers: {
-      '@type': 'Offer',
-      url: offerUrl(input.offerUrl),
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'Organization',
-        name: 'DotaCheats',
+    offers: offersBlock,
+  };
+}
+
+/** Article schema for technical guides (not blog posts). */
+export function guideArticleSchema(input: {
+  name: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: input.name,
+    description: input.description,
+    url: canonicalUrl(input.url),
+    datePublished: input.datePublished,
+    dateModified: input.dateModified ?? input.datePublished,
+    inLanguage: 'en-US',
+    author: {
+      '@type': 'Organization',
+      name: SITE_BRAND,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_BRAND,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_ORIGIN}/logo.svg`,
       },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl(input.url),
     },
   };
 }
@@ -209,11 +277,11 @@ export function articleSchema(input: {
     inLanguage: 'en-US',
     author: {
       '@type': 'Organization',
-      name: 'DotaCheats',
+      name: SITE_BRAND,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'DotaCheats',
+      name: SITE_BRAND,
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_ORIGIN}/logo.svg`,
