@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { PATH_REDIRECTS } from './redirects.mjs';
+import { checkoutRedirectLines } from '../src/config/checkout-redirects.mjs';
 
 /** Keep in sync with src/data/site.ts KEYWORD_REDIRECTS */
 const KEYWORD_REDIRECTS = [
@@ -40,6 +41,13 @@ if (!fs.existsSync(redirectsFile)) {
     const line = `${from} ${to}`.replace(/\s+/g, ' ');
     if (!text.includes(from) || !text.includes(to)) {
       errors.push(`_redirects missing alias ${from} → ${to}`);
+    }
+  }
+
+  for (const line of checkoutRedirectLines()) {
+    const [from, to] = line.split(/\s+/);
+    if (!text.includes(from) || !text.includes(to)) {
+      errors.push(`_redirects missing checkout ${from} → ${to}`);
     }
   }
 }

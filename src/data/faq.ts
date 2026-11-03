@@ -1,5 +1,5 @@
 import type { IconName } from '../components/icons/types';
-import { checkoutPath } from '../config/checkout';
+import { checkoutPath, PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import { SITE_DOMAIN } from '../config/site';
 import { normalizeInternalPath, productPath, ROUTES } from '../utils/path';
 
@@ -35,7 +35,7 @@ const pricingPage = link('monthly and lifetime pricing page', '/pricing/');
 const cloudDmaPage = link('Cloud DMA product overview', '/cloud-dma/');
 const requirementsGuide = link('Windows and RAM requirements guide', '/guides/borderlands-3-cheat-system-requirements/');
 const setupGuide = link('Hyper-V Cloud DMA setup walkthrough', '/guides/cloud-dma-setup/');
-const checkout = link('secure Borderlands 3 checkout', checkoutPath('borderlands3'));
+const checkout = link('secure checkout', PRIMARY_CHECKOUT_PATH);
 const faqPage = link('full FAQ topic list', ROUTES.faq);
 
 const elite = link('Dota 2 Elite', productPath('elite'));

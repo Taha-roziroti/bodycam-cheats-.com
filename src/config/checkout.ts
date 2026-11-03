@@ -26,8 +26,11 @@ export function checkoutPath(product: CheckoutProduct = 'borderlands3'): string 
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
-/** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('borderlands3');
+/** Hub where visitors pick Borderlands 3, Cloud DMA, or HWID Spoofer before checkout. */
+export const CHECKOUT_HUB_PATH = '/go/';
+
+/** Default generic buy CTA (header, support pre-checkout). */
+export const PRIMARY_CHECKOUT_PATH = CHECKOUT_HUB_PATH;
 
 /** Map internal product slugs to checkout redirect paths. */
 export function checkoutForSlug(slug: string): string {
@@ -64,16 +67,31 @@ export function resolveCheckoutHref(href: string): string {
   }
 
   // Legacy / encoded product paths → internal checkout
-  if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
+  if (
+    href.includes('%2Fproducts%2Fcloud-dma') ||
+    href.includes('/products/cloud-dma') ||
+    (href.includes('/go/TAHA') && href.includes('cloud-dma'))
+  ) {
     return checkoutPath('cloudDma');
   }
-  if (href.includes('borderlands-3') || href.includes('/products/borderlands-3')) {
+  if (
+    href.includes('borderlands-3') ||
+    href.includes('/products/borderlands-3') ||
+    (href.includes('/go/TAHA') && href.includes('borderlands-3'))
+  ) {
     return checkoutPath('borderlands3');
   }
-  if (href.includes('%2Fproducts%2Fskin-changer') || href.includes('/products/skin-changer')) {
+  if (
+    href.includes('%2Fproducts%2Fskin-changer') ||
+    href.includes('/products/skin-changer')
+  ) {
     return checkoutPath('skinChanger');
   }
-  if (href.includes('%2Fproducts%2Fhwid-spoofer') || href.includes('/products/hwid-spoofer')) {
+  if (
+    href.includes('%2Fproducts%2Fhwid-spoofer') ||
+    href.includes('/products/hwid-spoofer') ||
+    (href.includes('/go/TAHA') && href.includes('hwid-spoofer'))
+  ) {
     return checkoutPath('hwidSpoofer');
   }
   if (href.includes('%2Fproducts%2Fugc') || href.includes('/products/ugc')) {

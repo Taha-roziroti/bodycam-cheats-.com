@@ -41,7 +41,7 @@ It provides access to the Borderlands 3 cheat product according to the monthly s
 
 The monthly plan is a convenient option for players who want to explore the available features and choose a subscription that fits their preferences.
 
-**Listed monthly price: $35** (30-day access per billing period—aligned across plan selector and FAQ on this site.)
+**Listed monthly price: $35** (31-day access per billing period—aligned with checkout.)
 
 ## Borderlands 3 Lifetime Cheats
 

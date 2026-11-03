@@ -25,6 +25,7 @@ export const CLOUD_DMA_ADDITIONAL_SERVICES = [
 
 export const BL3_CHECKOUT = checkoutPath('borderlands3');
 export const CLOUD_DMA_CHECKOUT = checkoutPath('cloudDma');
+export const HWID_SPOOFER_CHECKOUT = checkoutPath('hwidSpoofer');
 
 export const bl3ProductOffers = [
   { name: 'Borderlands 3 Cheats — Monthly', priceUsd: 35, url: BL3_CHECKOUT },
@@ -35,6 +36,12 @@ export const cloudDmaOffer = {
   name: 'Cloud DMA infrastructure license (lifetime)',
   priceUsd: 50,
   url: CLOUD_DMA_CHECKOUT,
+} as const;
+
+export const hwidSpooferOffer = {
+  name: 'HWID Spoofer (lifetime)',
+  priceUsd: 50,
+  url: HWID_SPOOFER_CHECKOUT,
 } as const;
 
 export const bl3Features = [
@@ -66,7 +73,7 @@ export const monthlyPlanCopy = {
   priceUsd: 35,
   durationLabel: `${MONTHLY_ACCESS_DAYS}-day access`,
   renewal:
-    'Each monthly payment extends access for another 30-day period from activation or renewal. Cancel future renewals according to checkout terms.',
+    'Each monthly payment extends access for another 31-day period from activation or renewal. Cancel future renewals according to checkout terms.',
 } as const;
 
 export const lifetimePlanCopy = {

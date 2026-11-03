@@ -238,6 +238,26 @@ html.dark #why-us .why-compare-other-card :hover .icon-app {
   text-decoration: none;
 }
 
+/* CTA links (Starwind Button) must keep readable contrast inside prose/markdown shells */
+a[data-slot='button'] {
+  text-decoration: none;
+}
+
+a[data-slot='button'].bg-primary {
+  color: var(--primary-foreground);
+}
+
+a[data-slot='button'].bg-primary:hover,
+a[data-slot='button'].bg-primary:focus-visible {
+  color: var(--primary-foreground);
+}
+
+.content-markdown a[data-slot='button'].bg-primary,
+.prose a[data-slot='button'].bg-primary {
+  color: var(--primary-foreground);
+  text-decoration: none;
+}
+
 .skip-link:focus {
   left: 1rem;
   top: 1rem;

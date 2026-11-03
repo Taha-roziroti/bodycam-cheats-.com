@@ -1,6 +1,6 @@
 ---
 import { t } from '../i18n';
-import { checkoutPath } from '../config/checkout';
+import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import { Button } from '@/components/starwind/button';
 import {
   Sheet,
@@ -21,7 +21,7 @@ const navIcons: Record<string, IconName> = {
   '/support/': 'navSupport',
 };
 
-const purchaseUrl = checkoutPath('borderlands3');
+const purchaseUrl = PRIMARY_CHECKOUT_PATH;
 ---
 
 <header class="pointer-events-none fixed inset-x-0 top-0 z-50">

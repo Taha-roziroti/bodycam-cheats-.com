@@ -12,7 +12,7 @@ export const button = tv({
   variants: {
     variant: {
       default: "bg-foreground text-background hover:bg-foreground/90 focus-visible:ring-outline/50",
-      primary: "bg-primary text-primary-foreground hover:bg-[var(--cod-accent-hover)] focus-visible:ring-[var(--cod-magenta-soft)]/50 border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]",
+      primary: "bg-primary text-primary-foreground no-underline hover:bg-[var(--cod-accent-hover)] hover:text-primary-foreground focus-visible:ring-[var(--cod-magenta-soft)]/50 border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]",
       secondary: "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] focus-visible:ring-secondary/50",
       outline: "dark:border-input focus-visible:ring-outline/50 bg-background dark:bg-input/30 focus-visible:border-outline hover:bg-muted dark:hover:bg-input/50 hover:text-foreground border shadow-xs",
       ghost: "hover:bg-muted hover:text-foreground focus-visible:ring-outline/50",

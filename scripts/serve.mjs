@@ -164,7 +164,7 @@ const server = http.createServer((req, res) => {
   }
 
   const { pathname, query, fragment } = splitUrl(req.url);
-  const checkoutRedirect = resolveCheckoutPathRedirect(pathname);
+  const checkoutRedirect = resolveCheckoutPathRedirect(pathname, query);
   if (checkoutRedirect) {
     res.writeHead(302, { Location: checkoutRedirect });
     res.end();

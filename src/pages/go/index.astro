@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CheckoutProductChooser from '../../components/borderlands3/CheckoutProductChooser.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Choose your plan — Borderlands 3 Cheats checkout"
+  description="Select Borderlands 3 cheats, Cloud DMA, or HWID Spoofer, then continue to secure checkout."
+  noindex={true}
+>
+  <article class="py-10 md:py-14">
+    <div class="mx-auto max-w-3xl px-5">
+      <Breadcrumbs
+        items={[
+          { name: 'Home', path: '/' },
+          { name: 'Checkout', path: '/go/' },
+        ]}
+      />
+      <header class="mt-6">
+        <h1 class="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Choose a product</h1>
+        <p class="mt-3 text-muted-foreground">
+          Pick the Borderlands 3 cheat package, Cloud DMA license, or HWID Spoofer, then continue to checkout.
+        </p>
+      </header>
+      <div class="mt-8">
+        <CheckoutProductChooser />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
