@@ -11,7 +11,7 @@ endCtaLabel: Explore Cloud DMA and build your compatible gaming setup.
 endCtaHref: /cloud-dma/
 ---
 
-# DMA setup guide — Hyper-V requirements
+# DMA setup guide — Hyper-V virtualization requirements
 
 Setting up a virtualization-based gaming environment becomes much easier when you understand the components involved.
 

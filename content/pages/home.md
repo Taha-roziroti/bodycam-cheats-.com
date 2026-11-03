@@ -24,7 +24,7 @@ figures:
     src: /images/borderlands3/borderlands-3-radar-gameplay.webp
 ---
 
-# Borderlands 3 Cheats for PC with soft aim
+# Borderlands 3 Cheats for PC with soft aim, loot radar & plans
 
 Pandora is full of enemies, valuable loot and unexpected encounters. Whether you're exploring dangerous locations, taking on powerful bosses or working your way through another challenging area, having the right tools can completely change how you approach the game.
 

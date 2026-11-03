@@ -31,12 +31,12 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const pricingPage = link('pricing page', '/pricing/');
-const cloudDmaPage = link('Cloud DMA page', '/cloud-dma/');
-const requirementsGuide = link('system requirements guide', '/guides/borderlands-3-cheat-system-requirements/');
-const setupGuide = link('Cloud DMA setup guide', '/guides/cloud-dma-setup/');
-const checkout = link('checkout', checkoutPath('borderlands3'));
-const faqPage = link('full FAQ', ROUTES.faq);
+const pricingPage = link('monthly and lifetime pricing page', '/pricing/');
+const cloudDmaPage = link('Cloud DMA product overview', '/cloud-dma/');
+const requirementsGuide = link('Windows and RAM requirements guide', '/guides/borderlands-3-cheat-system-requirements/');
+const setupGuide = link('Hyper-V Cloud DMA setup walkthrough', '/guides/cloud-dma-setup/');
+const checkout = link('secure Borderlands 3 checkout', checkoutPath('borderlands3'));
+const faqPage = link('full FAQ topic list', ROUTES.faq);
 
 const elite = link('Dota 2 Elite', productPath('elite'));
 const lite = link('Lite tier (map hack & ESP)', ROUTES.products);
@@ -62,7 +62,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: `Checkout runs through our secure partner. After purchase, follow delivery instructions from your order email and review the ${setupGuide} before launching the game.`,
+    a: `Checkout runs through our secure partner. After purchase, follow delivery instructions from your order email and review the ${link('post-purchase Hyper-V setup guide', '/guides/cloud-dma-setup/')} before launching the game.`,
   },
   {
     id: 'ban-risk',
@@ -103,28 +103,28 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqRankTiers',
     q: 'How much do Borderlands 3 cheats cost?',
-    a: `Monthly and lifetime prices are listed on the ${pricingPage}. Cloud DMA is a separate lifetime license on the ${cloudDmaPage}.`,
+    a: `Monthly and lifetime prices are listed on the ${link('cheat plan pricing table', '/pricing/')}. Cloud DMA is a separate lifetime license on the ${link('$50 Cloud DMA license page', '/cloud-dma/')}.`,
   },
   {
     id: 'cloud-dma',
     topic: 'products',
     icon: 'faqProductsPage',
     q: 'Is Cloud DMA included in the setup?',
-    a: `Cloud DMA is required on supported builds. Review the ${cloudDmaPage} and ${setupGuide} for Hyper-V, RAM, and add-on services such as GREENWARD or AWS.`,
+    a: `Cloud DMA is required on supported builds. Review the ${cloudDmaPage} and ${link('single-PC Hyper-V setup steps', '/guides/cloud-dma-setup/')} for Hyper-V, RAM, and add-on services such as GREENWARD or AWS.`,
   },
   {
     id: 'cloud-dma-cost',
     topic: 'products',
     icon: 'faqUgcWhat',
     q: 'What does Cloud DMA cost beyond the cheat license?',
-    a: `The Cloud DMA lifetime license is listed on the ${cloudDmaPage}. GREENWARD, static server hosting, and AWS resources are purchased separately.`,
+    a: `The Cloud DMA lifetime license is listed on the ${link('Cloud DMA pricing overview', '/cloud-dma/')}. GREENWARD, static server hosting, and AWS resources are purchased separately.`,
   },
   {
     id: 'windows-req',
     topic: 'setup',
     icon: 'faqDiscordHelp',
     q: 'What Windows version do I need?',
-    a: `Windows 10 or 11 with virtualization enabled for Cloud DMA. See the ${requirementsGuide} for RAM, CPU, and client compatibility.`,
+    a: `Windows 10 or 11 with virtualization enabled for Cloud DMA. See the ${link('Borderlands 3 PC requirements checklist', '/guides/borderlands-3-cheat-system-requirements/')} for RAM, CPU, and client compatibility.`,
   },
   {
     id: 'soft-aim',
@@ -183,7 +183,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'all',
     icon: 'faqMore',
     q: 'Where is the full FAQ?',
-    a: `This page collects plan, feature, Cloud DMA, and setup answers. Start on the homepage, then read the ${faqPage} filters for every topic.`,
+    a: `This page collects plan, feature, Cloud DMA, and setup answers. Start on the ${link('Borderlands 3 cheats homepage', '/')}, then read the ${faqPage} filters for every topic.`,
   },
 ];
 

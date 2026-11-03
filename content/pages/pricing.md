@@ -19,7 +19,7 @@ figures:
     src: /images/borderlands3/borderlands-3-soft-aim-gameplay.webp
 ---
 
-# Cheats pricing and subscription plans
+# Cheats pricing — monthly, lifetime plans & features
 
 Choosing the right cheat subscription should be simple.
 
@@ -104,7 +104,7 @@ When choosing your Borderlands 3 cheat plan, remember to review the Cloud DMA re
 
 **Listed Cloud DMA lifetime license price: $50** (license only—not the full setup cost).
 
-Visit the [Cloud DMA page](/cloud-dma/) for its product details, system specifications and setup information.
+Visit the [Hyper-V infrastructure specs](/cloud-dma/) for its product details, system specifications and setup information.
 
 ## Which Borderlands 3 Cheat Plan Should You Choose?
 

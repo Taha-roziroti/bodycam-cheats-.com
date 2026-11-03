@@ -9,8 +9,9 @@ const routeLastmod = sitemapLastmod as Record<string, string>;
 
 function lastmodForPath(path: string): string {
   const date = routeLastmod[path];
-  if (date) return `${date}T12:00:00.000Z`;
-  return buildDate;
+  if (!date) return buildDate;
+  if (date.includes('T')) return date.endsWith('Z') ? date : `${date}Z`;
+  return `${date}T12:00:00.000Z`;
 }
 
 const blogLastmod = new Map(

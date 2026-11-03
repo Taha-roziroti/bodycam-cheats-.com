@@ -13,7 +13,7 @@ endCtaLabel: Explore Cloud DMA and get started.
 endCtaHref: /go/cloud-dma/
 ---
 
-# Cloud DMA for Game Cheats — single-PC setup
+# Cloud DMA for Game Cheats — Hyper-V lifetime license setup
 
 A well-organized gaming setup starts with the right infrastructure.
 

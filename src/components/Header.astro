@@ -6,10 +6,10 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/components/starwind/sheet';
 import Icon from './icons/Icon.astro';
+import { sheetTitle } from '@/components/starwind/sheet/variants';
 
 import type { IconName } from './icons/types';
 
@@ -64,7 +64,7 @@ const purchaseUrl = checkoutPath('borderlands3');
         </SheetTrigger>
         <SheetContent side="right" class="flex w-[min(100vw-2rem,20rem)] flex-col gap-4">
           <SheetHeader>
-            <SheetTitle>{t.site.name}</SheetTitle>
+            <p class={sheetTitle()}>{t.site.name}</p>
           </SheetHeader>
           <nav class="flex flex-col gap-1" aria-label="Mobile">
             {t.nav.map((link) => (

@@ -1,6 +1,6 @@
 ---
 route: /guides/borderlands-3-cheat-system-requirements/
-seoTitle: System requirements – Windows, RAM & client specs
+seoTitle: System requirements – Windows RAM & client specs guide
 metaDescription: "System requirements for Windows 10/11, Steam or Official Client, RAM, and Cloud DMA prerequisites—review before Borderlands 3 cheat checkout."
 schemaTypes:
   - Article
@@ -20,7 +20,7 @@ figures:
     src: /images/borderlands3/borderlands-3-enemy-esp-skag.webp
 ---
 
-# Borderlands 3 Cheat System Requirements
+# Borderlands 3 cheat system requirements — Windows, client specs
 
 Before getting started with Borderlands 3 cheats, it's worth understanding the PC configuration required for the complete setup.
 

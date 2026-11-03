@@ -525,7 +525,7 @@ export const en: Translations = {
   },
   support: {
     eyebrow: 'Support',
-    title: 'Support for checkout, Cloud DMA & licenses',
+    title: 'Support for checkout help, Cloud DMA setup & licenses',
     subtitle: 'Use this support page for checkout questions, Cloud DMA setup, and license delivery after purchase.',
     channels: [
       {
@@ -553,7 +553,7 @@ export const en: Translations = {
         icon: 'clock',
         title: 'Setup guides',
         desc: 'Hyper-V, RAM, and client compatibility for Cloud DMA.',
-        linkLabel: 'Cloud DMA setup guide',
+        linkLabel: 'Read Hyper-V setup steps',
         href: '/guides/cloud-dma-setup/',
       },
     ],
@@ -620,7 +620,7 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About Borderlands 3 Cheats',
+      title: 'About Borderlands 3 Cheats — guides, pricing & cloud',
       description:
         'Borderlands 3 Cheats publishes PC feature guides, Cloud DMA setup, pricing, and support resources at borderlands3cheats.com.',
       sections: [
@@ -650,7 +650,7 @@ export const en: Translations = {
       ],
     },
     privacy: {
-      title: 'Privacy Policy — Borderlands 3 Cheats',
+      title: 'Privacy Policy — analytics, cookies & Borderlands 3 Cheats',
       description:
         'Privacy at Borderlands 3 Cheats: how we handle analytics, cookies, and contact data when you use borderlands3cheats.com.',
       sections: [
@@ -686,7 +686,7 @@ export const en: Translations = {
       ],
     },
     terms: {
-      title: 'Terms & Conditions — Borderlands 3 Cheats',
+      title: 'Terms & Conditions — purchase, license, refund policy details',
       description:
         'Purchase, license, refund, and use terms for Borderlands 3 cheat and Cloud DMA products at borderlands3cheats.com.',
       sections: [

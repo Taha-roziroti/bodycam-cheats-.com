@@ -30,7 +30,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'DMA setup steps for Hyper-V, CPU virtualization, 8–16 GB RAM, and Windows 10/11 checks before you enable the single-PC environment.',
   },
   '/guides/borderlands-3-cheat-system-requirements/': {
-    title: 'System requirements – Windows, RAM & client specs',
+    title: 'System requirements – Windows RAM & client specs guide',
     description:
       'System requirements for Windows 10/11, Steam or Official Client, RAM, and Cloud DMA prerequisites—review before Borderlands 3 cheat checkout.',
   },
@@ -59,19 +59,19 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     description: 'Join Dota players to discuss heroes, builds, patch changes, guides, and community moments.',
   },
   '/faq/': {
-    title: 'FAQ – cheat plans, Cloud DMA, pricing & checkout',
+    title: 'FAQ – cheat plans, Cloud DMA, pricing & checkout help',
     description:
       'FAQ: answers on $35/$150 cheat plans, $50 Cloud DMA license, Windows requirements, checkout delivery, and license moves.',
   },
   '/terms/': {
-    title: 'Terms – purchase, license & refund policy details',
+    title: 'Terms – purchase, license, refund & policy details',
     description:
       'Terms for Borderlands 3 cheat and Cloud DMA purchases: license use, checkout delivery, refund rules, and acceptable use.',
   },
   '/privacy/': {
     title: 'Privacy – Borderlands 3 Cheats analytics & cookies',
     description:
-      'Privacy: how borderlands3cheats.com uses Google Analytics, cookies, and support email data when you browse or checkout.',
+      'Privacy: how borderlands3cheats.com uses Google Analytics, cookies, and support email data when you browse the site or complete checkout.',
   },
   '/about/': {
     title: 'Borderlands 3 Cheats – guides, pricing & Cloud DMA',
@@ -81,7 +81,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/support/': {
     title: 'Support – checkout help, Cloud DMA setup & licenses',
     description:
-      'Support: help with cheat checkout, Cloud DMA Hyper-V setup, Windows requirements, and license delivery after purchase.',
+      'Support: help with cheat checkout, Cloud DMA Hyper-V setup, Windows requirements, and license delivery after purchase on this site.',
   },
 };
 

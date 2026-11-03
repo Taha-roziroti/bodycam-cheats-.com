@@ -36,6 +36,10 @@ const jsonLd = jsonLdForContentPage({
 });
 const ctaHref = data.endCtaHref ?? defaultEndCtaHref(data.route, data.checkout);
 const buyUrl = data.checkout === 'cloud-dma' ? CLOUD_DMA_CHECKOUT : BL3_CHECKOUT;
+const checkoutHeadingMain =
+  data.checkout === 'cloud-dma' ? 'Cloud DMA license checkout' : 'Borderlands 3 cheat plan options';
+const checkoutHeadingSidebar =
+  data.checkout === 'cloud-dma' ? 'Cloud DMA license panel' : 'Borderlands 3 cheat checkout panel';
 const ogType = data.layout === 'article' ? 'article' : 'website';
 const lcpPreload =
   data.route === '/' && data.heroImage
@@ -92,7 +96,7 @@ const logoAlt = logoAltByRoute[data.route];
               <CheckoutPanel
                 productSlug={data.checkout === 'cloud-dma' ? 'cloud-dma' : 'borderlands-3'}
                 buyUrl={buyUrl}
-                heading={data.checkout === 'cloud-dma' ? 'Cloud DMA license' : 'Borderlands 3 cheat plans'}
+                heading={checkoutHeadingMain}
               />
             </div>
             {data.showAdditionalCostsCallout ? (
@@ -103,7 +107,7 @@ const logoAlt = logoAltByRoute[data.route];
             <CheckoutPanel
               productSlug={data.checkout === 'cloud-dma' ? 'cloud-dma' : 'borderlands-3'}
               buyUrl={buyUrl}
-              heading={data.checkout === 'cloud-dma' ? 'Cloud DMA license' : 'Borderlands 3 cheat plans'}
+              heading={checkoutHeadingSidebar}
             />
           </div>
         </div>

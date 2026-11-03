@@ -98,7 +98,11 @@ function applyRouteLastmod(xml) {
     }
     const date = routeLastmod[pathname];
     if (!date) return block;
-    const iso = `${date}T12:00:00.000Z`;
+    const iso = date.includes('T')
+      ? date.endsWith('Z')
+        ? date
+        : `${date}Z`
+      : `${date}T12:00:00.000Z`;
     if (block.includes('<lastmod>')) {
       return block.replace(/<lastmod>[^<]+<\/lastmod>/, `<lastmod>${iso}</lastmod>`);
     }
