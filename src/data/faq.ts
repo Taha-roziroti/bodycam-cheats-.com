@@ -214,6 +214,13 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
   'setup',
 ];
 
+export const HOME_LANDING_FAQ_SECTION_COPY = {
+  eyebrow: 'Cheat FAQ',
+  title: 'Borderlands 3 cheats questions',
+  subtitle:
+    'Straight answers on plans, Cloud DMA, bans, and setup—open the full FAQ for every topic.',
+} as const;
+
 /** Section copy when FAQ list is scoped to the current page (not /faq/). */
 export const CONTEXTUAL_FAQ_SECTION_COPY = {
   eyebrow: 'FAQ',

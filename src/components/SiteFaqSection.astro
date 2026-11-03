@@ -13,6 +13,10 @@ interface Props {
   id?: string;
   titleId?: string;
   titleAs?: 'h1' | 'h2';
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  showFilters?: boolean;
   class?: string;
   /** Full /faq/ experience — all topics chip bar */
   variant?: 'full' | 'contextual';
@@ -24,6 +28,10 @@ const {
   id,
   titleId = 'faq-heading',
   titleAs,
+  eyebrow: eyebrowProp,
+  title: titleProp,
+  subtitle: subtitleProp,
+  showFilters: showFiltersProp,
   class: className,
   variant = 'contextual',
   filterTopics: filterTopicsProp,
@@ -32,15 +40,15 @@ const {
 const copy = variant === 'full' ? SITE_FAQ_SECTION_COPY : CONTEXTUAL_FAQ_SECTION_COPY;
 const filterTopics =
   filterTopicsProp ?? (variant === 'full' ? SITE_FAQ_FILTER_TOPICS : faqFilterTopicsForItems(items));
-const showFilters = filterTopics.length > 1;
+const showFilters = showFiltersProp ?? filterTopics.length > 1;
 ---
 
 <FaqSection
   id={id}
   items={items}
-  eyebrow={copy.eyebrow}
-  title={copy.title}
-  subtitle={copy.subtitle}
+  eyebrow={eyebrowProp ?? copy.eyebrow}
+  title={titleProp ?? copy.title}
+  subtitle={subtitleProp ?? copy.subtitle}
   titleId={titleId}
   showFilters={showFilters}
   filterTopics={filterTopics}

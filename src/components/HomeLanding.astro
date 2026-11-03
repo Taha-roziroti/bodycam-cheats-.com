@@ -6,9 +6,10 @@ import WhySetupSection from './WhySetupSection.astro';
 import WorkflowSection from './WorkflowSection.astro';
 import HomeGuidesSection from './HomeGuidesSection.astro';
 import SiteFaqSection from './SiteFaqSection.astro';
-import { getLandingFaqs } from '../data/faq';
+import { getLandingFaqs, HOME_LANDING_FAQ_SECTION_COPY, faqFilterTopicsForItems } from '../data/faq';
 
 const homeFaqs = getLandingFaqs();
+const homeFaqTopics = faqFilterTopicsForItems(homeFaqs);
 ---
 
 <HeroSection />
@@ -17,4 +18,14 @@ const homeFaqs = getLandingFaqs();
 <WhySetupSection />
 <WorkflowSection />
 <HomeGuidesSection />
-<SiteFaqSection id="faq" titleId="faq-title" titleAs="h2" items={homeFaqs} />
+<SiteFaqSection
+  id="faq"
+  titleId="faq-title"
+  titleAs="h2"
+  items={homeFaqs}
+  eyebrow={HOME_LANDING_FAQ_SECTION_COPY.eyebrow}
+  title={HOME_LANDING_FAQ_SECTION_COPY.title}
+  subtitle={HOME_LANDING_FAQ_SECTION_COPY.subtitle}
+  showFilters={homeFaqTopics.length > 1}
+  filterTopics={homeFaqTopics}
+/>

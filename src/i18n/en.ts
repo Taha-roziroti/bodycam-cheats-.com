@@ -584,12 +584,11 @@ export const en: Translations = {
     tagline:
       'Borderlands 3 PC cheat features, Cloud DMA infrastructure, and setup guides at borderlands3cheats.com.',
     exploreLinks: [
-      { href: '/', label: 'Homepage feature overview', ariaLabel: 'Home' },
-      { href: '/pricing/', label: 'Monthly and lifetime cheat plans', ariaLabel: 'Pricing' },
-      { href: '/cloud-dma/', label: 'Hyper-V infrastructure license', ariaLabel: 'Cloud DMA' },
-      { href: '/hwid-spoofer/', label: 'HWID Spoofer utility overview', ariaLabel: 'HWID Spoofer' },
-      { href: '/guides/cloud-dma-setup/', label: 'Virtualization setup walkthrough', ariaLabel: 'Setup guide' },
-      { href: '/faq/', label: 'Pre-purchase question list', ariaLabel: 'FAQ' },
+      { href: '/#features', label: 'Feature overview', ariaLabel: 'Features' },
+      { href: '/pricing/', label: 'Cheat plans', ariaLabel: 'Pricing' },
+      { href: '/#products', label: 'All products', ariaLabel: 'Products' },
+      { href: '/guides/cloud-dma-setup/', label: 'Setup walkthrough', ariaLabel: 'Setup guide' },
+      { href: '/faq/', label: 'Pre-purchase FAQ', ariaLabel: 'FAQ' },
     ],
     support: 'Support',
     legal: 'Legal',

@@ -40,6 +40,7 @@ const sidebarDefaultProduct: CheckoutProductId =
     : data.checkout === 'hwid-spoofer'
       ? 'hwid-spoofer'
       : 'borderlands-3';
+const useProductShell = data.layout === 'product' || data.layout === 'pricing';
 const ogType = data.layout === 'article' ? 'article' : 'website';
 const lcpPreload =
   data.route === '/' && data.heroImage
@@ -71,7 +72,7 @@ const logoAlt = logoAltByRoute[data.route];
     <link slot="head" rel="preload" as="image" href={lcpPreload} type="image/webp" fetchpriority="high" />
   ) : null}
   {
-    data.layout === 'product' && data.checkout ? (
+    useProductShell && (data.checkout || data.layout === 'pricing') ? (
       <section class="border-b border-border bg-muted/20 py-10 md:py-14">
         <div class="mx-auto max-w-6xl px-5">
           <Breadcrumbs items={breadcrumbs} class="mb-6 md:mb-8" />
@@ -111,10 +112,10 @@ const logoAlt = logoAltByRoute[data.route];
         </div>
       </section>
     ) : (
-      <article class="py-10 md:py-14">
-        <div class="mx-auto max-w-3xl px-5">
-          <Breadcrumbs items={breadcrumbs} class="mb-2" />
-          <div class="content-markdown mt-6">
+      <article class="border-b border-border bg-muted/20 py-10 md:py-14">
+        <div class="mx-auto max-w-6xl px-5">
+          <Breadcrumbs items={breadcrumbs} class="mb-6 md:mb-8" />
+          <div class="content-markdown mt-2 max-w-3xl">
             {FullContent ? <FullContent /> : null}
             <ContentFigures figures={data.figures} />
             {data.showAdditionalCostsCallout ? (
@@ -128,11 +129,11 @@ const logoAlt = logoAltByRoute[data.route];
 
   {
     data.endCtaLabel ? (
-      <div class="border-t border-border bg-muted/20 py-10">
-        <div class="mx-auto flex max-w-3xl flex-col items-start gap-4 px-5">
+      <div class="border-t border-border bg-muted/20 py-10 md:py-12">
+        <div class="mx-auto flex max-w-6xl flex-col items-start gap-4 px-5">
           <p class="text-lg font-semibold text-foreground">{data.endCtaLabel}</p>
           <Button as="a" href={ctaHref} variant="primary" size="lg" class="rounded-xl">
-            Get started
+            Buy now
           </Button>
         </div>
       </div>
@@ -142,15 +143,18 @@ const logoAlt = logoAltByRoute[data.route];
 
 <style is:global>
   .content-markdown :where(h1) {
+    font-family: var(--font-heading, inherit);
     font-size: clamp(1.875rem, 4vw, 2.5rem);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.15;
+    line-height: 1.12;
     margin-bottom: 1rem;
+    color: var(--foreground);
   }
   .content-markdown :where(h2) {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: var(--font-heading, inherit);
+    font-size: 1.375rem;
+    font-weight: 700;
     margin-top: 2.5rem;
     margin-bottom: 0.75rem;
     scroll-margin-top: 7rem;
