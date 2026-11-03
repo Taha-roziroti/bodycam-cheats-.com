@@ -14,11 +14,12 @@ export const en: Translations = {
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
+    { href: '/#features', label: 'Features' },
     { href: '/pricing/', label: 'Cheat plans' },
+    { href: '/#products', label: 'Products' },
     { href: '/cloud-dma/', label: 'DMA license' },
     { href: '/hwid-spoofer/', label: 'HWID spoofer' },
-    { href: '/guides/cloud-dma-setup/', label: 'Hyper-V guide' },
-    { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'Requirements' },
+    { href: '/faq/', label: 'FAQ' },
     { href: '/support/', label: 'Support' },
   ],
   hero: {
@@ -155,14 +156,14 @@ export const en: Translations = {
         desc: '31-day Borderlands 3 cheat access billed in USD.',
       },
       {
+        value: '$150',
+        title: 'Lifetime plan',
+        desc: 'One-time USD purchase for long-term cheat access while the product remains available.',
+      },
+      {
         value: '$50',
         title: 'Cloud DMA license',
         desc: 'Lifetime Hyper-V infrastructure license—add-ons priced separately.',
-      },
-      {
-        value: '24/7',
-        title: 'Support channel',
-        desc: 'Email and FAQ coverage for checkout, delivery, and setup questions.',
       },
     ],
   },

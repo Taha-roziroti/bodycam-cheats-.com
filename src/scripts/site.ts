@@ -19,11 +19,13 @@ function initNavHighlight() {
 
   document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]').forEach((link) => {
     const href = link.getAttribute('href') ?? '';
-    const linkPath = href.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+    const linkPath = href.split('#')[0].replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+    const linkHash = href.includes('#') ? href.split('#')[1] : '';
     let isActive = false;
 
-    if (linkPath === '/') {
+    if (linkHash && (linkPath === '/' || linkPath === '')) {
       isActive = path === '/';
+    } else if (linkPath === '/') {
     } else {
       isActive = path === linkPath || path.startsWith(`${linkPath}/`);
     }
