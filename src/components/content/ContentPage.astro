@@ -41,6 +41,15 @@ const lcpPreload =
   data.route === '/' && data.heroImage
     ? defaultWebpSrc(data.heroImage.src, HERO_IMAGE_WIDTHS)
     : null;
+
+const logoAltByRoute: Record<string, string> = {
+  '/': 'Borderlands 3 – logo',
+  '/pricing/': 'Cheats pricing – logo',
+  '/cloud-dma/': 'Cloud DMA – logo',
+  '/guides/cloud-dma-setup/': 'DMA setup – logo',
+  '/guides/borderlands-3-cheat-system-requirements/': 'System requirements – logo',
+};
+const logoAlt = logoAltByRoute[data.route];
 ---
 
 <BaseLayout
@@ -51,6 +60,7 @@ const lcpPreload =
   ogImage={data.ogImage}
   ogImageAlt={data.heroImage?.alt ?? data.seoTitle}
   articlePublishedTime={data.articlePublished}
+  logoAlt={logoAlt}
 >
   {lcpPreload ? (
     <link slot="head" rel="preload" as="image" href={lcpPreload} type="image/webp" fetchpriority="high" />

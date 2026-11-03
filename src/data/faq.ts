@@ -200,8 +200,8 @@ export function getAllFaqs(): SiteFaqItem[] {
 /** Shared FAQ block copy + filters (home, /faq/, products, blog). */
 export const SITE_FAQ_SECTION_COPY = {
   eyebrow: 'All topics',
-  title: 'Browse by category',
-  subtitle: 'Filter plans, features, Cloud DMA, setup, and safety answers.',
+  title: 'Browse FAQ by category',
+  subtitle: 'Filter FAQ entries on plans, features, Cloud DMA, setup, and safety.',
 } as const;
 
 export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [

@@ -10,29 +10,29 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Borderlands 3 Cheats for PC | ESP & Soft Aim',
+    title: 'Borderlands 3 – PC soft aim, ESP, loot radar & plans',
     description:
-      'Explore Borderlands 3 PC cheats with soft aim, enemy and loot ESP, radar, recoil control and more. Discover the features and get started.',
+      'Borderlands 3 PC setup with soft aim, enemy and loot ESP, radar, and recoil options. Compare $35 monthly and $150 lifetime plans plus Cloud DMA.',
   },
   '/pricing/': {
-    title: 'Borderlands 3 Cheats Price & Subscription Plans',
+    title: 'Cheats – monthly $35, lifetime $150 plans & features',
     description:
-      'Compare Borderlands 3 cheat prices and monthly or lifetime plans. Explore available features and choose your preferred access option.',
+      'Cheats pricing for monthly ($35) and lifetime ($150) access with soft aim, ESP, radar, and related features. Compare plans before checkout.',
   },
   '/cloud-dma/': {
-    title: 'Cloud DMA for Game Cheats | Single-PC Setup',
+    title: 'Cloud DMA – single-PC Hyper-V lifetime license $50',
     description:
-      'Explore Cloud DMA software, its single-PC Hyper-V environment, Windows requirements and lifetime license. Discover the complete setup.',
+      'Cloud DMA Hyper-V license for a single-PC setup: Windows 10/11, 8–16 GB RAM, $50 lifetime pricing, and how it fits the cheat stack.',
   },
   '/guides/cloud-dma-setup/': {
-    title: 'Cloud DMA Setup Guide | Hyper-V Requirements',
+    title: 'DMA setup guide – Hyper-V, RAM & CPU virtualization',
     description:
-      'Learn about Cloud DMA setup, Hyper-V, Windows compatibility, CPU virtualization and RAM requirements with our complete setup overview.',
+      'DMA setup steps for Hyper-V, CPU virtualization, 8–16 GB RAM, and Windows 10/11 checks before you enable the single-PC environment.',
   },
   '/guides/borderlands-3-cheat-system-requirements/': {
-    title: 'Borderlands 3 Cheat System Requirements',
+    title: 'System requirements – Windows, RAM & client specs',
     description:
-      'Explore Borderlands 3 cheat system requirements, Windows compatibility, supported PC clients, RAM and Cloud DMA setup specifications.',
+      'System requirements for Windows 10/11, Steam or Official Client, RAM, and Cloud DMA prerequisites—review before Borderlands 3 cheat checkout.',
   },
   '/products/dota-2-cheats/': {
     title: 'Dota 2 Elite Cheats & Utility Products',
@@ -59,29 +59,29 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     description: 'Join Dota players to discuss heroes, builds, patch changes, guides, and community moments.',
   },
   '/faq/': {
-    title: 'FAQ | Borderlands 3 Cheats & Cloud DMA',
+    title: 'FAQ – cheat plans, Cloud DMA, pricing & checkout',
     description:
-      'Answers about Borderlands 3 cheat plans, Cloud DMA, Windows requirements, pricing, and checkout at borderlands3cheats.com.',
+      'FAQ: answers on $35/$150 cheat plans, $50 Cloud DMA license, Windows requirements, checkout delivery, and license moves.',
   },
   '/terms/': {
-    title: 'Terms & Conditions | Borderlands 3 Cheats',
+    title: 'Terms – purchase, license & refund policy details',
     description:
-      'Purchase terms, license use, and refund policy for Borderlands 3 cheat and Cloud DMA products at borderlands3cheats.com.',
+      'Terms for Borderlands 3 cheat and Cloud DMA purchases: license use, checkout delivery, refund rules, and acceptable use.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | Borderlands 3 Cheats',
+    title: 'Privacy – Borderlands 3 Cheats analytics & cookies',
     description:
-      'How borderlands3cheats.com uses analytics, cookies, and contact data when you browse or request support.',
+      'Privacy: how borderlands3cheats.com uses Google Analytics, cookies, and support email data when you browse or checkout.',
   },
   '/about/': {
-    title: 'About Borderlands 3 Cheats',
+    title: 'Borderlands 3 Cheats – guides, pricing & Cloud DMA',
     description:
-      'What we publish: Borderlands 3 PC cheat features, Cloud DMA setup guides, pricing, and support at borderlands3cheats.com.',
+      'Borderlands 3 Cheats publishes PC ESP/soft aim guides, $35/$150 plans, $50 Cloud DMA license info, and independent site policies.',
   },
   '/support/': {
-    title: 'Support | Borderlands 3 Cheats',
+    title: 'Support – checkout help, Cloud DMA setup & licenses',
     description:
-      'Get help with Borderlands 3 cheat checkout, Cloud DMA setup, Windows requirements, and license delivery.',
+      'Support: help with cheat checkout, Cloud DMA Hyper-V setup, Windows requirements, and license delivery after purchase.',
   },
 };
 

@@ -1,8 +1,17 @@
 import type { SitemapItem } from '@astrojs/sitemap';
 import { blogPosts } from '../data/blog';
 import { parseBlogDate } from '../utils/schema';
+import sitemapLastmod from '../data/sitemap-lastmod.json';
 
 const buildDate = new Date().toISOString();
+
+const routeLastmod = sitemapLastmod as Record<string, string>;
+
+function lastmodForPath(path: string): string {
+  const date = routeLastmod[path];
+  if (date) return `${date}T12:00:00.000Z`;
+  return buildDate;
+}
 
 const blogLastmod = new Map(
   blogPosts.map((post) => [`/blog/${post.slug}/`, parseBlogDate(post.date)] as const),
@@ -29,7 +38,7 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return undefined;
   }
 
-  item.lastmod = buildDate;
+  item.lastmod = lastmodForPath(path);
 
   if (path === '/') {
     item.priority = 1;

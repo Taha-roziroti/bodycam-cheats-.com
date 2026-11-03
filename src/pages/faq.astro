@@ -19,11 +19,11 @@ const faqs = getAllFaqs();
 <BaseLayout
   title={seo.title}
   description={seo.description}
+  logoAlt="Faq – Borderlands 3 Cheats logo"
   jsonLd={[
     webPageSchema({
-      name: 'FAQ — Borderlands 3 Cheats & Cloud DMA',
-      description:
-        'Answers about Borderlands 3 cheat plans, Cloud DMA, Windows requirements, pricing, and checkout at borderlands3cheats.com.',
+      name: 'FAQ — plans, Cloud DMA & checkout',
+      description: seo.description,
       url: '/faq/',
     }),
     faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),
@@ -36,10 +36,13 @@ const faqs = getAllFaqs();
       <div class="mt-6">
         <SectionHeader
           eyebrow="Help center"
-          title="Borderlands 3 cheats & Cloud DMA FAQ"
-          desc="Pricing, monthly and lifetime plans, Cloud DMA setup costs, Windows requirements, and checkout—in one place."
+          title="FAQ: plans, Cloud DMA & checkout"
+          desc="This FAQ lists answers on pricing, Cloud DMA, Windows requirements, and checkout—filter topics below or open a question."
           titleId="faq-page-title"
         />
+        <p class="mt-4 max-w-3xl text-sm text-muted-foreground">
+          Use this FAQ before checkout if you need plan details, Cloud DMA prerequisites, or delivery steps after purchase.
+        </p>
       </div>
     </div>
   </section>

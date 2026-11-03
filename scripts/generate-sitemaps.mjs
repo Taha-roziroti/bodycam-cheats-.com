@@ -38,6 +38,10 @@ const SITEMAP_IMAGES = {
 const root = process.cwd();
 const dist = path.join(root, 'dist');
 const source = path.join(dist, 'sitemap-0.xml');
+const lastmodPath = path.join(root, 'src', 'data', 'sitemap-lastmod.json');
+const routeLastmod = fs.existsSync(lastmodPath)
+  ? JSON.parse(fs.readFileSync(lastmodPath, 'utf8'))
+  : {};
 
 if (!fs.existsSync(source)) {
   console.error('generate-sitemaps: dist/sitemap-0.xml not found — run astro build first.');
@@ -81,6 +85,27 @@ function escapeXml(value) {
     .replace(/"/g, '&quot;');
 }
 
+function applyRouteLastmod(xml) {
+  return xml.replace(/<url>([\s\S]*?)<\/url>/g, (block) => {
+    const locMatch = block.match(/<loc>([^<]+)<\/loc>/);
+    if (!locMatch) return block;
+    let pathname;
+    try {
+      pathname = new URL(locMatch[1]).pathname;
+      if (pathname !== '/' && !pathname.endsWith('/')) pathname = `${pathname}/`;
+    } catch {
+      return block;
+    }
+    const date = routeLastmod[pathname];
+    if (!date) return block;
+    const iso = `${date}T12:00:00.000Z`;
+    if (block.includes('<lastmod>')) {
+      return block.replace(/<lastmod>[^<]+<\/lastmod>/, `<lastmod>${iso}</lastmod>`);
+    }
+    return block.replace('</url>', `  <lastmod>${iso}</lastmod>\n  </url>`);
+  });
+}
+
 let raw = fs.readFileSync(source, 'utf8');
 raw = raw.replace(/^<\?xml[^?]*\?\>\s*/, '');
 
@@ -91,7 +116,7 @@ if (!raw.includes('xmlns:image=')) {
   );
 }
 
-const withImages = injectImages(raw);
+const withImages = applyRouteLastmod(injectImages(raw));
 const styled = `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="/sitemap.css"?>\n${withImages}`;
 const formatted = styled
   .replace(/<urlset([^>]*)>/, '<urlset$1>\n')

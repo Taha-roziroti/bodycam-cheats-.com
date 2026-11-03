@@ -1,0 +1,63 @@
+---
+import { canonicalUrl } from '../config/seo';
+
+interface Props {
+  path: string;
+  shareTitle: string;
+}
+
+const { path, shareTitle } = Astro.props;
+const pageUrl = encodeURIComponent(canonicalUrl(path));
+const text = encodeURIComponent(shareTitle);
+---
+
+<nav aria-label="Share this page" class="share-links not-prose mx-auto max-w-6xl px-5 pb-10 text-sm text-muted-foreground">
+  <p class="mb-2 font-medium text-foreground">Share this page</p>
+  <ul class="flex flex-wrap gap-x-4 gap-y-2">
+    <li>
+      <a
+        href={`https://twitter.com/intent/tweet?url=${pageUrl}&text=${text}`}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Share on X
+      </a>
+    </li>
+    <li>
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Share on Facebook
+      </a>
+    </li>
+    <li>
+      <a
+        href={`https://t.me/share/url?url=${pageUrl}&text=${text}`}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Share on Telegram
+      </a>
+    </li>
+    <li>
+      <a
+        href={`https://reddit.com/submit?url=${pageUrl}&title=${text}`}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Share on Reddit
+      </a>
+    </li>
+    <li>
+      <a
+        href={`https://wa.me/?text=${text}%20${pageUrl}`}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Share on WhatsApp
+      </a>
+    </li>
+  </ul>
+</nav>

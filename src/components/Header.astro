@@ -2,7 +2,6 @@
 import { t } from '../i18n';
 import { checkoutPath } from '../config/checkout';
 import { Button } from '@/components/starwind/button';
-import AnimatedThemeSwitch from './AnimatedThemeSwitch.astro';
 import {
   Sheet,
   SheetContent,
@@ -15,11 +14,11 @@ import Icon from './icons/Icon.astro';
 import type { IconName } from './icons/types';
 
 const navIcons: Record<string, IconName> = {
-  Pricing: 'navProducts',
-  'Cloud DMA': 'reqCpu',
-  'Setup guide': 'navBlog',
-  Requirements: 'reqSettings',
-  Support: 'navSupport',
+  '/pricing/': 'navProducts',
+  '/cloud-dma/': 'reqCpu',
+  '/guides/cloud-dma-setup/': 'navBlog',
+  '/guides/borderlands-3-cheat-system-requirements/': 'reqSettings',
+  '/support/': 'navSupport',
 };
 
 const purchaseUrl = checkoutPath('borderlands3');
@@ -43,7 +42,7 @@ const purchaseUrl = checkoutPath('borderlands3');
           data-nav-link
           {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
         >
-          <Icon name={navIcons[link.label] ?? 'navFeatures'} size={16} />
+          <Icon name={navIcons[link.href] ?? 'navFeatures'} size={16} />
           {link.label}
         </a>
       ))}
@@ -54,7 +53,6 @@ const purchaseUrl = checkoutPath('borderlands3');
         <Button as="a" href={purchaseUrl} variant="primary" size="md" class="hidden rounded-lg border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] lg:inline-flex" aria-label={t.ui.checkoutAria}>
           {t.ui.browseCheats}
         </Button>
-        <AnimatedThemeSwitch size="md" ariaLabel={t.ui.themeLight} class="inline-flex" />
       </div>
 
       <Sheet class="lg:hidden">
@@ -76,7 +74,7 @@ const purchaseUrl = checkoutPath('borderlands3');
                 data-nav-link
                 {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
               >
-                <Icon name={navIcons[link.label] ?? 'navFeatures'} size={16} />
+                <Icon name={navIcons[link.href] ?? 'navFeatures'} size={16} />
                 {link.label}
               </a>
             ))}
@@ -84,9 +82,6 @@ const purchaseUrl = checkoutPath('borderlands3');
           <Button as="a" href={purchaseUrl} variant="primary" class="w-full justify-center" aria-label={t.ui.checkoutAria}>
             {t.ui.browseCheatsMobile}
           </Button>
-          <div class="flex justify-center pt-1">
-            <AnimatedThemeSwitch size="sm" ariaLabel={t.ui.themeLight} />
-          </div>
         </SheetContent>
       </Sheet>
     </div>

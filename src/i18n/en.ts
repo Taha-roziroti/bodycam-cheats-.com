@@ -14,11 +14,11 @@ export const en: Translations = {
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
-    { href: '/pricing/', label: 'Pricing' },
-    { href: '/cloud-dma/', label: 'Cloud DMA' },
-    { href: '/guides/cloud-dma-setup/', label: 'Setup guide' },
-    { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'Requirements' },
-    { href: '/support/', label: 'Support' },
+    { href: '/pricing/', label: 'Cheat plans' },
+    { href: '/cloud-dma/', label: 'DMA license' },
+    { href: '/guides/cloud-dma-setup/', label: 'Hyper-V guide' },
+    { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'PC requirements' },
+    { href: '/support/', label: 'Help desk' },
   ],
   hero: {
     status: 'Dota 2 — patch build online',
@@ -525,8 +525,8 @@ export const en: Translations = {
   },
   support: {
     eyebrow: 'Support',
-    title: 'Borderlands 3 Cheats support',
-    subtitle: 'Let us know how we can help.',
+    title: 'Support for checkout, Cloud DMA & licenses',
+    subtitle: 'Use this support page for checkout questions, Cloud DMA setup, and license delivery after purchase.',
     channels: [
       {
         icon: 'users',
@@ -606,11 +606,11 @@ export const en: Translations = {
     tagline:
       'Borderlands 3 PC cheat features, Cloud DMA infrastructure, and setup guides at borderlands3cheats.com.',
     exploreLinks: [
-      { href: '/', label: 'Borderlands 3 cheats', ariaLabel: 'Home' },
-      { href: '/pricing/', label: 'Plans & pricing', ariaLabel: 'Pricing' },
-      { href: '/cloud-dma/', label: 'Cloud DMA license', ariaLabel: 'Cloud DMA' },
-      { href: '/guides/cloud-dma-setup/', label: 'Cloud DMA setup', ariaLabel: 'Setup guide' },
-      { href: '/faq/', label: 'Pre-purchase FAQ', ariaLabel: 'FAQ' },
+      { href: '/', label: 'Homepage feature overview', ariaLabel: 'Home' },
+      { href: '/pricing/', label: 'Monthly and lifetime cheat plans', ariaLabel: 'Pricing' },
+      { href: '/cloud-dma/', label: 'Hyper-V infrastructure license', ariaLabel: 'Cloud DMA' },
+      { href: '/guides/cloud-dma-setup/', label: 'Virtualization setup walkthrough', ariaLabel: 'Setup guide' },
+      { href: '/faq/', label: 'Pre-purchase question list', ariaLabel: 'FAQ' },
     ],
     support: 'Support',
     legal: 'Legal',
@@ -629,6 +629,8 @@ export const en: Translations = {
           paragraphs: [
             'Borderlands 3 Cheats is an independent resource for PC players exploring soft aim, enemy and loot ESP, radar, and related configuration options. We publish pricing, system requirements, and Cloud DMA setup guides so you can evaluate the product before checkout.',
             'We are not affiliated with, endorsed by, or sponsored by the game publisher or its licensors. Product names are used for identification only.',
+            'Borderlands 3 cheats content on this site explains supported features, plan lengths, and the separate Cloud DMA license—without claiming official publisher approval.',
+            'Listed offers on this site include a $35 monthly cheat plan, a $150 lifetime cheat plan, and a $50 lifetime Cloud DMA license, each with separate checkout flows.',
           ],
         },
         {
@@ -636,6 +638,7 @@ export const en: Translations = {
           paragraphs: [
             'Our site covers Borderlands 3 cheat plans (monthly and lifetime), the Cloud DMA infrastructure license, Hyper-V setup steps, and pre-purchase FAQ. Content is updated when requirements or checkout flows change.',
             'Review the system requirements and Cloud DMA pages before purchase so your Windows PC matches the listed configuration.',
+            'Borderlands 3 cheats guides focus on Windows 10 and 11, supported clients, and realistic setup order: requirements, Cloud DMA, then cheat checkout.',
           ],
         },
         {
@@ -647,26 +650,31 @@ export const en: Translations = {
       ],
     },
     privacy: {
-      title: 'Privacy Policy',
+      title: 'Privacy Policy — Borderlands 3 Cheats',
       description:
-        'How Borderlands 3 Cheats handles analytics, cookies, and contact data when you use borderlands3cheats.com.',
+        'Privacy at Borderlands 3 Cheats: how we handle analytics, cookies, and contact data when you use borderlands3cheats.com.',
       sections: [
         {
-          heading: 'Information we collect',
+          heading: 'Privacy: information we collect',
           paragraphs: [
             'We may collect standard web analytics such as page views, device type, browser, and approximate region through Google Analytics when enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on borderlands3cheats.com.',
+            'Privacy practices here apply only to pages hosted on borderlands3cheats.com, not to third-party checkout or payment processors.',
+            'If you email support@borderlands3cheats.com, we process your message to answer checkout, Cloud DMA, or license questions—not for marketing lists.',
           ],
         },
         {
           heading: 'How we use data',
           paragraphs: [
             'Analytics help us understand which guides and product pages are useful so we can improve content and fix broken links. Support tickets may retain the email address and message content you provide until the issue is resolved.',
+            'We do not sell personal data. Privacy-related requests should include enough detail for us to locate your message or account reference from checkout.',
           ],
         },
         {
           heading: 'Cookies',
           paragraphs: [
             'We use minimal cookies required for analytics. You can block cookies in your browser settings; core site content remains accessible without them.',
+            'Privacy controls in your browser also limit measurement cookies while still allowing you to read public pages.',
+            'We do not use cookies to store checkout credentials; payment data stays on the external checkout provider.',
           ],
         },
         {
@@ -678,12 +686,12 @@ export const en: Translations = {
       ],
     },
     terms: {
-      title: 'Terms & Conditions',
+      title: 'Terms & Conditions — Borderlands 3 Cheats',
       description:
         'Purchase, license, refund, and use terms for Borderlands 3 cheat and Cloud DMA products at borderlands3cheats.com.',
       sections: [
         {
-          heading: 'Agreement',
+          heading: 'Terms: agreement and purchases',
           paragraphs: [
             'Last updated: November 2026. By using borderlands3cheats.com or completing checkout for any product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
           ],
@@ -752,7 +760,5 @@ export const en: Translations = {
     discordAria: 'Join Borderlands 3 Cheats on Discord',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
-    themeLight: 'Switch to light mode',
-    themeDark: 'Switch to dark mode',
   },
 };

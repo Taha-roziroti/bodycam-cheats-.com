@@ -1,5 +1,3 @@
-@import './theme-switch.css';
-
 /* Site-specific globals (Tailwind + Starwind live in starwind.css).
    Page CSS is imported only where used to keep inlined HTML smaller. */
 

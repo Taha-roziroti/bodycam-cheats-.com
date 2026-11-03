@@ -1,7 +1,7 @@
 ---
 route: /
-seoTitle: Borderlands 3 Cheats for PC | ESP & Soft Aim
-metaDescription: Explore Borderlands 3 PC cheats with soft aim, enemy and loot ESP, radar, recoil control and more. Discover the features and get started.
+seoTitle: Borderlands 3 – PC soft aim, ESP, loot radar & plans
+metaDescription: Borderlands 3 PC setup with soft aim, enemy and loot ESP, radar, and recoil options. Compare $35 monthly and $150 lifetime plans plus Cloud DMA.
 schemaTypes:
   - Product
   - Offer
@@ -24,7 +24,7 @@ figures:
     src: /images/borderlands3/borderlands-3-radar-gameplay.webp
 ---
 
-# Borderlands 3 Cheats for PC
+# Borderlands 3 Cheats for PC with soft aim
 
 Pandora is full of enemies, valuable loot and unexpected encounters. Whether you're exploring dangerous locations, taking on powerful bosses or working your way through another challenging area, having the right tools can completely change how you approach the game.
 
@@ -34,7 +34,7 @@ With features including soft aim, enemy ESP, loot ESP, radar and recoil options,
 
 Explore the available features, customize your settings, and tune the software to how you play.
 
-Compare [Borderlands 3 cheat pricing](/pricing/), review [Cloud DMA](/cloud-dma/) requirements, and check [system requirements](/guides/borderlands-3-cheat-system-requirements/) before you buy.
+Compare [monthly and lifetime cheat pricing](/pricing/), review [Hyper-V license details](/cloud-dma/) requirements, and check the [PC compatibility checklist](/guides/borderlands-3-cheat-system-requirements/) before you buy.
 
 ## Borderlands 3 Cheat Features
 
@@ -102,7 +102,7 @@ The product configuration lists Windows 10 and Windows 11 support, along with th
 
 For the complete experience, Cloud DMA is part of the required configuration on supported builds.
 
-We recommend reviewing the [system requirements](/guides/borderlands-3-cheat-system-requirements/) before getting started so that your computer is ready for the complete setup.
+We recommend reviewing the [Windows and RAM compatibility guide](/guides/borderlands-3-cheat-system-requirements/) before getting started so that your computer is ready for the complete setup.
 
 ## Choose Your Borderlands 3 Cheat Plan
 
@@ -120,7 +120,7 @@ A longer-term option for players who want lifetime access to the Borderlands 3 c
 
 Both options give you access to the product according to their respective plan details.
 
-Visit our [pricing page](/pricing/) to compare the available options and choose your preferred plan.
+Visit our [plan comparison page](/pricing/) to compare the available options and choose your preferred plan.
 
 ## Frequently Asked Questions
 
@@ -134,7 +134,7 @@ The product is designed for compatible Windows PC configurations. The listed sup
 
 ### Is Cloud DMA included in the setup?
 
-Cloud DMA is a required part of the complete configuration on supported builds. Visit our [Cloud DMA page](/cloud-dma/) to explore the license and setup information.
+Cloud DMA is a required part of the complete configuration on supported builds. Visit the [infrastructure license overview](/cloud-dma/) to explore pricing and setup information.
 
 ### Can I choose between monthly and lifetime access?
 

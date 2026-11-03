@@ -2,18 +2,24 @@
 import { t } from '../i18n';
 import { Separator } from '@/components/starwind/separator';
 
+interface Props {
+  logoAlt?: string;
+}
+
+const { logoAlt } = Astro.props;
+
 const resourceLinks = [
-  { href: '/pricing/', label: 'Borderlands 3 cheat pricing', ariaLabel: 'Pricing' },
-  { href: '/cloud-dma/', label: 'Cloud DMA license', ariaLabel: 'Cloud DMA' },
-  { href: '/guides/cloud-dma-setup/', label: 'Cloud DMA setup guide', ariaLabel: 'Setup guide' },
-  { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'System requirements', ariaLabel: 'Requirements' },
-  { href: '/support/', label: t.footer.support },
+  { href: '/pricing/', label: 'Compare monthly and lifetime prices', ariaLabel: 'Pricing' },
+  { href: '/cloud-dma/', label: 'Review the $50 lifetime DMA license', ariaLabel: 'Cloud DMA' },
+  { href: '/guides/cloud-dma-setup/', label: 'Walk through Hyper-V activation', ariaLabel: 'Setup guide' },
+  { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'Check Windows and RAM specs', ariaLabel: 'Requirements' },
+  { href: '/support/', label: 'Open checkout and delivery help', ariaLabel: 'Support' },
 ];
 
 const legalLinks = [
-  { href: '/about/', label: t.footer.about },
-  { href: '/privacy/', label: t.footer.privacy },
-  { href: '/terms/', label: t.footer.terms },
+  { href: '/about/', label: 'Who publishes this site' },
+  { href: '/privacy/', label: 'Analytics and cookie notice' },
+  { href: '/terms/', label: 'Purchase and refund rules' },
 ];
 ---
 
@@ -22,7 +28,7 @@ const legalLinks = [
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <div class="space-y-4">
         <a href="/" class="inline-flex items-center gap-2.5 font-[family-name:var(--font-heading)] text-lg font-semibold" aria-label={t.ui.homeAria}>
-          <img src="/logo.svg" alt="" width="32" height="32" class="rounded-md" />
+          <img src="/logo.svg" alt={logoAlt ?? ''} width="32" height="32" class="rounded-md" />
           <span aria-hidden="true">Borderlands 3 <span class="text-muted-foreground">Cheats</span></span>
         </a>
         <p class="text-sm text-muted-foreground">{t.footer.tagline}</p>

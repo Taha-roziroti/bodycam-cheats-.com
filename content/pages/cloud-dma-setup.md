@@ -1,7 +1,7 @@
 ---
 route: /guides/cloud-dma-setup/
-seoTitle: Cloud DMA Setup Guide | Hyper-V Requirements
-metaDescription: Learn about Cloud DMA setup, Hyper-V, Windows compatibility, CPU virtualization and RAM requirements with our complete setup overview.
+seoTitle: DMA setup guide – Hyper-V, RAM & CPU virtualization
+metaDescription: "DMA setup steps for Hyper-V, CPU virtualization, 8–16 GB RAM, and Windows 10/11 checks before you enable the single-PC environment."
 schemaTypes:
   - Article
   - BreadcrumbList
@@ -11,11 +11,11 @@ endCtaLabel: Explore Cloud DMA and build your compatible gaming setup.
 endCtaHref: /cloud-dma/
 ---
 
-# Cloud DMA Setup Guide
+# DMA setup guide — Hyper-V requirements
 
 Setting up a virtualization-based gaming environment becomes much easier when you understand the components involved.
 
-Cloud DMA uses Windows Hyper-V to establish its dedicated environment, bringing together the virtualization technology and supporting services required by the supported configuration.
+This dma setup guide uses Windows Hyper-V to establish its dedicated environment, bringing together the virtualization technology and supporting services required by the supported configuration.
 
 The setup is centered around one compatible Windows computer, making your existing hardware the foundation of the environment.
 
@@ -23,7 +23,7 @@ In this guide, we'll cover the essential Cloud DMA requirements, the role of Hyp
 
 See the [Cloud DMA product page](/cloud-dma/) for license pricing and [Borderlands 3 cheats](/) for the game package overview.
 
-## Understanding Cloud DMA Hyper-V Setup
+## DMA setup: Hyper-V prerequisites
 
 Cloud DMA is built around Microsoft's Hyper-V virtualization technology.
 

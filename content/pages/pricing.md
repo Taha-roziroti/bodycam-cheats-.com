@@ -1,7 +1,7 @@
 ---
 route: /pricing/
-seoTitle: Borderlands 3 Cheats Price & Subscription Plans
-metaDescription: Compare Borderlands 3 cheat prices and monthly or lifetime plans. Explore available features and choose your preferred access option.
+seoTitle: Cheats – monthly $35, lifetime $150 plans & features
+metaDescription: "Cheats pricing for monthly ($35) and lifetime ($150) access with soft aim, ESP, radar, and related features. Compare plans before checkout."
 schemaTypes:
   - WebPage
   - BreadcrumbList
@@ -19,13 +19,13 @@ figures:
     src: /images/borderlands3/borderlands-3-soft-aim-gameplay.webp
 ---
 
-# Borderlands 3 Cheats Price and Plans
+# Cheats pricing and subscription plans
 
-Choosing the right Borderlands 3 cheat subscription should be simple.
+Choosing the right cheat subscription should be simple.
 
-Whether you want access for a shorter period or prefer a longer-term option, our plans give you the flexibility to choose according to your preferences.
+Whether you want access for a shorter period or prefer a longer-term option, our cheats plans give you the flexibility to choose according to your preferences.
 
-Our Borderlands 3 cheat software brings together features such as soft aim, enemy ESP, loot ESP, radar and weapon configuration options.
+Our cheat software brings together features such as soft aim, enemy ESP, loot ESP, radar and weapon configuration options.
 
 Below, you'll find an overview of our available subscription options and what to consider when choosing your plan.
 

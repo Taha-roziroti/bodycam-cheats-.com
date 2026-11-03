@@ -259,7 +259,5 @@ export interface Translations {
     discordAria: string;
     menuOpen: string;
     menuClose: string;
-    themeLight: string;
-    themeDark: string;
   };
 }
