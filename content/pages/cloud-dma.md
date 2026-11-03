@@ -13,7 +13,7 @@ endCtaLabel: Explore Cloud DMA and get started.
 endCtaHref: /go/cloud-dma/
 ---
 
-# Cloud DMA for Game Cheats — Hyper-V lifetime license setup
+# Cloud DMA for Game Cheats — single-PC Hyper-V lifetime license setup
 
 A well-organized gaming setup starts with the right infrastructure.
 
@@ -23,7 +23,7 @@ For players using compatible cheat configurations, this infrastructure license i
 
 Its single-PC approach makes it an interesting solution for players looking to build a dedicated environment without centering their setup around an additional physical computer.
 
-This page covers the **Cloud DMA infrastructure license**—not the [Borderlands 3 cheat package](/) itself. Compare [Borderlands 3 pricing](/pricing/) and read the [setup guide](/guides/cloud-dma-setup/) when you are ready.
+This page covers the **Cloud DMA infrastructure license**—not the [Borderlands 3 cheat package](/) itself. Compare [Borderlands 3 pricing](/pricing/) and read the [Hyper-V activation walkthrough](/guides/cloud-dma-setup/) when you are ready.
 
 ## What Is Cloud DMA?
 

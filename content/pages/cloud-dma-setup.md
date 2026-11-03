@@ -21,7 +21,7 @@ The setup is centered around one compatible Windows computer, making your existi
 
 In this guide, we'll cover the essential Cloud DMA requirements, the role of Hyper-V and the main things to prepare before getting started.
 
-See the [Cloud DMA product page](/cloud-dma/) for license pricing and [Borderlands 3 cheats](/) for the game package overview.
+See the [Cloud DMA license pricing page](/cloud-dma/) for license pricing and [Borderlands 3 cheats homepage](/) for the game package overview.
 
 ## DMA setup: Hyper-V prerequisites
 
@@ -114,7 +114,7 @@ Keeping the relevant setup details together makes it easier to prepare the envir
     <li><strong class="text-foreground">Static Server</strong> — dedicated server component with its own fee.</li>
     <li><strong class="text-foreground">AWS</strong> — cloud resources with separate billing; not included in the $50 license.</li>
   </ul>
-  <p class="mt-3 text-muted-foreground">Budget for all three in addition to the license before you reach checkout. See the <a href="/cloud-dma/">Cloud DMA product page</a> for context.</p>
+  <p class="mt-3 text-muted-foreground">Budget for all three in addition to the license before you reach checkout. See the <a href="/cloud-dma/">$50 Cloud DMA license details</a> for context.</p>
 </aside>
 
 ## Step 6: Complete the Setup and Activation

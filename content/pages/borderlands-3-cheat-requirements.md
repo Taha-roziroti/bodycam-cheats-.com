@@ -20,7 +20,7 @@ figures:
     src: /images/borderlands3/borderlands-3-enemy-esp-skag.webp
 ---
 
-# Borderlands 3 cheat system requirements — Windows, client specs
+# Borderlands 3 cheat system requirements guide — Windows, client specs
 
 Before getting started with Borderlands 3 cheats, it's worth understanding the PC configuration required for the complete setup.
 
@@ -30,7 +30,7 @@ From enemy ESP and loot highlighting to soft aim and radar, the software brings 
 
 In this guide, we'll cover the listed operating system requirements, supported clients, hardware specifications and the Cloud DMA configuration.
 
-Start from [Borderlands 3 cheats](/), compare [pricing](/pricing/), and review the [Cloud DMA product](/cloud-dma/) for infrastructure specs.
+Start from [Borderlands 3 cheats homepage](/), compare [monthly and lifetime pricing](/pricing/), and review the [Cloud DMA infrastructure specs](/cloud-dma/) for infrastructure specs.
 
 ## Which Borderlands 3 Game Clients Are Supported?
 

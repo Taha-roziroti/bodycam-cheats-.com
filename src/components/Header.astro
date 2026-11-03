@@ -32,6 +32,7 @@ const purchaseUrl = checkoutPath('borderlands3');
     <a href="/" class="inline-flex min-w-0 items-center gap-2 font-[family-name:var(--font-heading)] text-base font-semibold sm:text-lg" aria-label={t.ui.homeAria}>
       <span class="size-2 shrink-0 rounded-full bg-primary" aria-hidden="true" title="Loot rarity accent"></span>
       <span class="truncate" aria-hidden="true">Borderlands 3 <span class="text-muted-foreground">Cheats</span></span>
+      <span class="sr-only"> site header</span>
     </a>
 
     <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 lg:flex" aria-label="Primary">
@@ -44,6 +45,7 @@ const purchaseUrl = checkoutPath('borderlands3');
         >
           <Icon name={navIcons[link.href] ?? 'navFeatures'} size={16} />
           {link.label}
+          <span class="sr-only"> primary nav</span>
         </a>
       ))}
     </nav>
@@ -76,6 +78,7 @@ const purchaseUrl = checkoutPath('borderlands3');
               >
                 <Icon name={navIcons[link.href] ?? 'navFeatures'} size={16} />
                 {link.label}
+                <span class="sr-only"> mobile menu</span>
               </a>
             ))}
           </nav>

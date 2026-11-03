@@ -557,7 +557,7 @@ export const en: Translations = {
         href: '/guides/cloud-dma-setup/',
       },
     ],
-    ticketTitle: 'Include in your ticket',
+    ticketTitle: 'Support: Include in your ticket',
     ticketItems: [
       { title: 'Order email', desc: 'The address used at checkout via our secure partner.' },
       { title: 'Platform', desc: 'Windows 10 or 11, Borderlands 3 client (Steam or Official), and Cloud DMA status.' },
@@ -625,7 +625,7 @@ export const en: Translations = {
         'Borderlands 3 Cheats publishes PC feature guides, Cloud DMA setup, pricing, and support resources at borderlands3cheats.com.',
       sections: [
         {
-          heading: 'Who we are',
+          heading: 'Borderlands 3 Cheats: Who we are',
           paragraphs: [
             'Borderlands 3 Cheats is an independent resource for PC players exploring soft aim, enemy and loot ESP, radar, and related configuration options. We publish pricing, system requirements, and Cloud DMA setup guides so you can evaluate the product before checkout.',
             'We are not affiliated with, endorsed by, or sponsored by the game publisher or its licensors. Product names are used for identification only.',
