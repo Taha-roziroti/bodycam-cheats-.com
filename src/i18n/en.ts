@@ -525,43 +525,43 @@ export const en: Translations = {
   },
   support: {
     eyebrow: 'Support',
-    title: 'DotaCheats support',
+    title: 'Borderlands 3 Cheats support',
     subtitle: 'Let us know how we can help.',
     channels: [
       {
         icon: 'users',
         title: 'Chat before checkout',
-        desc: 'Speak to our team about tiers and access.',
+        desc: 'Speak to our team about monthly or lifetime plans and Cloud DMA.',
         linkLabel: 'Start checkout',
         href: PRIMARY_CHECKOUT_PATH,
       },
       {
         icon: 'headphones',
-        title: 'Chat to support',
-        desc: "We're here for loader, HWID and account issues.",
-        linkLabel: 'support@dotacheats.com',
-        href: 'mailto:support@dotacheats.com',
+        title: 'Email support',
+        desc: "We're here for checkout, Cloud DMA setup, and license delivery questions.",
+        linkLabel: 'support@borderlands3cheats.com',
+        href: 'mailto:support@borderlands3cheats.com',
       },
       {
         icon: 'navFaq',
         title: 'Read the FAQ',
-        desc: 'Compatibility, bans and setup—before you buy.',
+        desc: 'Plans, features, Cloud DMA, and Windows requirements—before you buy.',
         linkLabel: 'View all FAQ',
         href: '/faq/',
       },
       {
         icon: 'clock',
-        title: 'Live operators',
-        desc: 'Discord engineers on shift 24/7.',
-        linkLabel: 'Open contact page',
-        href: '/support/',
+        title: 'Setup guides',
+        desc: 'Hyper-V, RAM, and client compatibility for Cloud DMA.',
+        linkLabel: 'Cloud DMA setup guide',
+        href: '/guides/cloud-dma-setup/',
       },
     ],
     ticketTitle: 'Include in your ticket',
     ticketItems: [
-      { title: 'Order email', desc: 'The address used at checkout on dotacheats.com or via our secure checkout.' },
-      { title: 'Platform', desc: 'Steam on Windows 10 or 11—and your Dota 2 client version.' },
-      { title: 'Error detail', desc: 'Screenshot or exact message from the loader or Steam.' },
+      { title: 'Order email', desc: 'The address used at checkout via our secure partner.' },
+      { title: 'Platform', desc: 'Windows 10 or 11, Borderlands 3 client (Steam or Official), and Cloud DMA status.' },
+      { title: 'Error detail', desc: 'Screenshot or exact message from the loader, Hyper-V, or game client.' },
     ],
   },
   faq: {
@@ -620,28 +620,28 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About DotaCheats',
+      title: 'About Borderlands 3 Cheats',
       description:
-        'DotaCheats provides Dota 2 cheat tiers, utility tools and PC support resources at dotacheats.com.',
+        'Borderlands 3 Cheats publishes PC feature guides, Cloud DMA setup, pricing, and support resources at borderlands3cheats.com.',
       sections: [
         {
           heading: 'Who we are',
           paragraphs: [
-            'DotaCheats is a PC-focused resource for Dota 2 players exploring scripts, map hack, zoom hack and Skin Changer workflows. We publish tier comparisons, setup guides, and live status notes so you can evaluate dota cheats before checkout.',
-            'All product names are used for identification only.',
+            'Borderlands 3 Cheats is an independent resource for PC players exploring soft aim, enemy and loot ESP, radar, and related configuration options. We publish pricing, system requirements, and Cloud DMA setup guides so you can evaluate the product before checkout.',
+            'We are not affiliated with, endorsed by, or sponsored by the game publisher or its licensors. Product names are used for identification only.',
           ],
         },
         {
           heading: 'What we publish',
           paragraphs: [
-            'Our site covers Lite, Pro, and Elite cheat tiers, HWID utilities, Skin Changer and account recovery workflows. Blog articles explain ranked-safe configs, patch-day checks, and VAC update behavior.',
-            'Content is updated when patches land or when loader modules shift. Check the homepage status banner and Discord #status before every session.',
+            'Our site covers Borderlands 3 cheat plans (monthly and lifetime), the Cloud DMA infrastructure license, Hyper-V setup steps, and pre-purchase FAQ. Content is updated when requirements or checkout flows change.',
+            'Review the system requirements and Cloud DMA pages before purchase so your Windows PC matches the listed configuration.',
           ],
         },
         {
           heading: 'Support',
           paragraphs: [
-            'Questions about compatibility, loader errors, or checkout are handled through Discord and email support. Include your order email, Steam account, and Windows version when opening a ticket.',
+            'Questions about compatibility, Cloud DMA, checkout, or license delivery are handled through email support. Include your order email, Windows version, and any loader or Hyper-V error text when opening a ticket.',
           ],
         },
       ],
@@ -649,12 +649,12 @@ export const en: Translations = {
     privacy: {
       title: 'Privacy Policy',
       description:
-        'How DotaCheats handles analytics, cookies, and contact data when you use dotacheats.com.',
+        'How Borderlands 3 Cheats handles analytics, cookies, and contact data when you use borderlands3cheats.com.',
       sections: [
         {
           heading: 'Information we collect',
           paragraphs: [
-            'We may collect standard web analytics such as page views, device type, browser, and approximate region through Google Analytics when enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on dotacheats.com.',
+            'We may collect standard web analytics such as page views, device type, browser, and approximate region through Google Analytics when enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on borderlands3cheats.com.',
           ],
         },
         {
@@ -680,47 +680,47 @@ export const en: Translations = {
     terms: {
       title: 'Terms & Conditions',
       description:
-        'Purchase, license, refund, and use terms for DotaCheats products and dotacheats.com.',
+        'Purchase, license, refund, and use terms for Borderlands 3 cheat and Cloud DMA products at borderlands3cheats.com.',
       sections: [
         {
           heading: 'Agreement',
           paragraphs: [
-            'Last updated: September 2026. By using dotacheats.com or completing checkout for any product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
+            'Last updated: November 2026. By using borderlands3cheats.com or completing checkout for any product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
           ],
         },
         {
           heading: 'What you purchase',
           paragraphs: [
-            'We sell access to Dota 2 cheat tiers (Lite, Pro, Elite) and utility tools (HWID Spoofer, UGC, Skin Changer / Unlock All) delivered through an operator portal and loader for Steam on Windows.',
-            'Feature lists on each product page describe what is included at the time of purchase. Modules can change when Dota 2 or anti-cheat systems update.',
+            'We sell access to Borderlands 3 cheat software (monthly or lifetime plans) and a separate Cloud DMA infrastructure license, delivered through external checkout and license delivery flows for supported Windows PCs.',
+            'Feature lists on pricing and product pages describe what is included at the time of purchase. Modules or requirements can change when the game or supported configuration updates.',
           ],
         },
         {
           heading: 'Checkout and delivery',
           paragraphs: [
-            'Payment and license delivery run on external checkout pages. dotacheats.com does not process or store payment card numbers.',
-            'After purchase, use the operator portal linked from your order flow to download the current loader and setup guide before launching Dota 2.',
+            'Payment and license delivery run on external checkout pages. borderlands3cheats.com does not process or store payment card numbers.',
+            'After purchase, follow instructions from your order email and the Cloud DMA setup guide before launching Borderlands 3.',
           ],
         },
         {
           heading: 'License use',
           paragraphs: [
-            'Licenses are for your personal use only. Do not share loader files, portal logins, or license keys. HWID and device limits depend on your tier and are enforced in the portal.',
+            'Licenses are for your personal use only. Do not share loader files, portal logins, or license keys. Device or HWID limits depend on your plan and are enforced by the checkout provider.',
           ],
         },
         {
           heading: 'Refunds and purchases',
           paragraphs: [
-            'All sales are final once checkout completes. We do not refund change-of-mind purchases, account bans, VAC penalties, or issues caused by ignoring setup guides or running modules while the status banner shows offline.',
-            'If the product does not work as described on a supported setup—Steam Dota 2 on Windows 10/11, current loader from the portal, and the live status banner showing online when you started—contact us through the Support page. Include your order email, Windows version, Dota 2 build, and screenshots or exact error text from the loader.',
+            'All sales are final once checkout completes unless required by applicable law. We do not refund change-of-mind purchases, account penalties, or issues caused by ignoring setup guides or unsupported hardware.',
+            'If the product does not work as described on a supported setup—Windows 10/11, listed client, Cloud DMA configured per the guide—contact us through the Support page with your order email, Windows version, and screenshots or exact error text.',
             'We may, at our discretion, offer a fix, replacement access, or partial/full refund when we confirm a fault on our side. We are not obligated to approve every request.',
           ],
         },
         {
           heading: 'Availability and risk',
           paragraphs: [
-            'Third-party tools for Dota 2 can conflict with game updates and anti-cheat systems. You use this software at your own risk, including possible account action.',
-            'Check the homepage status banner before every session. Do not queue ranked while modules are offline or misaligned after a patch.',
+            'Third-party tools for Borderlands 3 can conflict with game updates and anti-cheat or publisher enforcement. You use this software at your own risk, including possible account action.',
+            'Review requirements and setup guides before every session, especially after game patches.',
           ],
         },
         {
@@ -732,24 +732,24 @@ export const en: Translations = {
         {
           heading: 'Support',
           paragraphs: [
-            'For terms, billing, or loader questions, use the buttons on the Support page. See also our Privacy Policy for how we handle site data.',
+            'For terms, billing, or setup questions, use the Support page. See also our Privacy Policy for how we handle site data.',
           ],
         },
       ],
     },
     support: {
-      title: 'DotaCheats Support',
+      title: 'Borderlands 3 Cheats Support',
       description:
-        'Get support for loader, HWID, and checkout questions at dotacheats.com.',
+        'Get support for checkout, Cloud DMA setup, and license delivery at borderlands3cheats.com.',
     },
   },
   ui: {
     skipLink: 'Skip to main content',
     browseCheats: 'View plans',
     browseCheatsMobile: 'View plans',
-    homeAria: 'DotaCheats home',
+    homeAria: 'Borderlands 3 Cheats home',
     checkoutAria: 'Start checkout',
-    discordAria: 'Join DotaCheats on Discord',
+    discordAria: 'Join Borderlands 3 Cheats on Discord',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
     themeLight: 'Switch to light mode',

@@ -20,6 +20,15 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return undefined;
   }
 
+  if (
+    path.startsWith('/blog') ||
+    path.startsWith('/forum') ||
+    path.startsWith('/products/') ||
+    path.startsWith('/cheats/')
+  ) {
+    return undefined;
+  }
+
   item.lastmod = buildDate;
 
   if (path === '/') {

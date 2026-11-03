@@ -59,29 +59,29 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     description: 'Join Dota players to discuss heroes, builds, patch changes, guides, and community moments.',
   },
   '/faq/': {
-    title: 'FAQ | Dota 2 Cheats, Products & Setup',
+    title: 'FAQ | Borderlands 3 Cheats & Cloud DMA',
     description:
-      'Answers on cheat tiers, map hack, scripts, HWID tools, checkout, and blog guides at dotacheats.com.',
+      'Answers about Borderlands 3 cheat plans, Cloud DMA, Windows requirements, pricing, and checkout at borderlands3cheats.com.',
   },
   '/terms/': {
-    title: 'Terms & Conditions | DotaCheats',
+    title: 'Terms & Conditions | Borderlands 3 Cheats',
     description:
-      'Purchase terms, license use, and refund policy for DotaCheats products sold through dotacheats.com.',
+      'Purchase terms, license use, and refund policy for Borderlands 3 cheat and Cloud DMA products at borderlands3cheats.com.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | DotaCheats',
+    title: 'Privacy Policy | Borderlands 3 Cheats',
     description:
-      'How dotacheats.com uses analytics, cookies, and contact data when you browse or request support.',
+      'How borderlands3cheats.com uses analytics, cookies, and contact data when you browse or request support.',
   },
   '/about/': {
-    title: 'About DotaCheats',
+    title: 'About Borderlands 3 Cheats',
     description:
-      'What DotaCheats publishes: Dota 2 cheat tiers, utilities, guides, and status notes at dotacheats.com.',
+      'What we publish: Borderlands 3 PC cheat features, Cloud DMA setup guides, pricing, and support at borderlands3cheats.com.',
   },
   '/support/': {
-    title: 'Support | DotaCheats',
+    title: 'Support | Borderlands 3 Cheats',
     description:
-      'Get help with loader setup, HWID, and checkout for Dota 2 cheat tiers and utilities.',
+      'Get help with Borderlands 3 cheat checkout, Cloud DMA setup, Windows requirements, and license delivery.',
   },
 };
 
