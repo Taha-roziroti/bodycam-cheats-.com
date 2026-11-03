@@ -18,8 +18,8 @@ export const en: Translations = {
     { href: '/cloud-dma/', label: 'DMA license' },
     { href: '/hwid-spoofer/', label: 'HWID spoofer' },
     { href: '/guides/cloud-dma-setup/', label: 'Hyper-V guide' },
-    { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'PC requirements' },
-    { href: '/support/', label: 'Help desk' },
+    { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'Requirements' },
+    { href: '/support/', label: 'Support' },
   ],
   hero: {
     status: 'Dota 2 — patch build online',

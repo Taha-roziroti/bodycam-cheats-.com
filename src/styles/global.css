@@ -276,6 +276,17 @@ a.nav-link[data-nav-link] .icon-app {
   color: currentColor;
 }
 
+/* Primary header nav: never wrap link labels (all pages share one Header). */
+[data-floating-nav] nav[aria-label='Primary'] {
+  flex-wrap: nowrap;
+}
+
+[data-floating-nav] nav[aria-label='Primary'] a.nav-link[data-nav-link] {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
 html:not(.dark) a.nav-link[data-nav-link]:hover .icon-app,
 html.dark a.nav-link[data-nav-link] .icon-app,
 html.dark a.nav-link[data-nav-link]:hover .icon-app {
