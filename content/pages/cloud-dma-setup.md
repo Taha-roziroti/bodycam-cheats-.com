@@ -106,17 +106,6 @@ Review these components alongside the license information to understand how the 
 
 Keeping the relevant setup details together makes it easier to prepare the environment before moving on to installation and activation.
 
-<aside class="not-prose my-10 rounded-2xl border border-amber-500/40 bg-amber-500/10 p-5 text-sm text-foreground" aria-labelledby="cloud-dma-additional-costs">
-  <h2 id="cloud-dma-additional-costs" class="text-base font-semibold text-foreground">Cloud DMA license is not the full setup cost</h2>
-  <p class="mt-2 text-muted-foreground">The listed Cloud DMA price covers the infrastructure license only. You must also purchase and maintain these separate services before activation:</p>
-  <ul class="mt-3 list-disc space-y-2 pl-5 text-muted-foreground">
-    <li><strong class="text-foreground">GREENWARD</strong> — required activation and routing service (bought outside this site).</li>
-    <li><strong class="text-foreground">Static Server</strong> — dedicated server component with its own fee.</li>
-    <li><strong class="text-foreground">AWS</strong> — cloud resources with separate billing; not included in the $50 license.</li>
-  </ul>
-  <p class="mt-3 text-muted-foreground">Budget for all three in addition to the license before you reach checkout. See the <a href="/cloud-dma/">$50 Cloud DMA license details</a> for context.</p>
-</aside>
-
 ## Step 6: Complete the Setup and Activation
 
 After preparing Windows, checking processor virtualization and reviewing the required components, follow the installation and activation instructions provided with your Cloud DMA configuration.

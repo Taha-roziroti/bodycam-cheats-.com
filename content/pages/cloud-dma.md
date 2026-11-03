@@ -8,7 +8,6 @@ schemaTypes:
   - BreadcrumbList
 layout: product
 checkout: cloud-dma
-showAdditionalCostsCallout: true
 endCtaLabel: Explore Cloud DMA and get started.
 endCtaHref: /go/cloud-dma/
 ---

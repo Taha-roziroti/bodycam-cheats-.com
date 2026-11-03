@@ -8,6 +8,7 @@ const INDEXABLE_MONEY_ROUTES = [
   '/',
   '/pricing/',
   '/cloud-dma/',
+  '/hwid-spoofer/',
   '/guides/cloud-dma-setup/',
   '/guides/borderlands-3-cheat-system-requirements/',
   '/faq/',

@@ -1,117 +1,16 @@
 ---
-import CheckoutPanel from './CheckoutPanel.astro';
-import { BL3_CHECKOUT, CLOUD_DMA_CHECKOUT, HWID_SPOOFER_CHECKOUT } from '../../data/borderlands3Site';
-import { getProductPlans, formatPlanPrice } from '../../data/productPricing';
+import CheckoutProductPicker, { type CheckoutProductId } from './CheckoutProductPicker.astro';
 
-type StoreProduct = 'borderlands-3' | 'cloud-dma' | 'hwid-spoofer';
+interface Props {
+  defaultProduct?: CheckoutProductId;
+}
 
-const products: {
-  id: StoreProduct;
-  title: string;
-  summary: string;
-  priceFrom: string;
-  buyUrl: string;
-  panelHeading: string;
-}[] = [
-  {
-    id: 'borderlands-3',
-    title: 'Borderlands 3 cheats',
-    summary: 'Soft aim, ESP, loot radar, and recoil options for PC.',
-    priceFrom: `From ${formatPlanPrice(getProductPlans('borderlands-3')[0]!.priceUsd)} / mo`,
-    buyUrl: BL3_CHECKOUT,
-    panelHeading: 'Borderlands 3 cheat plan options',
-  },
-  {
-    id: 'cloud-dma',
-    title: 'Cloud DMA license',
-    summary: 'Hyper-V infrastructure layer required on supported builds.',
-    priceFrom: formatPlanPrice(getProductPlans('cloud-dma')[0]!.priceUsd),
-    buyUrl: CLOUD_DMA_CHECKOUT,
-    panelHeading: 'Cloud DMA license checkout',
-  },
-  {
-    id: 'hwid-spoofer',
-    title: 'HWID Spoofer',
-    summary: 'Hardware ID reset utility with cleaner (separate from game cheats).',
-    priceFrom: formatPlanPrice(getProductPlans('hwid-spoofer')[0]!.priceUsd),
-    buyUrl: HWID_SPOOFER_CHECKOUT,
-    panelHeading: 'HWID Spoofer checkout',
-  },
-];
+const { defaultProduct } = Astro.props;
 ---
 
-<div class="mx-auto max-w-lg" data-checkout-product-chooser>
-  <p class="mb-4 text-sm text-muted-foreground">Choose a product, pick a plan if shown, then continue to checkout.</p>
-
-  <div class="flex flex-col gap-2" role="tablist" aria-label="Choose a product">
-    {
-      products.map((product, index) => (
-        <button
-          type="button"
-          role="tab"
-          class="checkout-product-option rounded-xl border border-border bg-card px-4 py-3 text-left transition-colors hover:border-primary/50 data-[active=true]:border-primary data-[active=true]:bg-primary/10"
-          data-checkout-product-option={product.id}
-          data-active={index === 0 ? 'true' : 'false'}
-          aria-selected={index === 0 ? 'true' : 'false'}
-          id={`checkout-tab-${product.id}`}
-          aria-controls={`checkout-panel-${product.id}`}
-        >
-          <span class="block text-base font-semibold text-foreground">{product.title}</span>
-          <span class="mt-0.5 block text-sm text-muted-foreground">{product.summary}</span>
-          <span class="mt-1 block text-sm font-medium text-foreground">{product.priceFrom}</span>
-        </button>
-      ))
-    }
-  </div>
-
-  <div class="mt-6">
-    {
-      products.map((product, index) => (
-        <div
-          id={`checkout-panel-${product.id}`}
-          role="tabpanel"
-          aria-labelledby={`checkout-tab-${product.id}`}
-          hidden={index !== 0 ? true : undefined}
-          data-checkout-product-panel={product.id}
-        >
-          <CheckoutPanel productSlug={product.id} buyUrl={product.buyUrl} heading={product.panelHeading} />
-        </div>
-      ))
-    }
-  </div>
+<div class="mx-auto max-w-lg">
+  <p class="mb-4 text-sm text-muted-foreground">
+    Select Borderlands 3 cheats, HWID Spoofer, or Cloud DMA, then continue to checkout.
+  </p>
+  <CheckoutProductPicker defaultProduct={defaultProduct} class="lg:static lg:top-auto" />
 </div>
-
-<script>
-  const initCheckoutProductChooser = () => {
-    document.querySelectorAll('[data-checkout-product-chooser]').forEach((root) => {
-      if (root.hasAttribute('data-chooser-bound')) return;
-      root.setAttribute('data-chooser-bound', '');
-
-      const tabs = root.querySelectorAll<HTMLButtonElement>('[data-checkout-product-option]');
-      const panels = root.querySelectorAll<HTMLElement>('[data-checkout-product-panel]');
-
-      const activate = (id: string) => {
-        tabs.forEach((tab) => {
-          const active = tab.getAttribute('data-checkout-product-option') === id;
-          tab.dataset.active = active ? 'true' : 'false';
-          tab.setAttribute('aria-selected', active ? 'true' : 'false');
-        });
-        panels.forEach((panel) => {
-          const show = panel.getAttribute('data-checkout-product-panel') === id;
-          if (show) panel.removeAttribute('hidden');
-          else panel.setAttribute('hidden', '');
-        });
-      };
-
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          const id = tab.getAttribute('data-checkout-product-option');
-          if (id) activate(id);
-        });
-      });
-    });
-  };
-
-  initCheckoutProductChooser();
-  document.addEventListener('astro:after-swap', initCheckoutProductChooser);
-</script>

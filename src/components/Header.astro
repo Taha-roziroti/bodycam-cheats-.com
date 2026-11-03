@@ -16,6 +16,7 @@ import type { IconName } from './icons/types';
 const navIcons: Record<string, IconName> = {
   '/pricing/': 'navProducts',
   '/cloud-dma/': 'reqCpu',
+  '/hwid-spoofer/': 'shieldCheck',
   '/guides/cloud-dma-setup/': 'navBlog',
   '/guides/borderlands-3-cheat-system-requirements/': 'reqSettings',
   '/support/': 'navSupport',
@@ -27,32 +28,32 @@ const purchaseUrl = PRIMARY_CHECKOUT_PATH;
 <header class="pointer-events-none fixed inset-x-0 top-0 z-50">
   <div class="flex justify-center px-3 pt-3 sm:px-4 sm:pt-4" data-floating-nav>
     <div
-      class="pointer-events-auto relative flex h-14 w-full max-w-6xl items-center justify-between gap-3 rounded-xl border border-border bg-card/95 px-4 text-foreground shadow-sm sm:px-5 lg:h-16"
+      class="pointer-events-auto grid h-14 w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 rounded-xl border border-border bg-card/95 px-3 text-foreground shadow-sm sm:px-4 lg:h-16 xl:max-w-7xl xl:px-5"
     >
-    <a href="/" class="inline-flex min-w-0 items-center gap-2 font-[family-name:var(--font-heading)] text-base font-semibold sm:text-lg" aria-label={t.ui.homeAria}>
+    <a href="/" class="inline-flex min-w-0 items-center gap-1.5 justify-self-start font-[family-name:var(--font-heading)] text-sm font-semibold tracking-tight sm:text-base lg:text-[15px] xl:text-lg" aria-label={t.ui.homeAria}>
       <span class="size-2 shrink-0 rounded-full bg-primary" aria-hidden="true" title="Loot rarity accent"></span>
       <span class="truncate" aria-hidden="true">Borderlands 3 <span class="text-muted-foreground">Cheats</span></span>
       <span class="sr-only"> site header</span>
     </a>
 
-    <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 lg:flex" aria-label="Primary">
+    <nav class="hidden min-w-0 justify-self-center lg:flex lg:flex-nowrap lg:items-center lg:gap-1.5 xl:gap-3" aria-label="Primary">
       {t.nav.map((link) => (
         <a
           href={link.href}
-          class="nav-link inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          class="nav-link inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-[10px] font-normal leading-none tracking-tight text-muted-foreground transition-colors hover:text-foreground xl:gap-1.5 xl:text-[11px] xl:font-medium 2xl:text-xs"
           data-nav-link
           {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
         >
-          <Icon name={navIcons[link.href] ?? 'navFeatures'} size={16} />
+          <Icon name={navIcons[link.href] ?? 'navFeatures'} size={14} class="shrink-0" />
           {link.label}
           <span class="sr-only"> primary nav</span>
         </a>
       ))}
     </nav>
 
-    <div class="flex items-center gap-2">
+    <div class="flex items-center justify-self-end gap-2">
       <div class="hidden items-center gap-3 sm:flex">
-        <Button as="a" href={purchaseUrl} variant="primary" size="md" class="hidden rounded-lg border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] lg:inline-flex" aria-label={t.ui.checkoutAria}>
+        <Button as="a" href={purchaseUrl} variant="primary" size="sm" class="hidden shrink-0 rounded-lg border border-white/20 px-3 text-xs shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] lg:inline-flex xl:h-10 xl:px-4 xl:text-sm" aria-label={t.ui.checkoutAria}>
           {t.ui.browseCheats}
         </Button>
       </div>

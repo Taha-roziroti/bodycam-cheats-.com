@@ -23,6 +23,7 @@ const SITEMAP_IMAGES = {
     },
   ],
   '/cloud-dma/': [{ loc: `${SITE_URL}/og/cloud-dma.jpg`, title: 'Cloud DMA single-PC Hyper-V setup' }],
+  '/hwid-spoofer/': [{ loc: `${SITE_URL}/og/default.jpg`, title: 'HWID Spoofer lifetime utility' }],
   '/guides/cloud-dma-setup/': [
     { loc: `${SITE_URL}/og/cloud-dma-setup.jpg`, title: 'Cloud DMA setup guide' },
   ],

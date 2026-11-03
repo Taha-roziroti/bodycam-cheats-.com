@@ -16,6 +16,7 @@ export const en: Translations = {
   nav: [
     { href: '/pricing/', label: 'Cheat plans' },
     { href: '/cloud-dma/', label: 'DMA license' },
+    { href: '/hwid-spoofer/', label: 'HWID spoofer' },
     { href: '/guides/cloud-dma-setup/', label: 'Hyper-V guide' },
     { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'PC requirements' },
     { href: '/support/', label: 'Help desk' },
@@ -609,6 +610,7 @@ export const en: Translations = {
       { href: '/', label: 'Homepage feature overview', ariaLabel: 'Home' },
       { href: '/pricing/', label: 'Monthly and lifetime cheat plans', ariaLabel: 'Pricing' },
       { href: '/cloud-dma/', label: 'Hyper-V infrastructure license', ariaLabel: 'Cloud DMA' },
+      { href: '/hwid-spoofer/', label: 'HWID Spoofer utility overview', ariaLabel: 'HWID Spoofer' },
       { href: '/guides/cloud-dma-setup/', label: 'Virtualization setup walkthrough', ariaLabel: 'Setup guide' },
       { href: '/faq/', label: 'Pre-purchase question list', ariaLabel: 'FAQ' },
     ],

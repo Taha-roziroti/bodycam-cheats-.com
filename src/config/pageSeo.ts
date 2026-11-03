@@ -24,6 +24,11 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     description:
       'Cloud DMA Hyper-V license for a single-PC setup: Windows 10/11, 8–16 GB RAM, $50 lifetime pricing, and how it fits the cheat stack.',
   },
+  '/hwid-spoofer/': {
+    title: 'HWID Spoofer – lifetime hardware ID reset utility $50',
+    description:
+      'HWID Spoofer for PC hardware ID resets after enforcement or PC swaps: Windows 10/11, $50 lifetime utility license, and when to use it.',
+  },
   '/guides/cloud-dma-setup/': {
     title: 'DMA setup guide – Hyper-V, RAM & CPU virtualization',
     description:

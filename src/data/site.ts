@@ -37,6 +37,7 @@ export const SEO_ROUTE_INTENTS: Record<string, string> = {
   '/': 'borderlands 3 cheats, ESP, soft aim, loot radar, PC availability',
   '/pricing/': 'borderlands 3 cheats price, monthly and lifetime plans',
   '/cloud-dma/': 'cloud dma for game cheats, single-PC Hyper-V license',
+  '/hwid-spoofer/': 'hwid spoofer, hardware ID reset utility, PC ban recovery',
   '/guides/cloud-dma-setup/': 'cloud dma setup guide, Hyper-V and virtualization',
   '/guides/borderlands-3-cheat-system-requirements/':
     'borderlands 3 cheat system requirements, Windows and Steam client',
@@ -49,6 +50,7 @@ export const INDEXABLE_MONEY_ROUTES = [
   '/',
   '/pricing/',
   '/cloud-dma/',
+  '/hwid-spoofer/',
   '/guides/cloud-dma-setup/',
   '/guides/borderlands-3-cheat-system-requirements/',
   '/faq/',
@@ -59,6 +61,7 @@ export const OG_IMAGES: Record<string, string> = {
   '/': '/og/home.jpg',
   '/pricing/': '/og/pricing.jpg',
   '/cloud-dma/': '/og/cloud-dma.jpg',
+  '/hwid-spoofer/': '/og/default.jpg',
   '/guides/cloud-dma-setup/': '/og/cloud-dma-setup.jpg',
   '/guides/borderlands-3-cheat-system-requirements/': '/og/requirements.jpg',
   '/faq/': '/og/faq.jpg',
@@ -92,6 +95,12 @@ export const SITEMAP_IMAGES: Record<string, { loc: string; title: string }[]> = 
     {
       loc: `${SITE_URL}/og/cloud-dma.jpg`,
       title: 'Cloud DMA single-PC Hyper-V setup',
+    },
+  ],
+  '/hwid-spoofer/': [
+    {
+      loc: `${SITE_URL}/og/default.jpg`,
+      title: 'HWID Spoofer lifetime utility',
     },
   ],
   '/guides/cloud-dma-setup/': [

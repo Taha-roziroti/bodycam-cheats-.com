@@ -2,12 +2,11 @@
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
-import CheckoutPanel from '../borderlands3/CheckoutPanel.astro';
+import CheckoutProductPicker, { type CheckoutProductId } from '../borderlands3/CheckoutProductPicker.astro';
 import AdditionalCostsCallout from '../borderlands3/AdditionalCostsCallout.astro';
 import ContentFigures from './ContentFigures.astro';
 import ContentHeroImage from './ContentHeroImage.astro';
 import { defaultWebpSrc, HERO_IMAGE_WIDTHS } from '../../utils/responsiveImage';
-import { BL3_CHECKOUT, CLOUD_DMA_CHECKOUT } from '../../data/borderlands3Site';
 import {
   breadcrumbsForRoute,
   defaultEndCtaHref,
@@ -35,11 +34,12 @@ const jsonLd = jsonLdForContentPage({
   articlePublished: data.articlePublished,
 });
 const ctaHref = data.endCtaHref ?? defaultEndCtaHref(data.route, data.checkout);
-const buyUrl = data.checkout === 'cloud-dma' ? CLOUD_DMA_CHECKOUT : BL3_CHECKOUT;
-const checkoutHeadingMain =
-  data.checkout === 'cloud-dma' ? 'Cloud DMA license checkout' : 'Borderlands 3 cheat plan options';
-const checkoutHeadingSidebar =
-  data.checkout === 'cloud-dma' ? 'Cloud DMA license panel' : 'Borderlands 3 cheat checkout panel';
+const sidebarDefaultProduct: CheckoutProductId =
+  data.checkout === 'cloud-dma'
+    ? 'cloud-dma'
+    : data.checkout === 'hwid-spoofer'
+      ? 'hwid-spoofer'
+      : 'borderlands-3';
 const ogType = data.layout === 'article' ? 'article' : 'website';
 const lcpPreload =
   data.route === '/' && data.heroImage
@@ -50,6 +50,7 @@ const logoAltByRoute: Record<string, string> = {
   '/': 'Borderlands 3 – logo',
   '/pricing/': 'Cheats pricing – logo',
   '/cloud-dma/': 'Cloud DMA – logo',
+  '/hwid-spoofer/': 'HWID Spoofer – logo',
   '/guides/cloud-dma-setup/': 'DMA setup – logo',
   '/guides/borderlands-3-cheat-system-requirements/': 'System requirements – logo',
 };
@@ -95,22 +96,14 @@ const logoAlt = logoAltByRoute[data.route];
               <ContentFigures figures={data.figures} />
             </div>
             <div class="not-prose mt-8 lg:hidden">
-              <CheckoutPanel
-                productSlug={data.checkout === 'cloud-dma' ? 'cloud-dma' : 'borderlands-3'}
-                buyUrl={buyUrl}
-                heading={checkoutHeadingMain}
-              />
+              <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
             </div>
             {data.showAdditionalCostsCallout ? (
               <AdditionalCostsCallout class="not-prose mt-8" />
             ) : null}
           </div>
           <div class="hidden lg:block">
-            <CheckoutPanel
-              productSlug={data.checkout === 'cloud-dma' ? 'cloud-dma' : 'borderlands-3'}
-              buyUrl={buyUrl}
-              heading={checkoutHeadingSidebar}
-            />
+            <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
           </div>
         </div>
       </section>

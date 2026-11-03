@@ -4,6 +4,8 @@ import {
   bl3ProductOffers,
   cloudDmaOffer,
   CLOUD_DMA_CHECKOUT,
+  hwidSpooferOffer,
+  HWID_SPOOFER_CHECKOUT,
 } from '../data/borderlands3Site';
 import { PRODUCT_ID, SITE_URL } from '../data/site';
 import {
@@ -26,6 +28,12 @@ export function breadcrumbsForRoute(route: string): BreadcrumbItem[] {
     return [
       { name: 'Home', path: '/' },
       { name: 'Cloud DMA', path: '/cloud-dma/' },
+    ];
+  }
+  if (route === '/hwid-spoofer/') {
+    return [
+      { name: 'Home', path: '/' },
+      { name: 'HWID Spoofer', path: '/hwid-spoofer/' },
     ];
   }
   if (route === '/guides/cloud-dma-setup/') {
@@ -85,6 +93,24 @@ export function jsonLdForContentPage(input: {
           ],
         }),
       );
+    } else if (input.route === '/hwid-spoofer/') {
+      blocks.push(
+        productSchema({
+          name: 'HWID Spoofer',
+          description: input.metaDescription,
+          url: '/hwid-spoofer/',
+          offerUrl: HWID_SPOOFER_CHECKOUT,
+          sku: 'hwid-spoofer',
+          productId: `${SITE_URL}/hwid-spoofer/#product`,
+          offers: [
+            {
+              name: hwidSpooferOffer.name,
+              priceUsd: hwidSpooferOffer.priceUsd,
+              url: HWID_SPOOFER_CHECKOUT,
+            },
+          ],
+        }),
+      );
     }
   }
 
@@ -116,10 +142,15 @@ export function jsonLdForContentPage(input: {
   return blocks;
 }
 
-export function defaultEndCtaHref(route: string, checkout?: 'borderlands-3' | 'cloud-dma'): string {
+export function defaultEndCtaHref(
+  route: string,
+  checkout?: 'borderlands-3' | 'cloud-dma' | 'hwid-spoofer',
+): string {
   if (checkout === 'cloud-dma') return checkoutPath('cloudDma');
+  if (checkout === 'hwid-spoofer') return checkoutPath('hwidSpoofer');
   if (checkout === 'borderlands-3') return checkoutPath('borderlands3');
   if (route === '/pricing/') return checkoutPath('borderlands3');
   if (route === '/cloud-dma/') return checkoutPath('cloudDma');
+  if (route === '/hwid-spoofer/') return checkoutPath('hwidSpoofer');
   return checkoutPath('borderlands3');
 }
