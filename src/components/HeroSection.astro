@@ -1,7 +1,7 @@
 ---
 import { t } from '../i18n';
-import { ROUTES } from '../utils/path';
-import { heroSlides } from '../data/products';
+import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
+import { borderlandsHeroSlides } from '../data/borderlands3Landing';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
 import ImageSlider from './ImageSlider.astro';
 import Icon from './icons/Icon.astro';
@@ -26,13 +26,14 @@ const heroMarqueePills = [
 >
   <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--primary)_0%,transparent_55%)] opacity-20" aria-hidden="true" />
 
-  <div class="relative mx-auto flex max-w-6xl flex-col justify-center px-5">
+  <div class="relative mx-auto flex max-w-6xl flex-col justify-center px-5 pb-8 pt-6 md:pb-10 md:pt-8">
     <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
       <div class="w-full max-w-xl space-y-6 text-left md:space-y-7 lg:max-w-2xl">
-        <Badge variant="secondary" class="uppercase tracking-wider">{h.eyebrow}</Badge>
+        <Badge variant="secondary" class="normal-case tracking-normal">{h.eyebrow}</Badge>
 
-        <h1 id="hero-title" class="text-4xl font-bold uppercase leading-tight md:text-5xl">
-          <span class="block text-primary">{h.titleLine2}</span>
+        <h1 id="hero-title" class="text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.25rem]">
+          <span class="block text-foreground">{h.titleLine1}</span>
+          <span class="mt-1 block text-primary">{h.titleLine2}</span>
         </h1>
 
         <p class="max-w-xl text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-base">
@@ -42,8 +43,7 @@ const heroMarqueePills = [
         <div class="flex flex-wrap justify-start gap-3 sm:gap-4">
           <Button
             as="a"
-            href={ROUTES.products}
-            data-scroll-target="products"
+            href={PRIMARY_CHECKOUT_PATH}
             variant="primary"
             size="lg"
             class="rounded-xl"
@@ -53,19 +53,18 @@ const heroMarqueePills = [
           </Button>
           <Button
             as="a"
-            href={t.site.discord}
+            href="/pricing/"
             variant="secondary"
             size="lg"
             class="rounded-xl"
           >
-            <Icon name="messageCircle" size={18} />
             {h.ctaDiscord}
           </Button>
         </div>
       </div>
 
       <div class="mx-auto flex w-full max-w-xl flex-col items-center gap-5 lg:mx-0 lg:max-w-none lg:items-end">
-        <ImageSlider images={heroSlides} id="hero-slider" variant="hero" desktopOnly />
+        <ImageSlider images={borderlandsHeroSlides} id="hero-slider" variant="hero" desktopOnly />
         <div class="grid w-full grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-4 lg:grid-cols-2">
           {h.metrics.map((m, i) => (
             <div class="flex min-w-0 items-center gap-3 rounded-xl border border-border/80 bg-card/70 px-3 py-3 shadow-sm shadow-black/10 transition-colors hover:border-primary/40">

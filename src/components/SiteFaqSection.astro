@@ -12,6 +12,7 @@ interface Props {
   items: SiteFaqItem[];
   id?: string;
   titleId?: string;
+  titleAs?: 'h1' | 'h2';
   class?: string;
   /** Full /faq/ experience — all topics chip bar */
   variant?: 'full' | 'contextual';
@@ -22,6 +23,7 @@ const {
   items,
   id,
   titleId = 'faq-heading',
+  titleAs,
   class: className,
   variant = 'contextual',
   filterTopics: filterTopicsProp,
@@ -42,6 +44,6 @@ const showFilters = filterTopics.length > 1;
   titleId={titleId}
   showFilters={showFilters}
   filterTopics={filterTopics}
-  titleAs={variant === 'full' ? 'h2' : 'h1'}
+  titleAs={titleAs ?? (variant === 'full' ? 'h2' : 'h1')}
   class={className}
 />

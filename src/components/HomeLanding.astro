@@ -1,0 +1,20 @@
+---
+import HeroSection from './HeroSection.astro';
+import FeaturesSection from './FeaturesSection.astro';
+import ProductsSection from './ProductsSection.astro';
+import WhySetupSection from './WhySetupSection.astro';
+import WorkflowSection from './WorkflowSection.astro';
+import HomeGuidesSection from './HomeGuidesSection.astro';
+import SiteFaqSection from './SiteFaqSection.astro';
+import { getLandingFaqs } from '../data/faq';
+
+const homeFaqs = getLandingFaqs();
+---
+
+<HeroSection />
+<FeaturesSection />
+<ProductsSection />
+<WhySetupSection />
+<WorkflowSection />
+<HomeGuidesSection />
+<SiteFaqSection id="faq" titleId="faq-title" titleAs="h2" items={homeFaqs} />

@@ -1,0 +1,35 @@
+---
+import { borderlandsGuideCards } from '../data/borderlands3Landing';
+import SectionHeader from './SectionHeader.astro';
+import Icon from './icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+---
+
+<section id="guides" class="border-y border-border bg-muted/20 py-16 md:py-24" aria-labelledby="guides-title">
+  <div class="mx-auto max-w-6xl px-5">
+    <SectionHeader
+      eyebrow="Guides"
+      title="Borderlands 3 setup and pricing guides"
+      desc="Review plans, Hyper-V setup, and PC requirements before you launch the cheat stack."
+      titleId="guides-title"
+      titleAs="h2"
+    />
+
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-10">
+      {
+        borderlandsGuideCards.map((guide) => (
+          <article class="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-primary/35">
+            <h3 class="font-[family-name:var(--font-heading)] text-lg font-bold leading-snug text-foreground">
+              {guide.title}
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{guide.desc}</p>
+            <Button as="a" href={guide.href} variant="outline" size="sm" class="mt-6 w-fit rounded-lg">
+              {guide.readLabel}
+              <Icon name="arrowRight" size={16} />
+            </Button>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

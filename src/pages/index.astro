@@ -1,5 +1,28 @@
 ---
-import ContentPage from '../components/content/ContentPage.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeLanding from '../components/HomeLanding.astro';
+import { resolvePageSeo } from '../config/seo';
+import { loadContentPage } from '../utils/loadContentPage';
+import { jsonLdForContentPage } from '../utils/contentPageJsonLd';
+
+const seo = resolvePageSeo('/');
+const entry = await loadContentPage('home');
+const data = entry.data;
+const jsonLd = jsonLdForContentPage({
+  route: data.route,
+  seoTitle: data.seoTitle,
+  metaDescription: data.metaDescription,
+  schemaTypes: data.schemaTypes,
+});
 ---
 
-<ContentPage id="home" />
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  jsonLd={jsonLd}
+  ogImage={data.ogImage}
+  ogImageAlt={data.heroImage?.alt ?? data.seoTitle}
+  logoAlt="Borderlands 3 – logo"
+>
+  <HomeLanding />
+</BaseLayout>
