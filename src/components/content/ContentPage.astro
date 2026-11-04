@@ -14,6 +14,8 @@ import {
 } from '../../utils/contentPageJsonLd';
 import { Button } from '@/components/starwind/button';
 import { loadContentPage } from '../../utils/loadContentPage';
+import SiteFaqSection from '../SiteFaqSection.astro';
+import { faqFilterTopicsForItems, getContentPageFaqs } from '../../data/faq';
 
 interface Props {
   id: string;
@@ -56,6 +58,8 @@ const logoAltByRoute: Record<string, string> = {
   '/guides/borderlands-3-cheat-system-requirements/': 'System requirements – logo',
 };
 const logoAlt = logoAltByRoute[data.route];
+const pageFaqs = getContentPageFaqs(data.route);
+const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
 ---
 
 <BaseLayout
@@ -125,6 +129,20 @@ const logoAlt = logoAltByRoute[data.route];
         </div>
       </article>
     )
+  }
+
+  {
+    pageFaqs && pageFaqs.length > 0 ? (
+      <SiteFaqSection
+        id="page-faq"
+        titleId="page-faq-title"
+        titleAs="h2"
+        items={pageFaqs}
+        showFilters={pageFaqTopics.length > 1}
+        filterTopics={pageFaqTopics}
+        class="border-t border-border"
+      />
+    ) : null
   }
 
   {

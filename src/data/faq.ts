@@ -120,6 +120,13 @@ export const siteFaqs: SiteFaqItem[] = [
     a: `The Cloud DMA lifetime license is listed on the ${link('Cloud DMA pricing overview', '/cloud-dma/')}. GREENWARD, static server hosting, and AWS resources are purchased separately.`,
   },
   {
+    id: 'hwid-spoofer',
+    topic: 'products',
+    icon: 'faqProductsPage',
+    q: 'What does the HWID Spoofer change?',
+    a: `It targets common hardware identifiers used in ban workflows. Read the ${link('HWID Spoofer product page', '/hwid-spoofer/')} for scope, limits, and setup before checkout.`,
+  },
+  {
     id: 'windows-req',
     topic: 'setup',
     icon: 'faqDiscordHelp',
@@ -191,6 +198,20 @@ export function getLandingFaqs(): SiteFaqItem[] {
   return siteFaqs.filter((f) =>
     ['features', 'after-buy', 'ban-risk', 'platforms', 'cloud-dma', 'pricing-plans'].includes(f.id),
   );
+}
+
+const CONTENT_PAGE_FAQ_IDS: Record<string, string[]> = {
+  '/pricing/': ['pricing-plans', 'plan-prices', 'features', 'after-buy', 'checkout-help'],
+  '/cloud-dma/': ['cloud-dma', 'cloud-dma-cost', 'windows-req', 'platforms', 'after-buy'],
+  '/hwid-spoofer/': ['hwid-spoofer', 'ban-risk', 'license-move', 'platforms', 'undetected'],
+};
+
+export function getContentPageFaqs(route: string): SiteFaqItem[] | null {
+  const ids = CONTENT_PAGE_FAQ_IDS[route];
+  if (!ids) return null;
+  return ids
+    .map((id) => siteFaqs.find((f) => f.id === id))
+    .filter((f): f is SiteFaqItem => Boolean(f));
 }
 
 export function getAllFaqs(): SiteFaqItem[] {

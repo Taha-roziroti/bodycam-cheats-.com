@@ -15,7 +15,7 @@ interface Props {
 const { title, description, breadcrumbLabel, sections } = Astro.props;
 ---
 
-<article class="py-8 md:py-12">
+<article class="border-b border-border bg-muted/20 py-10 md:py-14">
   <div class="mx-auto max-w-3xl px-5">
     <div class="text-left">
     <Breadcrumbs
@@ -25,8 +25,8 @@ const { title, description, breadcrumbLabel, sections } = Astro.props;
       ]}
     />
     </div>
-    <header class="mt-4 space-y-4 text-center">
-      <h1 class="text-3xl font-bold normal-case md:text-4xl">{title}</h1>
+    <header class="mt-6 space-y-4 text-center">
+      <h1 class="text-3xl font-bold tracking-tight normal-case md:text-4xl">{title}</h1>
       <p class="text-lg leading-relaxed text-muted-foreground">{description}</p>
     </header>
 
