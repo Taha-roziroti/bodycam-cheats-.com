@@ -20,6 +20,8 @@
   --products-carousel-gap: 1rem;
   position: relative;
   margin-top: 4.75rem;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {

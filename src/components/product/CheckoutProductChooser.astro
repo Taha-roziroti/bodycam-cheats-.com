@@ -1,0 +1,16 @@
+---
+import CheckoutProductPicker, { type CheckoutProductId } from './CheckoutProductPicker.astro';
+
+interface Props {
+  defaultProduct?: CheckoutProductId;
+}
+
+const { defaultProduct } = Astro.props;
+---
+
+<div class="mx-auto max-w-lg">
+  <p class="mb-4 text-sm text-muted-foreground">
+    Select your main product, HWID Spoofer, or Cloud DMA, then continue to checkout.
+  </p>
+  <CheckoutProductPicker defaultProduct={defaultProduct} class="lg:static lg:top-auto" />
+</div>

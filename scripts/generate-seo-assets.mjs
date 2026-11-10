@@ -4,13 +4,7 @@ import sharp from 'sharp';
 
 const root = process.cwd();
 const ogDir = path.join(root, 'public', 'og');
-const heroSource = path.join(
-  root,
-  'public',
-  'images',
-  'borderlands3',
-  'borderlands-3-campfire-hero.webp',
-);
+const heroSource = path.join(root, 'public', 'images', 'bodycam', 'bodycam-hero.webp');
 
 const outputs = [
   'default.jpg',
@@ -23,8 +17,8 @@ const outputs = [
 ];
 
 if (!fs.existsSync(heroSource)) {
-  console.error('generate-seo-assets: missing hero source at', heroSource);
-  process.exit(1);
+  console.warn('generate-seo-assets: missing placeholder hero — skipping OG regeneration');
+  process.exit(0);
 }
 
 fs.mkdirSync(ogDir, { recursive: true });

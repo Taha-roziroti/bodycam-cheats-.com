@@ -1,151 +1,72 @@
 ---
 route: /
-seoTitle: Borderlands 3 – PC soft aim, ESP, loot radar & plans
-metaDescription: Borderlands 3 PC setup with soft aim, enemy and loot ESP, radar, and recoil options. Compare $35 monthly and $150 lifetime plans plus Cloud DMA.
+seoTitle: Bodycam Cheats for PC | ESP & Aimbot
+metaDescription: Explore Bodycam cheats for PC, including ESP, aimbot and gameplay options. Compare access plans and review system requirements.
 schemaTypes:
   - Product
   - Offer
   - BreadcrumbList
+  - WebPage
 layout: product
-checkout: borderlands-3
+checkout: main-product
 heroImage:
-  src: /images/borderlands3/borderlands-3-campfire-hero.webp
-  alt: Borderlands 3 Vault Hunters gathered around a campfire under a starry sky — official-style key art
-endCtaLabel: Explore our Borderlands 3 cheats and get started today.
-endCtaHref: /go/borderlands-3/
+  src: /images/bodycam/bodycam-hero.webp
+  alt: Bodycam tactical operators with body-worn camera HUD logo and REC indicator
+endCtaLabel: Explore Bodycam Access Options
+endCtaHref: /go/bodycam/
 figures:
-  - alt: Borderlands 3 enemy ESP gameplay overlay
-    src: /images/borderlands3/borderlands-3-enemy-esp-gameplay.webp
-  - alt: Borderlands 3 loot ESP feature showcase
-    src: /images/borderlands3/borderlands-3-loot-esp-showcase.webp
-  - alt: Borderlands 3 soft aim configuration and FOV settings
-    src: /images/borderlands3/borderlands-3-soft-aim-gameplay.webp
-  - alt: Borderlands 3 radar overlay during gameplay
-    src: /images/borderlands3/borderlands-3-radar-gameplay.webp
+  - alt: Bodycam ESP with cyan player boxes, skeletons and FOV circle in indoor map
+    src: /images/bodycam/bodycam-esp-indoor-cyan.webp
+  - alt: Bodycam cheat menu Visuals tab with Player ESP and 2D radar settings
+    src: /images/bodycam/bodycam-menu-visuals.webp
+  - alt: Bodycam aimbot menu with FOV, smoothness and recoil control
+    src: /images/bodycam/bodycam-menu-aimbot.webp
+  - alt: Bodycam scoped gameplay with red ESP boxes and snaplines
+    src: /images/bodycam/bodycam-esp-scope.webp
 ---
 
-# Borderlands 3 Cheats for PC with soft aim, loot radar & plans
+BODYCAM brings a distinctive kind of intensity to tactical FPS gameplay. Every hallway, doorway and open street can turn into a fight, and small decisions often make a big difference. For players exploring additional gameplay tools, the Bodycam cheats package brings together an extensive selection of visual, aiming, movement and weapon features in one interface.
 
-Pandora is full of enemies, valuable loot and unexpected encounters. Whether you're exploring dangerous locations, taking on powerful bosses or working your way through another challenging area, having the right tools can completely change how you approach the game.
+From player ESP and customizable aimbot options to weapon controls and detailed visual overlays, the available features cover several different aspects of the game. Whether you are interested in seeing the complete feature collection or looking for a particular option, this page is designed to give you a clear overview before choosing an access plan.
 
-Our **Borderlands 3 cheats** are designed for PC players who want more control over their gameplay, better awareness of their surroundings and a more customizable experience.
+## Explore the Bodycam Cheat Features
 
-With features including soft aim, enemy ESP, loot ESP, radar and recoil options, you can build a configuration that suits the way you play.
+One of the biggest highlights of the Bodycam cheat package is the variety of options available. Rather than focusing on a single feature, the collection brings together multiple categories that can be explored through its interface.
 
-Explore the available features, customize your settings, and tune the software to how you play.
+The visual category includes Player ESP, Box ESP, skeleton displays, snaplines, player chams, weapon chams, nicknames, health bars and distance indicators. There are also additional visual options for drones and bombs, giving the feature collection considerable depth.
 
-Compare [monthly and lifetime cheat pricing](/pricing/), review [Hyper-V license details](/cloud-dma/) requirements, and check the [PC compatibility checklist](/guides/borderlands-3-cheat-system-requirements/) before you buy.
+A separate aiming category contains head and chest targeting, an FOV circle, an aim line, Silent Aim, Magic Bullets, Instant Kill and Instant Aim. These options make the aiming section one of the most extensive parts of the available feature list.
 
-## Borderlands 3 Cheat Features
+Movement and weapon controls add another layer, with options including No Recoil, Rapid Fire, Full Auto, Unlimited Ammo, custom View FOV, Gravity Multiplier and Third Person.
 
-Every player approaches Borderlands 3 differently. Some prefer to focus on combat, while others spend their time exploring, collecting equipment and discovering everything Pandora has to offer.
+## Bodycam Aimbot and Visual Options
 
-That's why our Borderlands 3 cheat software brings together several useful features in one configuration.
+Different players look for different capabilities, which is why the distinction between aiming and visual features matters. The aimbot category concentrates on targeting options, while ESP is built around the visual information displayed during gameplay.
 
-### Enemy ESP
+Players interested in the aiming section can explore the dedicated [Bodycam aimbot page](/bodycam-aimbot/), where individual options are covered in greater detail. Those more interested in visual overlays can visit the [Bodycam ESP guide](/bodycam-esp/) for a closer look at the available displays and indicators.
 
-Keep track of enemy positions with enemy ESP.
+Having separate feature guides also makes it easier to understand the full package without having to search through one oversized list.
 
-The ESP interface provides additional visual information during gameplay, helping you recognize enemy locations and better understand what's happening around you.
+## Windows Compatibility and System Requirements
 
-Instead of relying entirely on your immediate surroundings, you can use the available ESP information to make more informed decisions.
+The listed Bodycam package supports Windows 10 and Windows 11. Its published system information also specifies a minimum of 8 GB RAM and a dedicated graphics card.
 
-### Loot ESP
+Several Windows security settings are part of the stated configuration, including HVCI, Core Isolation, TPM and Secure Boot. Cloud DMA is required for full functionality on supported builds.
 
-Finding interesting equipment is a major part of the Borderlands experience.
+Checking these details before choosing an access plan is a useful way to understand the intended configuration. The [requirements guide](/bodycam-requirements/) covers the Windows environment, hardware specifications and additional technical details in one place. See [Cloud DMA for Bodycam](/cloud-dma-for-bodycam/) for the infrastructure requirement.
 
-Loot ESP makes it easier to identify valuable items through visual indicators, helping bring more attention to loot around the environment.
+## Choose the Bodycam Access Plan
 
-Spend more time discovering useful equipment and less time overlooking items scattered throughout your adventures.
+The current Bodycam plans offer two different access periods. The monthly option provides 30 days of access, while the lifetime option is a one-time payment for unlimited-duration access.
 
-### Soft Aim
+Both options are advertised with the same feature set, so the main distinction is the length of access rather than a different collection of gameplay features.
 
-Looking for additional control during firefights?
+Players who prefer a shorter commitment can explore the monthly option, while those looking for a one-time access purchase can compare the lifetime plan on the [Bodycam cheats price page](/bodycam-cheats-price/).
 
-The soft aim feature provides customizable aiming assistance, allowing you to configure available settings according to your preferred gameplay style.
+## A Closer Look at the Complete Feature Collection
 
-Adjust your configuration to find a balance that feels comfortable for your approach to combat.
+Beyond the main aiming and visual categories, the available interface includes several additional options that give the package its breadth. Movement controls include Fly Hack, No World Border, Gravity Multiplier and Teleport Enemies In Front. Weapon-related options include No Recoil, Rapid Fire, Full Auto, Unlimited Ammo and God Mode.
 
-### Radar
+The miscellaneous category also includes a menu cursor option, full color customization and additional interface controls.
 
-Awareness can make a significant difference when exploring busy environments.
-
-The radar feature provides another way to view surrounding activity, helping you maintain a better understanding of your surroundings while moving between locations.
-
-### No Recoil and No Spread
-
-Weapon handling is an important part of any Borderlands 3 loadout.
-
-Our available recoil and spread options provide additional control over weapon behavior, allowing you to configure your experience around your preferred weapons and combat style.
-
-### Stream-Proof Overlay
-
-The software also includes a stream-proof overlay feature as part of its available configuration.
-
-This provides another layer of flexibility when organizing your gameplay interface.
-
-## Built Around Customization
-
-There isn't one perfect configuration for every player.
-
-Some players prefer a minimal interface with only a few selected features, while others enjoy having more information available during gameplay.
-
-Our Borderlands 3 cheats give you access to multiple feature options so you can tailor the software around your preferences.
-
-Whether you're interested in soft aim, enemy ESP, loot highlighting or radar, you can explore the available settings and create the configuration that works best for you.
-
-## Borderlands 3 Cheats for PC
-
-Designed for the PC version of Borderlands 3, our cheat software is intended for compatible Windows setups.
-
-The product configuration lists Windows 10 and Windows 11 support, along with the supported Steam and Official Client options.
-
-For the complete experience, Cloud DMA is part of the required configuration on supported builds.
-
-We recommend reviewing the [Windows and RAM compatibility guide](/guides/borderlands-3-cheat-system-requirements/) before getting started so that your computer is ready for the complete setup.
-
-## Choose Your Borderlands 3 Cheat Plan
-
-Getting started is straightforward.
-
-Choose the subscription that matches how long you plan to use the software.
-
-**Monthly Access**
-
-A flexible option for players who prefer monthly access.
-
-**Lifetime Access**
-
-A longer-term option for players who want lifetime access to the Borderlands 3 cheat product.
-
-Both options give you access to the product according to their respective plan details.
-
-Visit our [plan comparison page](/pricing/) to compare the available options and choose your preferred plan.
-
-## Frequently Asked Questions
-
-### What features are included in Borderlands 3 cheats?
-
-The available features include soft aim, enemy ESP, loot ESP, radar, no recoil, no spread and a stream-proof overlay.
-
-### Do Borderlands 3 cheats work on PC?
-
-The product is designed for compatible Windows PC configurations. The listed supported clients include Steam and the Official Client.
-
-### Is Cloud DMA included in the setup?
-
-Cloud DMA is a required part of the complete configuration on supported builds. Visit the [infrastructure license overview](/cloud-dma/) to explore pricing and setup information.
-
-### Can I choose between monthly and lifetime access?
-
-Yes. The available Borderlands 3 plans include monthly and lifetime access options.
-
-### What Windows version do I need?
-
-The listed product requirements include Windows 10 and Windows 11. Additional hardware and configuration requirements apply.
-
-## Get Started With Borderlands 3 Cheats
-
-Ready to explore a more customizable Borderlands 3 experience?
-
-Review the feature list, check system requirements, and pick monthly or lifetime access on the pricing page.
+With all these categories available to explore, the Bodycam cheats package provides a broad selection of gameplay features in a single place.

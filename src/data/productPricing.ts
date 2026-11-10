@@ -1,5 +1,5 @@
 /** Single source of truth for monthly access length (FAQ and plan selector). Matches Zadeyo listing. */
-export const MONTHLY_ACCESS_DAYS = 31;
+export const MONTHLY_ACCESS_DAYS = 30;
 
 export type ProductPlanId = 'monthly' | 'lifetime' | 'onetime';
 
@@ -10,7 +10,7 @@ export interface ProductPlan {
   priceNote: string;
 }
 
-const bl3Plans: ProductPlan[] = [
+const mainProductPlans: ProductPlan[] = [
   {
     id: 'monthly',
     label: 'Monthly',
@@ -38,7 +38,7 @@ const cloudDmaPlans: ProductPlan[] = [
   },
 ];
 
-const standardPlans: ProductPlan[] = bl3Plans;
+const standardPlans: ProductPlan[] = mainProductPlans;
 
 const ugcPlans: ProductPlan[] = [
   { id: 'onetime', label: 'One-time access', priceUsd: 50, priceNote: 'USD · one-time' },
@@ -48,7 +48,8 @@ export function getProductPlans(productSlug: string): ProductPlan[] {
   if (productSlug === 'ugc') return ugcPlans;
   if (productSlug === 'hwid-spoofer') return hwidSpooferPlans;
   if (productSlug === 'cloud-dma') return cloudDmaPlans;
-  if (productSlug === 'borderlands-3') return bl3Plans;
+  if (productSlug === 'main-product' || productSlug === 'bodycam' || productSlug === 'borderlands-3')
+    return mainProductPlans;
   return standardPlans;
 }
 

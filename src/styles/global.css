@@ -1,6 +1,11 @@
 /* Site-specific globals (Tailwind + Starwind live in starwind.css).
    Page CSS is imported only where used to keep inlined HTML smaller. */
 
+html,
+body {
+  overflow-x: clip;
+}
+
 /* Centered page sections — max width matches Tailwind max-w-6xl */
 .section-shell {
   width: 100%;
@@ -325,6 +330,9 @@ html.dark a.nav-link[data-nav-link]:hover .icon-app {
 
 .hero-status-marquee {
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  contain: layout;
   mask-image: linear-gradient(to right, transparent, black 3rem, black calc(100% - 3rem), transparent);
 }
 

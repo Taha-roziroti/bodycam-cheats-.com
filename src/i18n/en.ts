@@ -6,33 +6,34 @@ const productBase = PRODUCT_BASE;
 
 export const en: Translations = {
   site: {
-    name: 'Borderlands 3 Cheats',
-    domain: 'borderlands3cheats.com',
-    title: 'Borderlands 3 Cheats for PC | ESP & Soft Aim',
+    name: 'Bodycam Cheats',
+    domain: 'bodycam-cheats.com',
+    title: 'Bodycam Cheats for PC | ESP & Aimbot',
     description:
-      'Borderlands 3 PC cheat features: soft aim, enemy and loot ESP, radar and recoil options. Review plans, Cloud DMA requirements, and checkout details.',
+      'Explore Bodycam cheats for PC, including ESP, aimbot and visual options. Review features, requirements and plans before you buy.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
     { href: '/#features', label: 'Features' },
-    { href: '/pricing/', label: 'Cheat plans' },
-    { href: '/#products', label: 'Products' },
-    { href: '/cloud-dma/', label: 'DMA license' },
-    { href: '/hwid-spoofer/', label: 'HWID spoofer' },
+    { href: '/bodycam-aimbot/', label: 'Aimbot' },
+    { href: '/bodycam-esp/', label: 'ESP' },
+    { href: '/bodycam-cheats-price/', label: 'Pricing' },
+    { href: '/bodycam-requirements/', label: 'Requirements' },
+    { href: '/cloud-dma-for-bodycam/', label: 'Cloud DMA' },
     { href: '/faq/', label: 'FAQ' },
     { href: '/support/', label: 'Support' },
   ],
   hero: {
-    status: 'Borderlands 3 — supported Windows builds',
-    eyebrow: 'Private Borderlands 3 PC tools',
-    titleLine1: 'Borderlands 3 Cheats',
-    titleLine2: 'ESP, radar & soft aim',
+    status: 'Bodycam — Windows 10 & 11',
+    eyebrow: 'Bodycam PC software',
+    titleLine1: 'Bodycam Cheats',
+    titleLine2: 'ESP, aimbot & radar',
     subtitle:
-      'Borderlands 3 PC cheats with enemy and loot ESP, soft aim, radar, and recoil options—plus Cloud DMA and HWID utilities on separate checkouts.',
+      'Bodycam cheats with player ESP, aimbot, chams, drone/bomb ESP and recoil options—plus Cloud DMA on a separate license. Compare plans before checkout.',
     ctaPrimary: 'Buy now',
     ctaDiscord: 'Compare plans',
-    modesLabel: 'Supported client',
-    modes: ['Steam', 'Official client', 'Windows 10 & 11'],
+    modesLabel: 'Platform',
+    modes: ['Windows PC', 'Dedicated GPU', 'Windows 10 & 11'],
     metrics: [
       { label: 'Platform', strong: 'Windows PC' },
       { label: 'Plans', strong: '3' },
@@ -42,36 +43,36 @@ export const en: Translations = {
   },
   features: {
     eyebrow: 'Cheat features',
-    title: 'Borderlands 3 modules you can review before checkout',
+    title: 'Bodycam cheat features at a glance',
     subtitle:
-      'Enemy and loot ESP, soft aim, radar, and weapon tuning from the current Borderlands 3 listing—no unrelated game bundles.',
+      'Aimbot, ESP, chams, and awareness tools from the current Bodycam listing—see dedicated pages for aimbot and ESP depth.',
     items: [
       {
-        title: 'Enemy ESP',
-        subtitle: 'Threat readouts',
-        desc: 'Track enemies with boxes, skeletons, health state, and distance caps so you can read fights without guessing.',
+        title: 'Player ESP',
+        subtitle: 'Visibility stack',
+        desc: 'Boxes, skeletons, snaplines, nicknames, health and distance for Bodycam firefights.',
         bullets: [
-          'Enemy box, skeleton, and name tags',
-          'Health bars and distance readouts',
-          'Off-screen indicators where supported',
+          'Player box and skeleton ESP',
+          'Health bars and distance tags',
+          'Drone and bomb ESP where listed',
         ],
-        tags: ['enemy esp', 'skeleton esp', 'health bars'],
+        tags: ['bodycam esp', 'wallhack', 'player esp'],
         bento: 'sm:col-span-2 lg:col-span-12 lg:col-start-1 lg:row-start-1',
       },
       {
-        title: 'Loot ESP',
-        subtitle: 'Rarity at a glance',
-        desc: 'Highlight weapons and loot tiers so you spend less time searching the floor during runs.',
-        bullets: ['Weapon rarity highlights', 'Pickup distance tags', 'Configurable loot filters'],
-        tags: ['loot esp', 'rarity', 'pickups'],
+        title: 'Chams & indicators',
+        subtitle: 'Visual highlights',
+        desc: 'Player and weapon chams plus stream-proof overlay options on supported builds.',
+        bullets: ['Player and weapon chams', 'Stream-proof overlay mode', 'Custom colors and filters'],
+        tags: ['chams', 'stream proof', 'overlays'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-2',
       },
       {
-        title: 'Soft aim',
-        subtitle: 'Optional combat assist',
-        desc: 'Configurable FOV and smoothing—leave modules off until you confirm status and accept combat risk.',
-        bullets: ['Aim key and FOV sliders', 'Smoothing and bone selection', 'Visible checks where listed'],
-        tags: ['soft aim', 'fov', 'combat'],
+        title: 'Aimbot',
+        subtitle: 'Combat assist',
+        desc: 'FOV circle, head/chest selection, silent aim and aim line—tune before ranked play.',
+        bullets: ['FOV and smoothing sliders', 'Silent aim and aim line toggles', 'Recoil and spread options'],
+        tags: ['bodycam aimbot', 'fov', 'silent aim'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-7 lg:row-start-2',
       },
       {
@@ -118,15 +119,15 @@ export const en: Translations = {
   },
   whyUs: {
     eyebrow: 'Why us',
-    title: 'A Borderlands 3–focused catalog—not a mixed-game marketplace',
+    title: 'A Bodycam–focused catalog—not a mixed-game marketplace',
     subtitle:
-      'Plans, Cloud DMA, and HWID utilities stay on Borderlands 3 PC with listed features only and support you can reach before checkout.',
-    usLabel: 'Borderlands 3 Cheats',
+      'Plans, Cloud DMA, and HWID utilities stay on Bodycam PC with listed features only and support you can reach before checkout.',
+    usLabel: 'Bodycam Cheats',
     otherLabel: 'Typical listing',
     rows: [
       {
-        title: 'Borderlands 3 only',
-        desc: 'Pricing, guides, and checkout paths stay on Borderlands 3 PC instead of bundling unrelated titles.',
+        title: 'Bodycam only',
+        desc: 'Pricing, guides, and checkout paths stay on Bodycam PC instead of bundling unrelated titles.',
       },
       {
         title: 'Listed features only',
@@ -134,7 +135,7 @@ export const en: Translations = {
       },
       {
         title: 'Monthly and lifetime plans',
-        desc: 'Pick $35 monthly (31-day) access or a $150 lifetime license. Cloud DMA and HWID are separate checkouts.',
+        desc: 'Pick $35 monthly (30-day) access or a $150 lifetime license. Cloud DMA and HWID are separate checkouts.',
       },
       {
         title: 'Status before launch',
@@ -153,7 +154,7 @@ export const en: Translations = {
       {
         value: '$35',
         title: 'Monthly plan',
-        desc: '31-day Borderlands 3 cheat access billed in USD.',
+        desc: '30-day Bodycam cheat access billed in USD.',
       },
       {
         value: '$150',
@@ -175,13 +176,13 @@ export const en: Translations = {
       'Confirm compatibility, finish checkout, then follow delivery notes for Windows PC, Cloud DMA where required, and your saved cheat profile.',
     ctaPrimary: 'Compare plans',
     ctaSecondary: 'Setup FAQ',
-    ctaPrimaryHref: '/pricing/',
+    ctaPrimaryHref: '/bodycam-cheats-price/',
     ctaSecondaryHref: '/faq/',
     steps: [
       {
         step: 'Step 1',
         title: 'Confirm status and requirements',
-        desc: 'Review the PC requirements guide and Cloud DMA notes before you buy or launch Borderlands 3.',
+        desc: 'Review the PC requirements guide and Cloud DMA notes before you buy or launch Bodycam.',
       },
       {
         step: 'Step 2',
@@ -197,13 +198,13 @@ export const en: Translations = {
   },
   compatibility: {
     eyebrow: 'Platform support',
-    title: 'Built for Borderlands 3 on Windows PC.',
+    title: 'Built for Bodycam on Windows PC.',
     subtitle: 'Confirm Steam or official client support and Cloud DMA prerequisites before launch.',
     items: ['Windows 10 & 11', 'Steam client', 'Official client', 'Cloud DMA option', 'HWID utility', 'Secure checkout', 'Setup guides', 'Email support'],
   },
   cheats: {
     eyebrow: 'Elite cheat',
-    title: 'Dota 2 Elite cheats',
+    title: 'Bodycam Elite cheats',
     subtitle: 'Full ranked suite—map hack, scripts, bots, Skin Changer, and priority patch delivery.',
     viewAll: 'View Elite details',
     explore: 'Explore',
@@ -212,8 +213,8 @@ export const en: Translations = {
         badge: 'Limited slots',
         tier: 'Private',
         name: 'Elite',
-        title: 'Dota 2 Elite',
-        desc: 'Private dota 2 cheats build with Auto Farm Bot, Auto Kill Steal, Auto Dagon, Skin Changer and direct dev support.',
+        title: 'Bodycam Elite',
+        desc: 'Private example game cheats build with Auto Farm Bot, Auto Kill Steal, Auto Dagon, Skin Changer and direct dev support.',
         features: ['Auto Farm Bot', 'Auto Kill Steal', 'Auto Dagon', 'Full map hack suite', 'Skin Changer', 'Priority patch queue'],
         more: 42,
         href: `${productBase}elite/`,
@@ -223,7 +224,7 @@ export const en: Translations = {
   },
   products: {
     eyebrow: 'Shop',
-    title: 'Borderlands 3 products',
+    title: 'Bodycam products',
     subtitle: 'Main cheat plans, HWID Spoofer, and Cloud DMA license—three focused utilities for PC.',
     viewAll: 'View all products',
     get: 'Get',
@@ -234,7 +235,7 @@ export const en: Translations = {
         category: 'System utility',
         title: 'HWID Spoofer',
         subtitle: 'Clean slate for your PC',
-        desc: 'Hardware ID spoofing for disk serials, MAC addresses and GPU IDs—follow the portal setup guide before launching Dota 2.',
+        desc: 'Hardware ID spoofing for disk serials, MAC addresses and GPU IDs—follow the portal setup guide before launching Bodycam.',
         features: ['Spoofer & cleanup tools', 'Serial profile rotation', 'Compatibility scan', 'Post-spoof verification'],
         more: 9,
         href: `${productBase}hwid-spoofer/`,
@@ -264,7 +265,7 @@ export const en: Translations = {
   blog: {
     eyebrow: 'Blog',
     title: 'Guides and updates',
-    subtitle: 'Cheat codes, script setup, map hack config and patch-day checks for Dota 2.',
+    subtitle: 'Cheat codes, script setup, map hack config and patch-day checks for Bodycam.',
     latestTitle: 'Latest articles',
     latestSubtitle: 'Filter by topic or sort to find setup guides, feature deep-dives, and patch-day notes.',
     filterAll: 'All articles',
@@ -279,16 +280,16 @@ export const en: Translations = {
     items: [
       {
         tag: 'Guides',
-        title: 'Dota 2 cheat codes guide: console commands for practice lobbies',
+        title: 'Bodycam cheat codes guide: console commands for practice lobbies',
         slug: 'dota-2-cheat-codes-guide',
         image: '/images/blog/dota-2-cheat-codes-guide.png',
-        desc: 'Full list of Dota 2 cheat codes for custom lobbies—gold, levels, vision, hero spawn and item commands.',
+        desc: 'Full list of Bodycam cheat codes for custom lobbies—gold, levels, vision, hero spawn and item commands.',
         date: 'Aug 20, 2026',
         readTime: '10 min read',
       },
       {
         tag: 'Guides',
-        title: 'All Dota 2 console cheats and tips',
+        title: 'All Bodycam console cheats and tips',
         slug: 'dota-2-console-cheats-tips',
         image: '/images/blog/dota-2-console-cheats-tips.png',
         desc: 'Private lobby cheat list with refresh, wtf mode, creep spawn and bot commands explained.',
@@ -297,7 +298,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'How to use cheat codes in Dota 2',
+        title: 'How to use cheat codes in Bodycam',
         slug: 'how-to-use-dota-2-cheat-codes',
         image: '/images/blog/how-to-use-dota-2-cheat-codes.png',
         desc: 'Enable cheats in lobbies, open the console and understand the difference between practice codes and private dota cheats.',
@@ -306,16 +307,16 @@ export const en: Translations = {
       },
       {
         tag: 'Features',
-        title: 'Dota 2 cheats features: scripts, bots, map hack and more',
+        title: 'Bodycam cheats features: scripts, bots, map hack and more',
         slug: 'dota-2-cheats-features-guide',
         image: '/images/blog/dota-2-cheats-features-guide.png',
-        desc: 'Complete guide to our dota 2 cheats—Auto Combo, Auto Farm Bot, Skin Changer, Zoom Hack, Map Hack and Auto Dagon.',
+        desc: 'Complete guide to our example game cheats—Auto Combo, Auto Farm Bot, Skin Changer, Zoom Hack, Map Hack and Auto Dagon.',
         date: 'Aug 18, 2026',
         readTime: '12 min read',
       },
       {
         tag: 'Guides',
-        title: 'Dota 2 console commands and cheats: chat vs console',
+        title: 'Bodycam console commands and cheats: chat vs console',
         slug: 'dota-2-console-commands-cheats',
         image: '/images/blog/dota-2-console-commands-cheats.png',
         desc: 'Side-by-side chat cheats and console commands for gold, levels, vision and game start in private lobbies.',
@@ -324,7 +325,7 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Dota 2 Lite vs Pro: which tier fits you',
+        title: 'Bodycam Lite vs Pro: which tier fits you',
         slug: 'dota-2-lite-vs-pro',
         image: '/images/blog/dota-2-lite-vs-pro.png',
         desc: 'Map awareness vs script automation—compare Lite and Pro dota cheats for ranked and Turbo.',
@@ -342,16 +343,16 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Dota 2 scripts for ranked MMR',
+        title: 'Bodycam scripts for ranked MMR',
         slug: 'dota-2-scripts-ranked-mmr',
         image: '/images/blog/dota-2-scripts-ranked-mmr.png',
-        desc: 'Auto Combo, Prediction and Activator configs for climbing ranked with Pro tier dota 2 cheats.',
+        desc: 'Auto Combo, Prediction and Activator configs for climbing ranked with Pro tier example game cheats.',
         date: 'Aug 15, 2026',
         readTime: '6 min read',
       },
       {
         tag: 'Setup',
-        title: 'Map hack setup for Dota 2 ranked',
+        title: 'Map hack setup for Bodycam ranked',
         slug: 'dota-2-map-hack-setup',
         image: '/images/blog/dota-2-map-hack-setup.png',
         desc: 'Enemy position tracking, ward ESP, smoke alerts and vision detector tuning for Lite and Elite tiers.',
@@ -360,7 +361,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Zoom hack guide for Dota 2',
+        title: 'Zoom hack guide for Bodycam',
         slug: 'dota-2-zoom-hack-guide',
         image: '/images/blog/dota-2-zoom-hack-guide.png',
         desc: 'Extended camera view, dynamic zoom and safe angle lock for supports and midlaners.',
@@ -369,7 +370,7 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Skin changer and Unlock All for Dota 2',
+        title: 'Skin changer and Unlock All for Bodycam',
         slug: 'dota-2-skin-changer-guide',
         image: '/images/blog/dota-2-skin-changer-guide.png',
         desc: 'Preview arcanas, immortals and exclusive sets locally with our Unlock All Skin Changer module.',
@@ -378,10 +379,10 @@ export const en: Translations = {
       },
       {
         tag: 'Updates',
-        title: 'VAC patch day checklist for Dota 2 cheats',
+        title: 'VAC patch day checklist for Bodycam cheats',
         slug: 'vac-patch-day-checklist',
         image: '/images/blog/vac-patch-day-checklist.png',
-        desc: 'Status banner, loader reload and conservative profiles after every Dota 2 or VAC update.',
+        desc: 'Status banner, loader reload and conservative profiles after every Bodycam or VAC update.',
         date: 'Aug 13, 2026',
         readTime: '5 min read',
       },
@@ -390,13 +391,13 @@ export const en: Translations = {
         title: 'HWID spoofer vs new account after a VAC ban',
         slug: 'dota-2-hwid-spoofer-after-ban',
         image: '/images/blog/dota-2-hwid-spoofer-after-ban.png',
-        desc: 'When to spoof hardware, when to start fresh, and how dotacheats.com/products/dota-2-cheats fits each path.',
+        desc: 'When to spoof hardware, when to start fresh, and how bodycam-cheats.com/products/dota-2-cheats fits each path.',
         date: 'Aug 13, 2026',
         readTime: '7 min read',
       },
       {
         tag: 'Guides',
-        title: 'How to buy Dota 2 cheats in 2026',
+        title: 'How to buy Bodycam cheats in 2026',
         slug: 'how-to-buy-dota-2-cheats-2026',
         image: '/images/blog/how-to-buy-dota-2-cheats-2026.png',
         desc: 'Step-by-step purchase walkthrough for Lite, Pro and Elite via our secure checkout.',
@@ -414,7 +415,7 @@ export const en: Translations = {
       },
       {
         tag: 'Troubleshooting',
-        title: 'Valve Anti-Cheat was unable to verify Dota 2',
+        title: 'Valve Anti-Cheat was unable to verify Bodycam',
         slug: 'valve-anti-cheat-unable-to-verify',
         image: '/images/blog/valve-anti-cheat-unable-to-verify.png',
         desc: 'Fix verification errors, file integrity checks and when to use UGC appeal workflows after VAC issues.',
@@ -423,16 +424,16 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Dota 2 external cheat guide',
+        title: 'Bodycam external cheat guide',
         slug: 'dota-2-external-cheat-guide',
         image: '/images/blog/dota-2-external-cheat-guide.png',
-        desc: 'Why external dota 2 cheats matter, how the external loader works on PC and what makes private software safer than free tools.',
+        desc: 'Why external example game cheats matter, how the external loader works on PC and what makes private software safer than free tools.',
         date: 'Aug 11, 2026',
         readTime: '7 min read',
       },
       {
         tag: 'Setup',
-        title: 'Stream-proof overlay setup for Dota 2',
+        title: 'Stream-proof overlay setup for Bodycam',
         slug: 'dota-2-stream-proof-setup',
         image: '/images/blog/dota-2-stream-proof-setup.png',
         desc: 'Hide map hack and script overlays from OBS, Game Bar and capture cards—test workflow for content creators.',
@@ -461,9 +462,9 @@ export const en: Translations = {
     titleHighlight: 'saved config.',
     titleAfter: '',
     subtitle:
-      'A straight path from reviewing Borderlands 3 compatibility to a profile you can reuse every session.',
+      'A straight path from reviewing Bodycam compatibility to a profile you can reuse every session.',
     ctaLabel: 'Compare plans',
-    ctaHref: '/pricing/',
+    ctaHref: '/bodycam-cheats-price/',
     ctaSecondary: 'Read setup FAQ',
     ctaSecondaryHref: '/faq/',
     items: [
@@ -471,7 +472,7 @@ export const en: Translations = {
         num: '01',
         phase: 'Before purchase',
         title: 'Check requirements',
-        desc: 'Read the PC requirements and Cloud DMA guides after any Borderlands 3 or Windows update.',
+        desc: 'Read the PC requirements and Cloud DMA guides after any Bodycam or Windows update.',
       },
       {
         num: '02',
@@ -495,7 +496,7 @@ export const en: Translations = {
   },
   fieldNotes: {
     eyebrow: 'Field notes',
-    title: 'Built for how Dota 2 plays.',
+    title: 'Built for how Bodycam plays.',
     items: [
       { num: '01', title: 'Patch-day ready', desc: 'Patch notes hit Discord and the portal before the official blog—check before you queue ranked.' },
       { num: '02', title: 'Conservative defaults', desc: 'Start with safe script delays and map hack ranges, then tune up—not the other way around.' },
@@ -518,8 +519,8 @@ export const en: Translations = {
         icon: 'headphones',
         title: 'Email support',
         desc: "We're here for checkout, Cloud DMA setup, and license delivery questions.",
-        linkLabel: 'support@borderlands3cheats.com',
-        href: 'mailto:support@borderlands3cheats.com',
+        linkLabel: 'support@bodycam-cheats.com',
+        href: 'mailto:support@bodycam-cheats.com',
       },
       {
         icon: 'navFaq',
@@ -539,7 +540,7 @@ export const en: Translations = {
     ticketTitle: 'Support: Include in your ticket',
     ticketItems: [
       { title: 'Order email', desc: 'The address used at checkout via our secure partner.' },
-      { title: 'Platform', desc: 'Windows 10 or 11, Borderlands 3 client (Steam or Official), and Cloud DMA status.' },
+      { title: 'Platform', desc: 'Windows 10 or 11, Bodycam client (Steam or Official), and Cloud DMA status.' },
       { title: 'Error detail', desc: 'Screenshot or exact message from the loader, Hyper-V, or game client.' },
     ],
   },
@@ -550,13 +551,13 @@ export const en: Translations = {
     items: [
       {
         num: '01',
-        q: 'Where do I check if Dota 2 cheats are online?',
-        a: 'The live status banner is on dotacheats.com and in the Discord #status channel. Always check after a Dota 2 or VAC update.',
+        q: 'Where do I check if Bodycam cheats are online?',
+        a: 'The live status banner is on bodycam-cheats.com and in the Discord #status channel. Always check after a Bodycam or VAC update.',
       },
       {
         num: '02',
         q: 'What happens after I buy?',
-        a: 'Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Dota 2.',
+        a: 'Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Bodycam.',
       },
       {
         num: '03',
@@ -566,7 +567,7 @@ export const en: Translations = {
       {
         num: '04',
         q: 'Which platforms are supported?',
-        a: 'Dota 2 via Steam on Windows 10/11 64-bit only. macOS and Linux are not supported.',
+        a: 'Bodycam via Steam on Windows 10/11 64-bit only. macOS and Linux are not supported.',
       },
       {
         num: '05',
@@ -576,17 +577,17 @@ export const en: Translations = {
       {
         num: '06',
         q: 'Where are products and utilities listed?',
-        a: 'Cheat tiers, HWID Spoofer, UGC and Skin Changer live at dotacheats.com/products/dota-2-cheats with feature lists and checkout via our partner.',
+        a: 'Cheat tiers, HWID Spoofer, UGC and Skin Changer live at bodycam-cheats.com/products/dota-2-cheats with feature lists and checkout via our partner.',
       },
     ],
   },
   footer: {
     explore: 'Explore',
     tagline:
-      'Borderlands 3 PC cheat features, Cloud DMA infrastructure, and setup guides at borderlands3cheats.com.',
+      'Bodycam PC cheat features, Cloud DMA infrastructure, and setup guides at bodycam-cheats.com.',
     exploreLinks: [
       { href: '/#features', label: 'Feature overview', ariaLabel: 'Features' },
-      { href: '/pricing/', label: 'Cheat plans', ariaLabel: 'Pricing' },
+      { href: '/bodycam-cheats-price/', label: 'Cheat plans', ariaLabel: 'Pricing' },
       { href: '/#products', label: 'All products', ariaLabel: 'Products' },
       { href: '/guides/cloud-dma-setup/', label: 'Setup walkthrough', ariaLabel: 'Setup guide' },
       { href: '/faq/', label: 'Pre-purchase FAQ', ariaLabel: 'FAQ' },
@@ -599,25 +600,25 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About Borderlands 3 Cheats — guides, pricing & cloud',
+      title: 'About Bodycam Cheats — guides, pricing & cloud',
       description:
-        'Borderlands 3 Cheats publishes PC feature guides, Cloud DMA setup, pricing, and support resources at borderlands3cheats.com.',
+        'Bodycam Cheats publishes PC feature guides, Cloud DMA setup, pricing, and support resources at bodycam-cheats.com.',
       sections: [
         {
-          heading: 'Borderlands 3 Cheats: Who we are',
+          heading: 'Bodycam Cheats: Who we are',
           paragraphs: [
-            'Borderlands 3 Cheats is an independent resource for PC players exploring soft aim, enemy and loot ESP, radar, and related configuration options. We publish pricing, system requirements, and Cloud DMA setup guides so you can evaluate the product before checkout.',
+            'Bodycam Cheats is an independent resource for PC players exploring soft aim, enemy and loot ESP, radar, and related configuration options. We publish pricing, system requirements, and Cloud DMA setup guides so you can evaluate the product before checkout.',
             'We are not affiliated with, endorsed by, or sponsored by the game publisher or its licensors. Product names are used for identification only.',
-            'Borderlands 3 cheats content on this site explains supported features, plan lengths, and the separate Cloud DMA license—without claiming official publisher approval.',
+            'Bodycam cheats content on this site explains supported features, plan lengths, and the separate Cloud DMA license—without claiming official publisher approval.',
             'Listed offers on this site include a $35 monthly cheat plan, a $150 lifetime cheat plan, and a $50 lifetime Cloud DMA license, each with separate checkout flows.',
           ],
         },
         {
           heading: 'What we publish',
           paragraphs: [
-            'Our site covers Borderlands 3 cheat plans (monthly and lifetime), the Cloud DMA infrastructure license, Hyper-V setup steps, and pre-purchase FAQ. Content is updated when requirements or checkout flows change.',
+            'Our site covers Bodycam cheat plans (monthly and lifetime), the Cloud DMA infrastructure license, Hyper-V setup steps, and pre-purchase FAQ. Content is updated when requirements or checkout flows change.',
             'Review the system requirements and Cloud DMA pages before purchase so your Windows PC matches the listed configuration.',
-            'Borderlands 3 cheats guides focus on Windows 10 and 11, supported clients, and realistic setup order: requirements, Cloud DMA, then cheat checkout.',
+            'Bodycam cheats guides focus on Windows 10 and 11, supported clients, and realistic setup order: requirements, Cloud DMA, then cheat checkout.',
           ],
         },
         {
@@ -629,16 +630,16 @@ export const en: Translations = {
       ],
     },
     privacy: {
-      title: 'Privacy Policy — analytics, cookies & Borderlands 3 Cheats',
+      title: 'Privacy Policy — analytics, cookies & Bodycam Cheats',
       description:
-        'Privacy at Borderlands 3 Cheats: how we handle analytics, cookies, and contact data when you use borderlands3cheats.com.',
+        'Privacy at Bodycam Cheats: how we handle analytics, cookies, and contact data when you use bodycam-cheats.com.',
       sections: [
         {
           heading: 'Privacy: information we collect',
           paragraphs: [
-            'We may collect standard web analytics such as page views, device type, browser, and approximate region through Google Analytics when enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on borderlands3cheats.com.',
-            'Privacy practices here apply only to pages hosted on borderlands3cheats.com, not to third-party checkout or payment processors.',
-            'If you email support@borderlands3cheats.com, we process your message to answer checkout, Cloud DMA, or license questions—not for marketing lists.',
+            'We may collect standard web analytics such as page views, device type, browser, and approximate region through Google Analytics when enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on bodycam-cheats.com.',
+            'Privacy practices here apply only to pages hosted on bodycam-cheats.com, not to third-party checkout or payment processors.',
+            'If you email support@bodycam-cheats.com, we process your message to answer checkout, Cloud DMA, or license questions—not for marketing lists.',
           ],
         },
         {
@@ -667,26 +668,26 @@ export const en: Translations = {
     terms: {
       title: 'Terms & Conditions — purchase, license, refund policy details',
       description:
-        'Purchase, license, refund, and use terms for Borderlands 3 cheat and Cloud DMA products at borderlands3cheats.com.',
+        'Purchase, license, refund, and use terms for Bodycam cheat and Cloud DMA products at bodycam-cheats.com.',
       sections: [
         {
           heading: 'Terms: agreement and purchases',
           paragraphs: [
-            'Last updated: November 2026. By using borderlands3cheats.com or completing checkout for any product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
+            'Last updated: November 2026. By using bodycam-cheats.com or completing checkout for any product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
           ],
         },
         {
           heading: 'What you purchase',
           paragraphs: [
-            'We sell access to Borderlands 3 cheat software (monthly or lifetime plans) and a separate Cloud DMA infrastructure license, delivered through external checkout and license delivery flows for supported Windows PCs.',
+            'We sell access to Bodycam cheat software (monthly or lifetime plans) and a separate Cloud DMA infrastructure license, delivered through external checkout and license delivery flows for supported Windows PCs.',
             'Feature lists on pricing and product pages describe what is included at the time of purchase. Modules or requirements can change when the game or supported configuration updates.',
           ],
         },
         {
           heading: 'Checkout and delivery',
           paragraphs: [
-            'Payment and license delivery run on external checkout pages. borderlands3cheats.com does not process or store payment card numbers.',
-            'After purchase, follow instructions from your order email and the Cloud DMA setup guide before launching Borderlands 3.',
+            'Payment and license delivery run on external checkout pages. bodycam-cheats.com does not process or store payment card numbers.',
+            'After purchase, follow instructions from your order email and the Cloud DMA setup guide before launching Bodycam.',
           ],
         },
         {
@@ -706,7 +707,7 @@ export const en: Translations = {
         {
           heading: 'Availability and risk',
           paragraphs: [
-            'Third-party tools for Borderlands 3 can conflict with game updates and anti-cheat or publisher enforcement. You use this software at your own risk, including possible account action.',
+            'Third-party tools for Bodycam can conflict with game updates and anti-cheat or publisher enforcement. You use this software at your own risk, including possible account action.',
             'Review requirements and setup guides before every session, especially after game patches.',
           ],
         },
@@ -725,18 +726,18 @@ export const en: Translations = {
       ],
     },
     support: {
-      title: 'Borderlands 3 Cheats Support',
+      title: 'Bodycam Cheats Support',
       description:
-        'Get support for checkout, Cloud DMA setup, and license delivery at borderlands3cheats.com.',
+        'Get support for checkout, Cloud DMA setup, and license delivery at bodycam-cheats.com.',
     },
   },
   ui: {
     skipLink: 'Skip to main content',
     browseCheats: 'View plans',
     browseCheatsMobile: 'View plans',
-    homeAria: 'Borderlands 3 Cheats home',
+    homeAria: 'Bodycam Cheats home',
     checkoutAria: 'Start checkout',
-    discordAria: 'Join Borderlands 3 Cheats on Discord',
+    discordAria: 'Join Bodycam Cheats on Discord',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
   },

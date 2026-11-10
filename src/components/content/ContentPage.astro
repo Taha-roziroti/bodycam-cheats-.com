@@ -2,11 +2,11 @@
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
-import CheckoutProductPicker, { type CheckoutProductId } from '../borderlands3/CheckoutProductPicker.astro';
-import AdditionalCostsCallout from '../borderlands3/AdditionalCostsCallout.astro';
+import CheckoutProductPicker, { type CheckoutProductId } from '../product/CheckoutProductPicker.astro';
+import AdditionalCostsCallout from '../product/AdditionalCostsCallout.astro';
 import ContentFigures from './ContentFigures.astro';
 import ContentHeroImage from './ContentHeroImage.astro';
-import { defaultWebpSrc, HERO_IMAGE_WIDTHS } from '../../utils/responsiveImage';
+import { defaultWebpSrc, HERO_IMAGE_WIDTHS, isRasterImageSrc } from '../../utils/responsiveImage';
 import {
   breadcrumbsForRoute,
   defaultEndCtaHref,
@@ -41,21 +41,22 @@ const sidebarDefaultProduct: CheckoutProductId =
     ? 'cloud-dma'
     : data.checkout === 'hwid-spoofer'
       ? 'hwid-spoofer'
-      : 'borderlands-3';
+      : 'main-product';
 const useProductShell = data.layout === 'product' || data.layout === 'pricing';
 const ogType = data.layout === 'article' ? 'article' : 'website';
 const lcpPreload =
-  data.route === '/' && data.heroImage
+  data.route === '/' && data.heroImage && isRasterImageSrc(data.heroImage.src)
     ? defaultWebpSrc(data.heroImage.src, HERO_IMAGE_WIDTHS)
     : null;
 
 const logoAltByRoute: Record<string, string> = {
-  '/': 'Borderlands 3 – logo',
-  '/pricing/': 'Cheats pricing – logo',
-  '/cloud-dma/': 'Cloud DMA – logo',
-  '/hwid-spoofer/': 'HWID Spoofer – logo',
-  '/guides/cloud-dma-setup/': 'DMA setup – logo',
-  '/guides/borderlands-3-cheat-system-requirements/': 'System requirements – logo',
+  '/': 'Bodycam Cheats – logo',
+  '/bodycam-cheats-price/': 'Bodycam pricing – logo',
+  '/bodycam-aimbot/': 'Bodycam aimbot – logo',
+  '/bodycam-esp/': 'Bodycam ESP – logo',
+  '/bodycam-requirements/': 'Bodycam requirements – logo',
+  '/cloud-dma-for-bodycam/': 'Cloud DMA for Bodycam – logo',
+  '/guides/cloud-dma-setup/': 'Cloud DMA setup – logo',
 };
 const logoAlt = logoAltByRoute[data.route];
 const pageFaqs = getContentPageFaqs(data.route);
@@ -148,10 +149,15 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
   {
     data.endCtaLabel ? (
       <div class="border-t border-border bg-muted/20 py-10 md:py-12">
-        <div class="mx-auto flex max-w-6xl flex-col items-start gap-4 px-5">
-          <p class="text-lg font-semibold text-foreground">{data.endCtaLabel}</p>
-          <Button as="a" href={ctaHref} variant="primary" size="lg" class="rounded-xl">
-            Buy now
+        <div class="mx-auto flex max-w-6xl flex-col items-stretch gap-4 px-5 sm:items-start">
+          <Button
+            as="a"
+            href={ctaHref}
+            variant="primary"
+            size="lg"
+            class="w-full max-w-full rounded-xl text-center whitespace-normal sm:w-auto sm:whitespace-nowrap"
+          >
+            {data.endCtaLabel}
           </Button>
         </div>
       </div>

@@ -58,36 +58,12 @@ export interface ProductPage {
 
 /** Guides paired with each product detail page */
 export const productRelatedBlogSlugs: Record<string, string[]> = {
-  lite: ['dota-2-map-hack-setup', 'dota-2-lite-vs-pro', 'dota-2-zoom-hack-guide', 'vac-patch-day-checklist'],
-  pro: [
-    'dota-2-scripts-ranked-mmr',
-    'dota-2-auto-combo-hero-scripts',
-    'dota-2-lite-vs-pro',
-    'dota-2-stream-proof-setup',
-  ],
-  elite: [
-    'dota-2-elite-tier-guide',
-    'dota-2-cheats-features-guide',
-    'dota-2-map-hack-setup',
-    'vac-patch-day-checklist',
-    'how-to-buy-dota-2-cheats-2026',
-  ],
-  'hwid-spoofer': [
-    'dota-2-hwid-spoofer-after-ban',
-    'valve-anti-cheat-unable-to-verify',
-    'vac-patch-day-checklist',
-    'dota-2-external-cheat-guide',
-  ],
-  ugc: [
-    'valve-anti-cheat-unable-to-verify',
-    'dota-2-hwid-spoofer-after-ban',
-    'how-to-buy-dota-2-cheats-2026',
-  ],
-  'unlock-all': [
-    'dota-2-skin-changer-guide',
-    'dota-2-cheats-features-guide',
-    'dota-2-stream-proof-setup',
-  ],
+  lite: ['placeholder-article'],
+  pro: ['placeholder-article'],
+  elite: ['placeholder-article'],
+  'hwid-spoofer': ['placeholder-article'],
+  ugc: ['placeholder-article'],
+  'unlock-all': ['placeholder-article'],
 };
 
 const productBase = '/products/dota-2-cheats/';
@@ -101,7 +77,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '02',
     title: 'Choose your access tier',
-    desc: 'Select Elite dota cheats or the utility that matches your goal. Review the feature list before checkout via our secure checkout.',
+    desc: 'Select Example product tiers or the utility that matches your goal. Review the feature list before checkout via our secure checkout.',
   },
   {
     num: '03',
@@ -600,6 +576,6 @@ export const productHub = {
   path: productBase,
   title: t.products.title,
   subtitle: t.products.subtitle,
-  description: 'Elite dota cheats, HWID spoofer, UGC recovery, and cosmetic utilities for Dota 2 on PC.',
+  description: 'Example product tiers, HWID spoofer, UGC recovery, and cosmetic utilities for Dota 2 on PC.',
   buyUrl: checkoutPath('dota2'),
 };

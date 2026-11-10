@@ -1,39 +1,45 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SITE_HOST = 'borderlands3cheats.com';
+const SITE_HOST = 'bodycam-cheats.com';
 const SITE_URL = `https://${SITE_HOST}`;
 
 /** Keep in sync with src/data/site.ts SITEMAP_IMAGES */
 const SITEMAP_IMAGES = {
   '/': [
     {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-campfire-hero-640.webp`,
-      title: 'Borderlands 3 PC gameplay with ESP and soft aim overlays',
+      loc: `${SITE_URL}/images/bodycam/bodycam-hero.webp`,
+      title: 'Bodycam cheats hero — tactical bodycam operators',
     },
     {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-enemy-esp-gameplay-640.webp`,
-      title: 'Borderlands 3 enemy ESP gameplay overlay',
+      loc: `${SITE_URL}/images/bodycam/bodycam-esp-indoor-cyan.webp`,
+      title: 'Bodycam ESP with cyan player boxes indoors',
     },
   ],
-  '/pricing/': [
-    {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-campfire-hero-640.webp`,
-      title: 'Borderlands 3 cheat plans and pricing',
-    },
+  '/bodycam-cheats-price/': [
+    { loc: `${SITE_URL}/og/pricing.jpg`, title: 'Bodycam cheats pricing plans' },
+    { loc: `${SITE_URL}/images/bodycam/bodycam-esp-warehouse.webp`, title: 'Bodycam ESP warehouse gameplay' },
   ],
-  '/cloud-dma/': [{ loc: `${SITE_URL}/og/cloud-dma.jpg`, title: 'Cloud DMA single-PC Hyper-V setup' }],
-  '/hwid-spoofer/': [{ loc: `${SITE_URL}/og/default.jpg`, title: 'HWID Spoofer lifetime utility' }],
+  '/bodycam-aimbot/': [
+    { loc: `${SITE_URL}/images/bodycam/bodycam-menu-aimbot.webp`, title: 'Bodycam aimbot menu settings' },
+    { loc: `${SITE_URL}/images/bodycam/bodycam-aimbot-fov-snapline.webp`, title: 'Bodycam aimbot FOV and snapline' },
+  ],
+  '/bodycam-esp/': [
+    { loc: `${SITE_URL}/images/bodycam/bodycam-menu-visuals.webp`, title: 'Bodycam Visuals ESP menu' },
+    { loc: `${SITE_URL}/images/bodycam/bodycam-esp-forest-cyan.webp`, title: 'Bodycam skeleton ESP outdoors' },
+  ],
+  '/bodycam-requirements/': [
+    { loc: `${SITE_URL}/images/bodycam/bodycam-pov-hallway.webp`, title: 'Bodycam in-game bodycam POV' },
+    { loc: `${SITE_URL}/images/bodycam/bodycam-esp-scope.webp`, title: 'Bodycam scoped ESP overlay' },
+  ],
+  '/cloud-dma-for-bodycam/': [
+    { loc: `${SITE_URL}/og/cloud-dma.jpg`, title: 'Cloud DMA for Bodycam' },
+    { loc: `${SITE_URL}/images/bodycam/bodycam-hero.webp`, title: 'Bodycam product overview' },
+  ],
   '/guides/cloud-dma-setup/': [
-    { loc: `${SITE_URL}/og/cloud-dma-setup.jpg`, title: 'Cloud DMA setup guide' },
+    { loc: `${SITE_URL}/og/cloud-dma-setup.jpg`, title: 'Cloud DMA Hyper-V setup guide' },
+    { loc: `${SITE_URL}/images/bodycam/bodycam-pov-hallway.webp`, title: 'Bodycam tactical POV reference' },
   ],
-  '/guides/borderlands-3-cheat-system-requirements/': [
-    {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-soft-aim-gameplay-640.webp`,
-      title: 'Borderlands 3 PC system requirements',
-    },
-  ],
-  '/faq/': [{ loc: `${SITE_URL}/og/faq.jpg`, title: 'Borderlands 3 cheats FAQ' }],
 };
 
 const root = process.cwd();
@@ -133,13 +139,11 @@ fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), formatted, 'utf8');
 const urlCount = (formatted.match(/<url>/g) ?? []).length;
 console.log(`generate-sitemaps: ${urlCount} URLs with image namespace → dist/sitemap.xml`);
 
-// Copy public sitemap.css into dist if present
 const cssSrc = path.join(root, 'public', 'sitemap.css');
 if (fs.existsSync(cssSrc)) {
   fs.copyFileSync(cssSrc, path.join(dist, 'sitemap.css'));
 }
 
-// Copy og + _redirects
 for (const rel of ['og', '_redirects', 'robots.txt']) {
   const from = path.join(root, 'public', rel);
   const to = path.join(dist, rel);

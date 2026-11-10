@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Hero image placeholder">
+  <rect width="100%" height="100%" fill="#1e293b"/>
+  <rect x="80" y="80" width="1120" height="560" rx="16" fill="#334155" stroke="#64748b" stroke-width="2" stroke-dasharray="12 8"/>
+  <text x="640" y="340" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="28" text-anchor="middle">Hero image placeholder</text>
+  <text x="640" y="380" fill="#64748b" font-family="system-ui,sans-serif" font-size="18" text-anchor="middle">Replace with your artwork</text>
+</svg>

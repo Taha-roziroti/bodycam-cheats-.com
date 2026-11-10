@@ -1,29 +1,32 @@
-/** Canonical SEO / site identity — single source of truth (SEO-SUPER-BOOSTER). */
+/** Canonical SEO / site identity — bodycam-cheats.com */
 
-export const SITE_HOST = 'borderlands3cheats.com';
+import { BODYCAM_IMAGES } from './bodycamImages';
+import { BODYCAM_HERO } from './placeholders';
+
+export const SITE_HOST = 'bodycam-cheats.com';
 export const SITE_URL = `https://${SITE_HOST}`;
 
-export const SITE_NAME = 'Borderlands 3 Cheats';
+export const SITE_NAME = 'Bodycam Cheats';
 export const SITE_BRAND = SITE_NAME;
 export const SUPPORT_EMAIL = `support@${SITE_HOST}`;
 
 export const PRODUCT_BASE = '/';
-export const TITLE_PREFIX = 'Borderlands 3 Cheats for PC';
+export const TITLE_PREFIX = 'Bodycam Cheats for PC';
 
 /** Shared Product @id for home + product JSON-LD graphs. */
 export const PRODUCT_ID = `${SITE_URL}/#product`;
 
 export const SITE_PURPOSE =
-  'Borderlands 3 PC cheat software with ESP, soft aim, loot highlights, radar, and Cloud DMA infrastructure for supported Windows builds.';
+  'Independent Bodycam PC cheat resource covering ESP, aimbot, pricing, Windows requirements, and Cloud DMA compatibility—not affiliated with Reissad Studio.';
 
 /** Exactly six knowsAbout terms (structured data). */
 export const SITE_ABOUT = [
-  'Borderlands 3 PC cheats',
-  'Enemy ESP',
-  'Loot ESP',
-  'Soft aim',
+  'Bodycam PC cheats',
+  'Bodycam ESP',
+  'Bodycam aimbot',
   'Cloud DMA',
   'Hyper-V virtualization',
+  'Windows 10 and 11 compatibility',
 ] as const;
 
 export const LISTED_PRICES = {
@@ -32,38 +35,35 @@ export const LISTED_PRICES = {
   cloudDmaLifetimeUsd: 50,
 } as const;
 
-/** Copy intent map — not rendered as keyword lists on pages. */
 export const SEO_ROUTE_INTENTS: Record<string, string> = {
-  '/': 'borderlands 3 cheats, ESP, soft aim, loot radar, PC availability',
-  '/pricing/': 'borderlands 3 cheats price, monthly and lifetime plans',
-  '/cloud-dma/': 'cloud dma for game cheats, single-PC Hyper-V license',
-  '/hwid-spoofer/': 'hwid spoofer, hardware ID reset utility, PC ban recovery',
-  '/guides/cloud-dma-setup/': 'cloud dma setup guide, Hyper-V and virtualization',
-  '/guides/borderlands-3-cheat-system-requirements/':
-    'borderlands 3 cheat system requirements, Windows and Steam client',
-  '/faq/': 'pricing, Windows requirements, Cloud DMA, delivery',
+  '/': 'Bodycam cheats, ESP, aimbot, PC plans',
+  '/bodycam-aimbot/': 'Bodycam aimbot, FOV, silent aim',
+  '/bodycam-esp/': 'Bodycam ESP, wallhack, player overlays',
+  '/bodycam-cheats-price/': 'Bodycam cheats price, monthly vs lifetime',
+  '/bodycam-requirements/': 'Bodycam cheat requirements, Windows 10/11',
+  '/cloud-dma-for-bodycam/': 'Cloud DMA for Bodycam, Hyper-V single-PC',
+  '/guides/cloud-dma-setup/': 'Cloud DMA setup, Hyper-V, GREENWARD, Static Server, AWS',
+  '/faq/': 'Bodycam pricing, requirements, Cloud DMA, delivery',
   '/support/': 'checkout and setup support',
 };
 
-/** Primary money pages verified in CI. */
+/** Primary commercial pages verified in CI. */
 export const INDEXABLE_MONEY_ROUTES = [
   '/',
-  '/pricing/',
-  '/cloud-dma/',
-  '/hwid-spoofer/',
-  '/guides/cloud-dma-setup/',
-  '/guides/borderlands-3-cheat-system-requirements/',
-  '/faq/',
+  '/bodycam-aimbot/',
+  '/bodycam-esp/',
+  '/bodycam-cheats-price/',
+  '/bodycam-requirements/',
+  '/cloud-dma-for-bodycam/',
 ] as const;
 
-/** Open Graph JPEG paths (1200×630) under /og/ */
 export const OG_IMAGES: Record<string, string> = {
   '/': '/og/home.jpg',
-  '/pricing/': '/og/pricing.jpg',
-  '/cloud-dma/': '/og/cloud-dma.jpg',
-  '/hwid-spoofer/': '/og/default.jpg',
-  '/guides/cloud-dma-setup/': '/og/cloud-dma-setup.jpg',
-  '/guides/borderlands-3-cheat-system-requirements/': '/og/requirements.jpg',
+  '/bodycam-aimbot/': '/og/home.jpg',
+  '/bodycam-esp/': '/og/home.jpg',
+  '/bodycam-cheats-price/': '/og/pricing.jpg',
+  '/bodycam-requirements/': '/og/requirements.jpg',
+  '/cloud-dma-for-bodycam/': '/og/cloud-dma.jpg',
   '/faq/': '/og/faq.jpg',
   default: '/og/default.jpg',
 };
@@ -73,70 +73,59 @@ export function ogImageForPath(pathname: string): string {
   return OG_IMAGES[path] ?? OG_IMAGES.default!;
 }
 
-/** Sitemap image entries (≥1 per indexable URL). */
 export const SITEMAP_IMAGES: Record<string, { loc: string; title: string }[]> = {
   '/': [
-    {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-campfire-hero-640.webp`,
-      title: 'Borderlands 3 PC gameplay with ESP and soft aim overlays',
-    },
-    {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-enemy-esp-gameplay-640.webp`,
-      title: 'Borderlands 3 enemy ESP gameplay overlay',
-    },
+    { loc: `${SITE_URL}${BODYCAM_HERO}`, title: BODYCAM_IMAGES.hero.alt },
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.espIndoorCyan.src}`, title: BODYCAM_IMAGES.espIndoorCyan.alt },
   ],
-  '/pricing/': [
-    {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-campfire-hero-640.webp`,
-      title: 'Borderlands 3 cheat plans and pricing',
-    },
+  '/bodycam-aimbot/': [
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.menuAimbot.src}`, title: BODYCAM_IMAGES.menuAimbot.alt },
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.aimbotFovSnapline.src}`, title: BODYCAM_IMAGES.aimbotFovSnapline.alt },
   ],
-  '/cloud-dma/': [
-    {
-      loc: `${SITE_URL}/og/cloud-dma.jpg`,
-      title: 'Cloud DMA single-PC Hyper-V setup',
-    },
+  '/bodycam-esp/': [
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.menuVisuals.src}`, title: BODYCAM_IMAGES.menuVisuals.alt },
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.espForestCyan.src}`, title: BODYCAM_IMAGES.espForestCyan.alt },
   ],
-  '/hwid-spoofer/': [
-    {
-      loc: `${SITE_URL}/og/default.jpg`,
-      title: 'HWID Spoofer lifetime utility',
-    },
+  '/bodycam-cheats-price/': [
+    { loc: `${SITE_URL}/og/pricing.jpg`, title: 'Bodycam cheat pricing plans' },
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.espWarehouse.src}`, title: BODYCAM_IMAGES.espWarehouse.alt },
+  ],
+  '/bodycam-requirements/': [
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.povHallway.src}`, title: BODYCAM_IMAGES.povHallway.alt },
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.espScope.src}`, title: BODYCAM_IMAGES.espScope.alt },
+  ],
+  '/cloud-dma-for-bodycam/': [
+    { loc: `${SITE_URL}/og/cloud-dma.jpg`, title: 'Cloud DMA for Bodycam' },
+    { loc: `${SITE_URL}${BODYCAM_HERO}`, title: BODYCAM_IMAGES.hero.alt },
   ],
   '/guides/cloud-dma-setup/': [
-    {
-      loc: `${SITE_URL}/og/cloud-dma-setup.jpg`,
-      title: 'Cloud DMA setup guide',
-    },
-  ],
-  '/guides/borderlands-3-cheat-system-requirements/': [
-    {
-      loc: `${SITE_URL}/images/borderlands3/borderlands-3-soft-aim-gameplay-640.webp`,
-      title: 'Borderlands 3 PC system requirements',
-    },
-  ],
-  '/faq/': [
-    {
-      loc: `${SITE_URL}/og/faq.jpg`,
-      title: 'Borderlands 3 cheats FAQ',
-    },
+    { loc: `${SITE_URL}/og/cloud-dma-setup.jpg`, title: 'Cloud DMA Hyper-V setup guide' },
+    { loc: `${SITE_URL}${BODYCAM_IMAGES.povHallway.src}`, title: BODYCAM_IMAGES.povHallway.alt },
   ],
 };
 
-/** 301 aliases for commercial / legacy keyword URLs (also in public/_redirects). */
+/** Documented in scripts/keyword-redirects.mjs — mirrored here for app imports */
 export const KEYWORD_REDIRECTS: [string, string][] = [
-  ['/buy-borderlands-3-cheats', '/'],
-  ['/buy-borderlands-3-cheats/', '/'],
-  ['/buy-borderlands-3-cheat', '/'],
-  ['/buy-borderlands-3-cheat/', '/'],
-  ['/borderlands-3-cheats', '/'],
-  ['/borderlands-3-cheats/', '/'],
-  ['/borderlands-3-cheats-price', '/pricing/'],
-  ['/borderlands-3-cheats-price/', '/pricing/'],
-  ['/borderlands-3-esp', '/'],
-  ['/borderlands-3-esp/', '/'],
-  ['/borderlands-3-aimbot', '/'],
-  ['/borderlands-3-aimbot/', '/'],
+  ['/pricing', '/bodycam-cheats-price/'],
+  ['/pricing/', '/bodycam-cheats-price/'],
+  ['/guides/system-requirements', '/bodycam-requirements/'],
+  ['/guides/system-requirements/', '/bodycam-requirements/'],
+  ['/guides/borderlands-3-cheat-system-requirements', '/bodycam-requirements/'],
+  ['/guides/borderlands-3-cheat-system-requirements/', '/bodycam-requirements/'],
+  ['/cloud-dma', '/cloud-dma-for-bodycam/'],
+  ['/cloud-dma/', '/cloud-dma-for-bodycam/'],
+  ['/bodycam-hacks', '/'],
+  ['/bodycam-hacks/', '/'],
+  ['/bodycam-cheats', '/'],
+  ['/bodycam-cheats/', '/'],
+  ['/cheats', '/'],
+  ['/cheats/', '/'],
+  ['/products/dota-2-cheats', '/'],
+  ['/products/dota-2-cheats/', '/'],
+  ['/go/main-product', '/go/bodycam/'],
+  ['/go/main-product/', '/go/bodycam/'],
+  ['/go/borderlands-3', '/go/bodycam/'],
+  ['/go/borderlands-3/', '/go/bodycam/'],
   ['/cloud-dma-setup', '/guides/cloud-dma-setup/'],
   ['/cloud-dma-setup/', '/guides/cloud-dma-setup/'],
   ['/sitemap-index.xml', '/sitemap.xml'],

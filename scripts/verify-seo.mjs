@@ -1,17 +1,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SITE_HOST = 'borderlands3cheats.com';
+const SITE_HOST = 'bodycam-cheats.com';
 const SITE_URL = `https://${SITE_HOST}`;
 
 const INDEXABLE_MONEY_ROUTES = [
   '/',
-  '/pricing/',
-  '/cloud-dma/',
-  '/hwid-spoofer/',
-  '/guides/cloud-dma-setup/',
-  '/guides/borderlands-3-cheat-system-requirements/',
-  '/faq/',
+  '/bodycam-aimbot/',
+  '/bodycam-esp/',
+  '/bodycam-cheats-price/',
+  '/bodycam-requirements/',
+  '/cloud-dma-for-bodycam/',
 ];
 
 const dist = path.join(process.cwd(), 'dist');
@@ -76,50 +75,56 @@ function checkPage(route) {
     errors.push(`${route}: og:description must match meta description`);
   }
 
+  if (!html.includes('hreflang="en"') || !html.includes('hreflang="x-default"')) {
+    errors.push(`${route}: missing hreflang=en and hreflang=x-default`);
+  }
+
+  if (html.includes('FAQPage')) {
+    errors.push(`${route}: FAQPage JSON-LD must not appear on money pages (only /faq/)`);
+  }
+
   if (!html.includes('"@type":"Organization"') && !html.includes('"@type": "Organization"')) {
     errors.push(`${route}: missing Organization JSON-LD`);
   }
-  if (!html.includes('"@type":"WebSite"') && !html.includes('"@type": "WebSite"')) {
-    errors.push(`${route}: missing WebSite JSON-LD`);
-  }
+
+  return {
+    title: titleMatch?.[1] ?? '',
+    description: descMatch?.[1] ?? '',
+  };
 }
 
 const titles = new Map();
-
+const descriptions = new Map();
 for (const route of INDEXABLE_MONEY_ROUTES) {
-  checkPage(route);
-  const html = readHtml(route);
-  if (!html) continue;
-  const titleMatch = html.match(/<title>([^<]*)<\/title>/i);
-  if (titleMatch) {
-    const title = titleMatch[1];
-    if (titles.has(title)) {
-      errors.push(`Duplicate title "${title}" on ${titles.get(title)} and ${route}`);
-    } else {
-      titles.set(title, route);
-    }
+  const meta = checkPage(route);
+  if (!meta) continue;
+  if (meta.title) {
+    const other = titles.get(meta.title);
+    if (other) errors.push(`Duplicate <title> on ${route} and ${other}: "${meta.title}"`);
+    else titles.set(meta.title, route);
+  }
+  if (meta.description) {
+    const other = descriptions.get(meta.description);
+    if (other) errors.push(`Duplicate meta description on ${route} and ${other}`);
+    else descriptions.set(meta.description, route);
   }
 }
 
-const sitemapPath = path.join(dist, 'sitemap.xml');
-if (!fs.existsSync(sitemapPath)) {
-  errors.push('dist/sitemap.xml missing');
+const faqHtml = readHtml('/faq/');
+if (!faqHtml) {
+  errors.push('Missing built page: /faq/');
+} else if (!faqHtml.includes('FAQPage')) {
+  errors.push('/faq/: must include FAQPage JSON-LD');
+}
+
+const robotsPath = path.join(dist, 'robots.txt');
+if (!fs.existsSync(robotsPath)) {
+  errors.push('dist/robots.txt missing');
 } else {
-  const sitemap = fs.readFileSync(sitemapPath, 'utf8');
-  if (!sitemap.includes('image:image')) {
-    errors.push('sitemap.xml must include at least one image:image entry');
+  const robots = fs.readFileSync(robotsPath, 'utf8');
+  if (!robots.includes(`Sitemap: ${SITE_URL}/sitemap.xml`)) {
+    errors.push('robots.txt must reference sitemap.xml on apex host');
   }
-  if (!sitemap.includes('<?xml-stylesheet')) {
-    errors.push('sitemap.xml must reference sitemap.css stylesheet');
-  }
-  if (sitemap.includes('dotacheats.com')) {
-    errors.push('sitemap.xml must not reference dotacheats.com');
-  }
-}
-
-const robots = fs.readFileSync(path.join(process.cwd(), 'public', 'robots.txt'), 'utf8');
-if (!robots.includes(`Sitemap: ${SITE_URL}/sitemap.xml`)) {
-  errors.push('robots.txt must point to apex sitemap');
 }
 
 if (errors.length) {

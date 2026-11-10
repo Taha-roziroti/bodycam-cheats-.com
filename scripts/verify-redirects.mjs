@@ -2,26 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { PATH_REDIRECTS } from './redirects.mjs';
 import { checkoutRedirectLines } from '../src/config/checkout-redirects.mjs';
-
-/** Keep in sync with src/data/site.ts KEYWORD_REDIRECTS */
-const KEYWORD_REDIRECTS = [
-  ['/buy-borderlands-3-cheats', '/'],
-  ['/buy-borderlands-3-cheats/', '/'],
-  ['/buy-borderlands-3-cheat', '/'],
-  ['/buy-borderlands-3-cheat/', '/'],
-  ['/borderlands-3-cheats', '/'],
-  ['/borderlands-3-cheats/', '/'],
-  ['/borderlands-3-cheats-price', '/pricing/'],
-  ['/borderlands-3-cheats-price/', '/pricing/'],
-  ['/borderlands-3-esp', '/'],
-  ['/borderlands-3-esp/', '/'],
-  ['/borderlands-3-aimbot', '/'],
-  ['/borderlands-3-aimbot/', '/'],
-  ['/cloud-dma-setup', '/guides/cloud-dma-setup/'],
-  ['/cloud-dma-setup/', '/guides/cloud-dma-setup/'],
-  ['/sitemap-index.xml', '/sitemap.xml'],
-  ['/sitemap-0.xml', '/sitemap.xml'],
-];
+import { KEYWORD_REDIRECTS } from './keyword-redirects.mjs';
 
 const errors = [];
 
@@ -38,7 +19,6 @@ if (!fs.existsSync(redirectsFile)) {
 } else {
   const text = fs.readFileSync(redirectsFile, 'utf8');
   for (const [from, to] of KEYWORD_REDIRECTS) {
-    const line = `${from} ${to}`.replace(/\s+/g, ' ');
     if (!text.includes(from) || !text.includes(to)) {
       errors.push(`_redirects missing alias ${from} → ${to}`);
     }

@@ -8,4 +8,4 @@ Disallow: /go/
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://borderlands3cheats.com/sitemap.xml
+Sitemap: https://bodycam-cheats.com/sitemap.xml

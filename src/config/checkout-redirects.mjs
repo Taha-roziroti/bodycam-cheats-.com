@@ -1,24 +1,26 @@
-/** Zadeyo affiliate gateway (TAHA) — used for Borderlands 3 checkout redirects. */
+/** Zadeyo affiliate gateway — Bodycam + Cloud DMA checkout redirects. */
 const AFFILIATE_GO = 'https://zadeyo.com/go/TAHA';
 
 function affiliateTo(productPath) {
   return `${AFFILIATE_GO}?to=${encodeURIComponent(productPath)}`;
 }
 
-/** Checkout destinations keyed by internal product id. */
 export const CHECKOUT_URLS = {
-  borderlands3: affiliateTo('/products/borderlands-3'),
-  cloudDma: affiliateTo('/products/cloud-dma'),
+  mainProduct: affiliateTo('/products/bodycam'),
+  cloudDma: 'https://zadeyo.com/products/cloud-dma',
   dota2: 'https://zadeyo.com/products/dota-2',
   skinChanger: 'https://zadeyo.com/products/skin-changer',
   hwidSpoofer: affiliateTo('/products/hwid-spoofer'),
   ugc: 'https://zadeyo.com/products/ugc',
 };
 
-/** Checkout paths → external product URLs (used by Node serve + Astro middleware + _redirects). */
 export const CHECKOUT_PATH_REDIRECTS = new Map([
-  ['/go/borderlands-3', CHECKOUT_URLS.borderlands3],
-  ['/go/borderlands-3/', CHECKOUT_URLS.borderlands3],
+  ['/go/bodycam', CHECKOUT_URLS.mainProduct],
+  ['/go/bodycam/', CHECKOUT_URLS.mainProduct],
+  ['/go/main-product', CHECKOUT_URLS.mainProduct],
+  ['/go/main-product/', CHECKOUT_URLS.mainProduct],
+  ['/go/borderlands-3', CHECKOUT_URLS.mainProduct],
+  ['/go/borderlands-3/', CHECKOUT_URLS.mainProduct],
   ['/go/cloud-dma', CHECKOUT_URLS.cloudDma],
   ['/go/cloud-dma/', CHECKOUT_URLS.cloudDma],
   ['/go/dota-2', CHECKOUT_URLS.dota2],
@@ -56,7 +58,6 @@ export function resolveCheckoutPathRedirect(pathname, search = '') {
   return mergeSearchParams(base, search);
 }
 
-/** Unique /go paths for static host redirect files (Netlify / Cloudflare Pages). */
 export function checkoutRedirectLines() {
   const seen = new Set();
   const lines = [];

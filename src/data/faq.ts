@@ -1,4 +1,5 @@
 import type { IconName } from '../components/icons/types';
+import { bodycamPageFaqsByRoute } from './bodycamPageFaqs';
 import { checkoutPath, PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import { SITE_DOMAIN } from '../config/site';
 import { normalizeInternalPath, productPath, ROUTES } from '../utils/path';
@@ -31,9 +32,9 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const pricingPage = link('monthly and lifetime pricing page', '/pricing/');
-const cloudDmaPage = link('Cloud DMA product overview', '/cloud-dma/');
-const requirementsGuide = link('Windows and RAM requirements guide', '/guides/borderlands-3-cheat-system-requirements/');
+const cloudDmaPage = link('Cloud DMA for Bodycam', '/cloud-dma-for-bodycam/');
+const requirementsGuide = link('Bodycam system requirements guide', '/bodycam-requirements/');
+const pricingPage = link('Bodycam cheats price page', '/bodycam-cheats-price/');
 const setupGuide = link('Hyper-V Cloud DMA setup walkthrough', '/guides/cloud-dma-setup/');
 const checkout = link('secure checkout', PRIMARY_CHECKOUT_PATH);
 const faqPage = link('full FAQ topic list', ROUTES.faq);
@@ -52,7 +53,7 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'features',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
-    q: 'What features are included in Borderlands 3 cheats?',
+    q: 'What features are included with Bodycam cheats?',
     a: a(
       'Soft aim, enemy ESP, loot ESP, radar, no recoil, no spread, and a stream-proof overlay. See the homepage feature section for an overview.',
     ),
@@ -79,7 +80,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqPlatforms',
     q: 'Which platforms are supported?',
     a: a(
-      'Borderlands 3 on Windows 10 or 11 64-bit with supported Steam or Official Client builds. macOS and Linux are not supported.',
+      'Bodycam cheats list Windows 10 and Windows 11 with a dedicated GPU. macOS and Linux are not supported.',
     ),
   },
   {
@@ -96,14 +97,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqComparePlans',
     q: 'Can I choose between monthly and lifetime access?',
-    a: `Yes. Compare monthly and lifetime Borderlands 3 plans on the ${pricingPage}.`,
+    a: `Yes. Compare monthly and lifetime Bodycam plans on the ${pricingPage}.`,
   },
   {
     id: 'plan-prices',
     topic: 'plans',
     icon: 'faqRankTiers',
-    q: 'How much do Borderlands 3 cheats cost?',
-    a: `Monthly and lifetime prices are listed on the ${link('cheat plan pricing table', '/pricing/')}. Cloud DMA is a separate lifetime license on the ${link('$50 Cloud DMA license page', '/cloud-dma/')}.`,
+    q: 'How much do Bodycam cheat plans cost?',
+    a: `Monthly and lifetime prices are listed on the ${link('cheat plan pricing table', '/bodycam-cheats-price/')}. Cloud DMA is a separate lifetime license on the ${link('$50 Cloud DMA license page', '/cloud-dma-for-bodycam/')}.`,
   },
   {
     id: 'cloud-dma',
@@ -117,7 +118,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqUgcWhat',
     q: 'What does Cloud DMA cost beyond the cheat license?',
-    a: `The Cloud DMA lifetime license is listed on the ${link('Cloud DMA pricing overview', '/cloud-dma/')}. GREENWARD, static server hosting, and AWS resources are purchased separately.`,
+    a: `The Cloud DMA lifetime license is listed on the ${link('Cloud DMA pricing overview', '/cloud-dma-for-bodycam/')}. GREENWARD, static server hosting, and AWS resources are purchased separately.`,
   },
   {
     id: 'hwid-spoofer',
@@ -131,7 +132,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'setup',
     icon: 'faqDiscordHelp',
     q: 'What Windows version do I need?',
-    a: `Windows 10 or 11 with virtualization enabled for Cloud DMA. See the ${link('Borderlands 3 PC requirements checklist', '/guides/borderlands-3-cheat-system-requirements/')} for RAM, CPU, and client compatibility.`,
+    a: `Windows 10 or 11 with virtualization enabled for Cloud DMA. See the ${link('system requirements checklist', '/bodycam-requirements/')} for RAM, CPU, and client compatibility.`,
   },
   {
     id: 'soft-aim',
@@ -180,9 +181,9 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'publisher',
     topic: 'safety',
     icon: 'faqPrivateCheats',
-    q: 'Are you affiliated with Gearbox or 2K?',
+    q: 'Are you affiliated with Reissad Studio or Bodycam publishers?',
     a: a(
-      'No. Borderlands 3 Cheats is independent and uses the game name only to describe supported software.',
+      'No. Bodycam Cheats is independent and uses the game name only to describe supported software.',
     ),
   },
   {
@@ -190,23 +191,25 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'all',
     icon: 'faqMore',
     q: 'Where is the full FAQ?',
-    a: `This page collects plan, feature, Cloud DMA, and setup answers. Start on the ${link('Borderlands 3 cheats homepage', '/')}, then read the ${faqPage} filters for every topic.`,
+    a: `This page collects plan, feature, Cloud DMA, and setup answers. Start on the ${link('main product homepage', '/')}, then read the ${faqPage} filters for every topic.`,
   },
 ];
 
 export function getLandingFaqs(): SiteFaqItem[] {
-  return siteFaqs.filter((f) =>
-    ['features', 'after-buy', 'ban-risk', 'platforms', 'cloud-dma', 'pricing-plans'].includes(f.id),
-  );
+  return bodycamPageFaqsByRoute['/'] ?? [];
 }
 
 const CONTENT_PAGE_FAQ_IDS: Record<string, string[]> = {
-  '/pricing/': ['pricing-plans', 'plan-prices', 'features', 'after-buy', 'checkout-help'],
-  '/cloud-dma/': ['cloud-dma', 'cloud-dma-cost', 'windows-req', 'platforms', 'after-buy'],
-  '/hwid-spoofer/': ['hwid-spoofer', 'ban-risk', 'license-move', 'platforms', 'undetected'],
+  '/bodycam-cheats-price/': ['pricing-plans', 'plan-prices', 'features', 'after-buy', 'checkout-help'],
+  '/bodycam-requirements/': ['windows-req', 'cloud-dma', 'platforms', 'features', 'checkout-help'],
+  '/cloud-dma-for-bodycam/': ['cloud-dma', 'cloud-dma-cost', 'windows-req', 'platforms', 'after-buy'],
+  '/bodycam-aimbot/': ['features', 'pricing-plans', 'windows-req', 'checkout-help'],
+  '/bodycam-esp/': ['features', 'pricing-plans', 'windows-req', 'checkout-help'],
 };
 
 export function getContentPageFaqs(route: string): SiteFaqItem[] | null {
+  const bodycam = bodycamPageFaqsByRoute[route];
+  if (bodycam?.length) return bodycam;
   const ids = CONTENT_PAGE_FAQ_IDS[route];
   if (!ids) return null;
   return ids
@@ -236,10 +239,10 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
 ];
 
 export const HOME_LANDING_FAQ_SECTION_COPY = {
-  eyebrow: 'Cheat FAQ',
-  title: 'Borderlands 3 cheats questions',
+  eyebrow: 'Bodycam FAQ',
+  title: 'Frequently asked questions',
   subtitle:
-    'Straight answers on plans, Cloud DMA, bans, and setup—open the full FAQ for every topic.',
+    'Pricing, Windows requirements, Cloud DMA and checkout—open the full FAQ for every topic.',
 } as const;
 
 /** Section copy when FAQ list is scoped to the current page (not /faq/). */

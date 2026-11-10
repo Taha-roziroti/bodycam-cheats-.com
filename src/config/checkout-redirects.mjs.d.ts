@@ -1,5 +1,5 @@
 export declare const CHECKOUT_URLS: {
-  readonly borderlands3: string;
+  readonly mainProduct: string;
   readonly cloudDma: string;
   readonly dota2: string;
   readonly skinChanger: string;

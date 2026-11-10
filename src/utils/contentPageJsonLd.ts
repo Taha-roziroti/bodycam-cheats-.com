@@ -1,13 +1,13 @@
 import { checkoutPath } from '../config/checkout';
 import {
-  BL3_CHECKOUT,
-  bl3ProductOffers,
+  MAIN_PRODUCT_CHECKOUT,
+  mainProductOffers,
   cloudDmaOffer,
   CLOUD_DMA_CHECKOUT,
-  hwidSpooferOffer,
-  HWID_SPOOFER_CHECKOUT,
-} from '../data/borderlands3Site';
-import { PRODUCT_ID, SITE_URL } from '../data/site';
+} from '../data/productSite';
+import { BODYCAM_IMAGES } from '../data/bodycamImages';
+import { BODYCAM_HERO } from '../data/placeholders';
+import { LISTED_PRICES, PRODUCT_ID, SITE_URL } from '../data/site';
 import {
   breadcrumbSchema,
   guideArticleSchema,
@@ -18,39 +18,63 @@ import {
 
 export function breadcrumbsForRoute(route: string): BreadcrumbItem[] {
   if (route === '/') return [{ name: 'Home', path: '/' }];
-  if (route === '/pricing/') {
+  if (route === '/bodycam-cheats-price/') {
     return [
       { name: 'Home', path: '/' },
-      { name: 'Pricing', path: '/pricing/' },
+      { name: 'Pricing', path: '/bodycam-cheats-price/' },
     ];
   }
-  if (route === '/cloud-dma/') {
+  if (route === '/bodycam-aimbot/') {
     return [
       { name: 'Home', path: '/' },
-      { name: 'Cloud DMA', path: '/cloud-dma/' },
+      { name: 'Aimbot', path: '/bodycam-aimbot/' },
     ];
   }
-  if (route === '/hwid-spoofer/') {
+  if (route === '/bodycam-esp/') {
     return [
       { name: 'Home', path: '/' },
-      { name: 'HWID Spoofer', path: '/hwid-spoofer/' },
+      { name: 'ESP', path: '/bodycam-esp/' },
+    ];
+  }
+  if (route === '/bodycam-requirements/') {
+    return [
+      { name: 'Home', path: '/' },
+      { name: 'Requirements', path: '/bodycam-requirements/' },
+    ];
+  }
+  if (route === '/cloud-dma-for-bodycam/') {
+    return [
+      { name: 'Home', path: '/' },
+      { name: 'Cloud DMA', path: '/cloud-dma-for-bodycam/' },
     ];
   }
   if (route === '/guides/cloud-dma-setup/') {
     return [
       { name: 'Home', path: '/' },
-      { name: 'Cloud DMA', path: '/cloud-dma/' },
+      { name: 'Cloud DMA', path: '/cloud-dma-for-bodycam/' },
       { name: 'Setup guide', path: '/guides/cloud-dma-setup/' },
     ];
   }
-  if (route === '/guides/borderlands-3-cheat-system-requirements/') {
-    return [
-      { name: 'Home', path: '/' },
-      { name: 'Cheat plans', path: '/pricing/' },
-      { name: 'System requirements', path: '/guides/borderlands-3-cheat-system-requirements/' },
-    ];
-  }
   return [{ name: 'Home', path: '/' }];
+}
+
+function productSchemaImage(route: string): string {
+  switch (route) {
+    case '/':
+      return BODYCAM_HERO;
+    case '/bodycam-cheats-price/':
+      return BODYCAM_IMAGES.espWarehouse.src;
+    case '/bodycam-aimbot/':
+      return BODYCAM_IMAGES.menuAimbot.src;
+    case '/bodycam-esp/':
+      return BODYCAM_IMAGES.menuVisuals.src;
+    case '/bodycam-requirements/':
+      return BODYCAM_IMAGES.povHallway.src;
+    case '/cloud-dma-for-bodycam/':
+      return BODYCAM_IMAGES.hero.src;
+    default:
+      return BODYCAM_HERO;
+  }
 }
 
 export function jsonLdForContentPage(input: {
@@ -64,28 +88,28 @@ export function jsonLdForContentPage(input: {
   const blocks: Record<string, unknown>[] = [];
 
   if (input.schemaTypes.includes('Product')) {
-    if (input.route === '/') {
+    if (input.route === '/' || input.route === '/bodycam-cheats-price/') {
       blocks.push(
         productSchema({
-          name: 'Borderlands 3 Cheats for PC',
+          name: 'Bodycam Cheats for PC',
           description: input.metaDescription,
-          url: '/',
-          offerUrl: BL3_CHECKOUT,
-          sku: 'borderlands-3-cheats',
-          image: '/images/borderlands3/borderlands-3-esp-soft-aim-hero.webp',
-          productId: PRODUCT_ID,
-          offers: [...bl3ProductOffers],
+          url: input.route,
+          offerUrl: MAIN_PRODUCT_CHECKOUT,
+          sku: 'bodycam-cheats',
+          image: productSchemaImage(input.route),
+          productId: input.route === '/' ? PRODUCT_ID : `${SITE_URL}/bodycam-cheats-price/#product`,
+          offers: [...mainProductOffers],
         }),
       );
-    } else if (input.route === '/cloud-dma/') {
+    } else if (input.route === '/cloud-dma-for-bodycam/') {
       blocks.push(
         productSchema({
-          name: 'Cloud DMA for Game Cheats',
+          name: 'Cloud DMA for Bodycam',
           description: input.metaDescription,
-          url: '/cloud-dma/',
+          url: '/cloud-dma-for-bodycam/',
           offerUrl: CLOUD_DMA_CHECKOUT,
           sku: 'cloud-dma-license',
-          productId: `${SITE_URL}/cloud-dma/#product`,
+          productId: `${SITE_URL}/cloud-dma-for-bodycam/#product`,
           offers: [
             {
               name: cloudDmaOffer.name,
@@ -95,25 +119,18 @@ export function jsonLdForContentPage(input: {
           ],
         }),
       );
-    } else if (input.route === '/hwid-spoofer/') {
-      blocks.push(
-        productSchema({
-          name: 'HWID Spoofer',
-          description: input.metaDescription,
-          url: '/hwid-spoofer/',
-          offerUrl: HWID_SPOOFER_CHECKOUT,
-          sku: 'hwid-spoofer',
-          productId: `${SITE_URL}/hwid-spoofer/#product`,
-          offers: [
-            {
-              name: hwidSpooferOffer.name,
-              priceUsd: hwidSpooferOffer.priceUsd,
-              url: HWID_SPOOFER_CHECKOUT,
-            },
-          ],
-        }),
-      );
     }
+  }
+
+  if (input.schemaTypes.includes('Offer') && input.route === '/') {
+    blocks.push({
+      '@context': 'https://schema.org',
+      '@type': 'Offer',
+      name: 'Bodycam Cheats Monthly',
+      price: LISTED_PRICES.monthlyUsd.toFixed(2),
+      priceCurrency: 'USD',
+      url: MAIN_PRODUCT_CHECKOUT,
+    });
   }
 
   if (input.schemaTypes.includes('WebPage')) {
@@ -126,7 +143,8 @@ export function jsonLdForContentPage(input: {
     );
   }
 
-  if (input.schemaTypes.includes('Article') && input.articlePublished) {
+  const articleTypes = ['Article', 'TechArticle'];
+  if (articleTypes.some((t) => input.schemaTypes.includes(t)) && input.articlePublished) {
     blocks.push(
       guideArticleSchema({
         name: input.seoTitle,
@@ -146,13 +164,12 @@ export function jsonLdForContentPage(input: {
 
 export function defaultEndCtaHref(
   route: string,
-  checkout?: 'borderlands-3' | 'cloud-dma' | 'hwid-spoofer',
+  checkout?: 'main-product' | 'cloud-dma' | 'hwid-spoofer',
 ): string {
   if (checkout === 'cloud-dma') return checkoutPath('cloudDma');
   if (checkout === 'hwid-spoofer') return checkoutPath('hwidSpoofer');
-  if (checkout === 'borderlands-3') return checkoutPath('borderlands3');
-  if (route === '/pricing/') return checkoutPath('borderlands3');
-  if (route === '/cloud-dma/') return checkoutPath('cloudDma');
-  if (route === '/hwid-spoofer/') return checkoutPath('hwidSpoofer');
-  return checkoutPath('borderlands3');
+  if (checkout === 'main-product') return checkoutPath('mainProduct');
+  if (route === '/bodycam-cheats-price/') return checkoutPath('mainProduct');
+  if (route === '/cloud-dma-for-bodycam/') return checkoutPath('cloudDma');
+  return checkoutPath('mainProduct');
 }

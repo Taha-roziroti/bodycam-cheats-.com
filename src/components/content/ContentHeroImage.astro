@@ -16,12 +16,13 @@ interface Props {
 const { src, alt, priority = false, class: className = '' } = Astro.props;
 const srcSet = responsiveSrcSet(src, HERO_IMAGE_WIDTHS);
 const imgSrc = defaultWebpSrc(src, HERO_IMAGE_WIDTHS);
+const raster = Boolean(srcSet);
 ---
 
 <figure class={`overflow-hidden rounded-2xl border border-border bg-muted/20 ${className}`}>
   <img
     src={imgSrc}
-    srcset={srcSet}
+    srcset={raster ? srcSet : undefined}
     sizes={HERO_IMAGE_SIZES}
     alt={alt}
     width={960}

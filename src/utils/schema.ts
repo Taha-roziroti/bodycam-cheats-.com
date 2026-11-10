@@ -1,5 +1,6 @@
 import type { FaqItem } from '../i18n/types';
 import { SITE_BRAND, SUPPORT_EMAIL } from '../config/site';
+import { SITE_PURPOSE } from '../data/site';
 import { SITE_ORIGIN, absoluteAssetUrl, canonicalUrl, getOrganizationSameAs } from '../config/seo';
 
 export interface ProductOfferInput {
@@ -34,8 +35,7 @@ export function websiteSchema() {
     name: SITE_BRAND,
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
-    description:
-      'Borderlands 3 PC cheat features including soft aim, enemy and loot ESP, radar, and recoil options.',
+    description: SITE_PURPOSE,
   };
 }
 

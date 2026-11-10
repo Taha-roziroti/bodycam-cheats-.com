@@ -9,10 +9,11 @@ interface Props {
 const { logoAlt } = Astro.props;
 
 const resourceLinks = [
-  { href: '/pricing/', label: 'Cheat plans', ariaLabel: 'Pricing' },
-  { href: '/go/', label: 'All products', ariaLabel: 'Checkout hub' },
-  { href: '/guides/cloud-dma-setup/', label: 'Hyper-V setup guide', ariaLabel: 'Setup guide' },
-  { href: '/guides/borderlands-3-cheat-system-requirements/', label: 'PC requirements', ariaLabel: 'Requirements' },
+  { href: '/bodycam-cheats-price/', label: 'Pricing', ariaLabel: 'Bodycam pricing' },
+  { href: '/bodycam-aimbot/', label: 'Aimbot', ariaLabel: 'Bodycam aimbot' },
+  { href: '/bodycam-esp/', label: 'ESP', ariaLabel: 'Bodycam ESP' },
+  { href: '/bodycam-requirements/', label: 'Requirements', ariaLabel: 'Requirements' },
+  { href: '/cloud-dma-for-bodycam/', label: 'Cloud DMA', ariaLabel: 'Cloud DMA' },
   { href: '/support/', label: 'Support', ariaLabel: 'Support' },
 ];
 
@@ -29,7 +30,7 @@ const legalLinks = [
       <div class="space-y-4">
         <a href="/" class="inline-flex items-center gap-2.5 font-[family-name:var(--font-heading)] text-lg font-semibold" aria-label={t.ui.homeAria}>
           <img src="/logo.svg" alt={logoAlt ?? ''} width="32" height="32" class="rounded-md" />
-          <span aria-hidden="true">Borderlands 3 <span class="text-muted-foreground">Cheats</span></span>
+          <span aria-hidden="true">{t.site.name}</span>
           <span class="sr-only"> site footer</span>
         </a>
         <p class="text-sm text-muted-foreground">{t.footer.tagline}</p>

@@ -1,14 +1,16 @@
 ---
 import { t } from '../i18n';
 import { featureIcons } from '../data/sectionIcons';
+import { BODYCAM_IMAGES } from '../data/bodycamImages';
 import SectionHeader from './SectionHeader.astro';
 import Icon from './icons/Icon.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
 import { Badge } from '@/components/starwind/badge';
 
 const s = t.features;
 
 function isScriptsHero(title: string) {
-  return title === 'Enemy ESP';
+  return title === 'Player ESP';
 }
 ---
 
@@ -50,20 +52,32 @@ function isScriptsHero(title: string) {
                     </header>
 
                     <div class="features-bento-scripts__body flex min-h-0 flex-1 flex-col gap-4 px-5 py-4 sm:gap-5 sm:px-6 sm:py-5">
-                      <p class="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                      <div class="features-bento-scripts__copy">
+                        <p class="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
 
-                      {
-                        item.bullets && item.bullets.length > 0 && (
-                          <ul class="space-y-2.5 text-sm text-muted-foreground">
-                            {item.bullets.map((b) => (
-                              <li class="flex items-start gap-2.5">
-                                <Icon name="check" size={14} class="mt-0.5 shrink-0 text-primary" />
-                                <span class="leading-snug">{b}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )
-                      }
+                        {
+                          item.bullets && item.bullets.length > 0 && (
+                            <ul class="space-y-2.5 text-sm text-muted-foreground">
+                              {item.bullets.map((b) => (
+                                <li class="flex items-start gap-2.5">
+                                  <Icon name="check" size={14} class="mt-0.5 shrink-0 text-primary" />
+                                  <span class="leading-snug">{b}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )
+                        }
+                      </div>
+                      <figure class="features-bento-scripts__figure overflow-hidden rounded-xl border border-border/80">
+                        <ResponsiveImage
+                          src={BODYCAM_IMAGES.espIndoorCyan.src}
+                          alt={BODYCAM_IMAGES.espIndoorCyan.alt}
+                          width={960}
+                          height={540}
+                          sizes="(min-width: 1024px) 42vw, 100vw"
+                          class="aspect-video w-full object-cover"
+                        />
+                      </figure>
                     </div>
 
                     <div class="card-footer-band mt-auto flex flex-wrap items-center gap-2 px-5 py-3 sm:px-6 sm:py-3.5">
@@ -137,11 +151,11 @@ function isScriptsHero(title: string) {
       row-gap: 0;
     }
 
-    .features-bento-scripts__body > p {
+    .features-bento-scripts__copy > p {
       margin: 0;
     }
 
-    .features-bento-scripts__body > ul {
+    .features-bento-scripts__copy > ul {
       margin: 0;
     }
   }

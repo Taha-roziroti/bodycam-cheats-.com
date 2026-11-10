@@ -1,7 +1,8 @@
 ---
-import { borderlandsGuideCards } from '../data/borderlands3Landing';
+import { landingGuideCards } from '../data/landing';
 import SectionHeader from './SectionHeader.astro';
 import Icon from './icons/Icon.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
 import { Button } from '@/components/starwind/button';
 ---
 
@@ -9,7 +10,7 @@ import { Button } from '@/components/starwind/button';
   <div class="mx-auto max-w-6xl px-5">
     <SectionHeader
       eyebrow="Guides"
-      title="Borderlands 3 setup and pricing guides"
+      title="Setup and pricing guides"
       desc="Review plans, Hyper-V setup, and PC requirements before you launch the cheat stack."
       titleId="guides-title"
       titleAs="h2"
@@ -17,8 +18,21 @@ import { Button } from '@/components/starwind/button';
 
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-10">
       {
-        borderlandsGuideCards.map((guide) => (
-          <article class="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-primary/35">
+        landingGuideCards.map((guide) => (
+          <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-colors hover:border-primary/35">
+            {
+              guide.image ? (
+                <ResponsiveImage
+                  src={guide.image.src}
+                  alt={guide.image.alt}
+                  width={640}
+                  height={360}
+                  sizes="(min-width: 1024px) 320px, 100vw"
+                  class="aspect-video w-full object-cover"
+                />
+              ) : null
+            }
+            <div class="flex flex-1 flex-col p-6">
             <h3 class="font-[family-name:var(--font-heading)] text-lg font-bold leading-snug text-foreground">
               {guide.title}
             </h3>
@@ -27,6 +41,7 @@ import { Button } from '@/components/starwind/button';
               {guide.readLabel}
               <Icon name="arrowRight" size={16} />
             </Button>
+            </div>
           </article>
         ))
       }

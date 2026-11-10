@@ -1,7 +1,7 @@
 ---
 import '../styles/product-cheat-page.css';
 import { t } from '../i18n';
-import { borderlandsLandingProducts } from '../data/borderlands3Landing';
+import { landingProducts } from '../data/landing';
 import SectionHeader from './SectionHeader.astro';
 import CatalogCard from './CatalogCard.astro';
 import {
@@ -14,11 +14,11 @@ import {
 
 const s = t.products;
 
-function cardIcon(product: (typeof borderlandsLandingProducts)[number]) {
+function cardIcon(product: (typeof landingProducts)[number]) {
   return product.icon;
 }
 
-function cardLabel(product: (typeof borderlandsLandingProducts)[number]) {
+function cardLabel(product: (typeof landingProducts)[number]) {
   return product.label;
 }
 ---
@@ -39,7 +39,7 @@ function cardLabel(product: (typeof borderlandsLandingProducts)[number]) {
           <div class="products-carousel__viewport">
             <CarouselContent class="products-carousel__track">
               {
-                borderlandsLandingProducts.map((product) => (
+                landingProducts.map((product) => (
                   <CarouselItem class="products-carousel__slide">
                     <CatalogCard
                       class="catalog-card--carousel"
