@@ -1,4 +1,4 @@
-/* Support section — layout only (background matches other sections via Tailwind) */
+/* Support section — symmetric four-up cards, airy type */
 .support-section__inner {
   position: relative;
 }
@@ -11,8 +11,9 @@
   display: grid;
   gap: 1.25rem;
   list-style: none;
-  margin: 3rem 0 0;
+  margin: 3.5rem 0 0;
   padding: 0;
+  align-items: stretch;
 }
 
 @media (min-width: 640px) {
@@ -25,8 +26,46 @@
 @media (min-width: 1024px) {
   .support-section__cards {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
+}
+
+.support-section__card {
+  min-width: 0;
+  height: 100%;
+}
+
+.support-section__card [data-slot='card-header'] {
+  padding-bottom: 0.25rem;
+}
+
+.support-section__card [data-slot='card-content'] {
+  padding-bottom: 0.5rem;
+}
+
+.support-section__card [data-slot='card-content'] p {
+  margin: 0;
+  min-height: 4.125rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.support-section__card [data-slot='card-footer'] {
+  margin-top: auto;
+  padding-top: 1rem;
+  padding-bottom: 1.125rem;
+}
+
+.support-section__cta {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-inline: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 html:not(.dark) .support-section__icon {
@@ -38,14 +77,14 @@ html.dark .support-section__icon {
 }
 
 .support-section__tips {
-  margin-top: 3rem;
-  padding-top: 2rem;
+  margin-top: 3.5rem;
+  padding-top: 2.25rem;
   border-top: 1px solid var(--border);
-  text-align: left;
+  text-align: center;
 }
 
 .support-section__tips-title {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--foreground);
@@ -53,9 +92,9 @@ html.dark .support-section__icon {
 
 .support-section__tips-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   max-width: 48rem;
   text-align: left;
@@ -64,7 +103,8 @@ html.dark .support-section__icon {
 @media (min-width: 768px) {
   .support-section__tips-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
+    gap: 1.5rem;
+    text-align: center;
   }
 }
 
@@ -76,14 +116,14 @@ html.dark .support-section__icon {
 }
 
 .support-section__tips-item-desc {
-  margin: 0.35rem 0 0;
+  margin: 0.5rem 0 0;
   font-size: 0.8125rem;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--muted-foreground);
 }
 
 @media (max-width: 639px) {
   .support-section__cards {
-    margin-top: 2.25rem;
+    margin-top: 2.5rem;
   }
 }

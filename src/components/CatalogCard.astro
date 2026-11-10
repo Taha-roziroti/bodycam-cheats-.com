@@ -25,6 +25,8 @@ interface Props {
   viewLabel?: string;
   maxFeatures?: number;
   class?: string;
+  /** Stack CTAs vertically (carousel / narrow columns). */
+  stackedActions?: boolean;
 }
 
 const {
@@ -41,6 +43,7 @@ const {
   viewLabel = 'View details',
   maxFeatures = 10,
   class: className,
+  stackedActions = Boolean(className?.includes('carousel')),
 } = Astro.props;
 
 const displayFeatures = features.slice(0, maxFeatures);
@@ -75,12 +78,14 @@ const statusBadgeIcon = (text: string): IconName => {
           </Badge>
         )
       }
-      {variant === 'popular' && (
-        <Badge tone="primary" appearance="solid" size="sm" class="catalog-card__badge gap-1">
-          <Icon name="zap" size={12} class="shrink-0" />
-          Popular
-        </Badge>
-      )}
+      {
+        variant === 'popular' && !badge?.toLowerCase().includes('popular') && (
+          <Badge tone="primary" appearance="solid" size="sm" class="catalog-card__badge gap-1">
+            <Icon name="zap" size={12} class="shrink-0" />
+            Popular
+          </Badge>
+        )
+      }
       {
         variant === 'limited' && !badge?.toLowerCase().includes('limited') && (
           <Badge tone="warning" appearance="outline" size="sm" class="catalog-card__badge gap-1">
@@ -102,12 +107,39 @@ const statusBadgeIcon = (text: string): IconName => {
       {more > 0 && <li class="text-xs text-muted-foreground">+{more} more features</li>}
     </ul>
   </CardContent>
-  <CardFooter class="flex flex-col gap-2 sm:flex-row">
-    <Button as="a" href={buyUrl} variant="primary" size="sm" class="w-full sm:flex-1">
+  <CardFooter
+    class:list={[
+      'catalog-card__footer gap-2',
+      stackedActions ? 'flex flex-col' : 'flex flex-col sm:flex-row',
+    ]}
+  >
+    <Button
+      as="a"
+      href={buyUrl}
+      variant="primary"
+      size="sm"
+      title={buyLabel}
+      class:list={[
+        'catalog-card__cta w-full min-w-0',
+        !stackedActions && 'sm:flex-1',
+        stackedActions && 'catalog-card__cta--stacked',
+      ]}
+    >
       {buyLabel}
       <Icon name="arrowRight" size={17} />
     </Button>
-    <Button as="a" href={href} variant="outline" size="sm" class="w-full sm:flex-1">
+    <Button
+      as="a"
+      href={href}
+      variant="outline"
+      size="sm"
+      title={viewLabel}
+      class:list={[
+        'catalog-card__cta w-full min-w-0',
+        !stackedActions && 'sm:flex-1',
+        stackedActions && 'catalog-card__cta--stacked',
+      ]}
+    >
       {viewLabel}
       <Icon name="arrowRight" size={17} />
     </Button>

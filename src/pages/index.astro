@@ -43,12 +43,12 @@ const lcpPreload = defaultWebpSrc(BODYCAM_HERO, HERO_IMAGE_WIDTHS);
   />
   <HomeLanding />
   <section class="border-t border-border bg-muted/10 py-12 md:py-16" aria-label="Bodycam cheats overview">
-    <div class="content-markdown mx-auto max-w-3xl px-5">
+    <div class="content-markdown mx-auto w-full max-w-4xl px-5">
       <HomeContent />
       <ContentFigures figures={data.figures} />
       {
         data.endCtaLabel ? (
-          <div class="not-prose mt-10">
+          <div class="not-prose mt-10 flex justify-center">
             <Button
               as="a"
               href={data.endCtaHref ?? '/go/bodycam/'}

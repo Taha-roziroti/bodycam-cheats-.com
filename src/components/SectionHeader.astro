@@ -8,20 +8,43 @@ interface Props {
   titleAs?: 'h1' | 'h2';
   centered?: boolean;
   wide?: boolean;
+  /** Sans title for long headings (less condensed than display font). */
+  readableTitle?: boolean;
+  /** Keep left-aligned on large screens (e.g. home products). */
+  flush?: boolean;
+  class?: string;
 }
 
-const { eyebrow, title, desc, titleId, titleAs = 'h1', centered = false, wide = false } = Astro.props;
+const {
+  eyebrow,
+  title,
+  desc,
+  titleId,
+  titleAs = 'h1',
+  centered = false,
+  wide = false,
+  readableTitle = false,
+  flush = false,
+  class: className,
+} = Astro.props;
 const TitleTag = titleAs;
 ---
 
 <header
   class:list={[
-    'section-header space-y-0',
+    'section-header',
     wide && 'section-header--wide',
-    centered && 'mx-auto text-center',
+    centered && 'section-header--centered',
+    flush && 'section-header--flush',
+    className,
   ]}
 >
   <p class="section-header__eyebrow">{eyebrow}</p>
-  <TitleTag id={titleId} class="section-header__title">{title}</TitleTag>
+  <TitleTag
+    id={titleId}
+    class:list={['section-header__title', readableTitle && 'section-header__title--readable']}
+  >
+    {title}
+  </TitleTag>
   {desc ? <p class="section-header__subtitle">{desc}</p> : null}
 </header>

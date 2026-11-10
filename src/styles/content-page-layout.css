@@ -1,0 +1,33 @@
+/* Money / guide pages — main column + checkout rail (fills right side on lg+) */
+
+.content-page__grid {
+  align-items: start;
+}
+
+.content-page__main {
+  min-width: 0;
+  width: 100%;
+}
+
+.content-page__main .content-markdown {
+  max-width: none;
+}
+
+.content-page__aside {
+  position: sticky;
+  top: calc(var(--floating-nav-clearance) + 1rem);
+  min-width: 0;
+}
+
+.content-page__grid--single {
+  display: block;
+}
+
+.content-page__grid--single .content-page__main {
+  margin-inline: auto;
+  max-width: 42rem;
+}
+
+.content-page__grid--single .content-page__main .content-markdown {
+  max-width: 42rem;
+}

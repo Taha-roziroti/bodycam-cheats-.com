@@ -200,6 +200,9 @@ if (!run('node', ['scripts/audit-spelling.mjs'])) process.exit(1);
 console.log('seo-audit: responsive layout…');
 if (!run('node', ['scripts/audit-responsive.mjs'])) process.exit(1);
 
+console.log('seo-audit: layout containment…');
+if (!run('node', ['scripts/audit-layout-containment.mjs'])) process.exit(1);
+
 console.log('seo-audit: duplicate content…');
 if (!run('node', ['scripts/audit-duplicate-content.mjs'])) process.exit(1);
 

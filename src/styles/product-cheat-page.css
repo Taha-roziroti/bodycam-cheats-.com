@@ -9,10 +9,11 @@
 }
 
 /* Landing products header stays left-aligned with the cards */
-#products .section-header,
-#products .section-header__subtitle {
+#products .section-header--flush,
+#products .section-header--flush .section-header__subtitle {
   margin-inline: 0;
   text-align: left;
+  align-items: flex-start;
 }
 
 /* Landing products row carousel */
@@ -122,13 +123,15 @@
 
 .products-carousel [data-slot='carousel-item'].products-carousel__slide {
   display: flex;
+  box-sizing: border-box;
   min-width: 0;
   padding-left: 0 !important;
   padding-top: 0 !important;
   flex-grow: 0 !important;
   flex-shrink: 0 !important;
-  /* Override Starwind carouselItem `basis-full` */
   flex-basis: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .products-carousel__slide > * {
@@ -138,14 +141,10 @@
 
 @media (min-width: 640px) {
   .products-carousel [data-slot='carousel-item'].products-carousel__slide {
+    /* Two catalog products — never squeeze into a third-column width */
     flex-basis: calc((100% - var(--products-carousel-gap)) / 2) !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .products-carousel [data-slot='carousel-item'].products-carousel__slide {
-    /* Three whole cards — no fractional peek that clips edges */
-    flex-basis: calc((100% - var(--products-carousel-gap) * 2) / 3) !important;
+    width: calc((100% - var(--products-carousel-gap)) / 2) !important;
+    max-width: calc((100% - var(--products-carousel-gap)) / 2) !important;
   }
 }
 
@@ -160,6 +159,33 @@
 
 .catalog-card--carousel [data-slot='card-footer'] {
   padding-top: 0.75rem;
+}
+
+.catalog-card--carousel {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.catalog-card__cta--stacked {
+  height: auto;
+  min-height: 2.25rem;
+  max-width: 100%;
+  padding-block: 0.4rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 380px) {
+  .catalog-card__cta--stacked {
+    font-size: 0.75rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+.catalog-card__cta--stacked svg {
+  flex-shrink: 0;
 }
 
 /* Product detail — centered layout at all breakpoints */

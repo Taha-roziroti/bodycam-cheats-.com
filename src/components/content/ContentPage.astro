@@ -25,6 +25,7 @@ import { resolvePageSeo } from '../../config/seo';
 import SiteFaqSection from '../SiteFaqSection.astro';
 import { faqFilterTopicsForItems, getContentPageFaqs } from '../../data/faq';
 import '@/styles/content-markdown.css';
+import '@/styles/content-page-layout.css';
 
 interface Props {
   id: string;
@@ -55,7 +56,17 @@ const sidebarDefaultProduct: CheckoutProductId =
       ? 'hwid-spoofer'
       : 'main-product');
 
-const useProductShell = data.layout === 'product' || data.layout === 'pricing';
+const asideProduct: CheckoutProductId | null =
+  lockedProduct ??
+  (data.checkout === 'cloud-dma'
+    ? 'cloud-dma'
+    : data.checkout === 'hwid-spoofer'
+      ? 'hwid-spoofer'
+      : data.checkout
+        ? 'main-product'
+        : null);
+const useTwoColumn = Boolean(asideProduct);
+const checkoutDefaultProduct = asideProduct ?? sidebarDefaultProduct;
 const ogType = data.layout === 'article' ? 'article' : 'website';
 const lcpPreload =
   data.route === '/' && data.heroImage && isRasterImageSrc(data.heroImage.src)
@@ -97,35 +108,61 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
       media="(min-width: 1024px)"
     />
   ) : null}
-  {
-    useProductShell && (data.checkout || data.layout === 'pricing') ? (
-      <section class="border-b border-border bg-muted/20 py-10 md:py-14">
-        <div class="mx-auto max-w-6xl px-5">
-          <Breadcrumbs items={breadcrumbs} class="mb-6 md:mb-8" />
+  <section class="border-b border-border bg-muted/20 py-10 md:py-14">
+    <div class="mx-auto max-w-6xl px-5">
+      <Breadcrumbs items={breadcrumbs} class="mb-6 md:mb-8" />
+      <div
+        class:list={[
+          'content-page__grid gap-10',
+          useTwoColumn && 'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(18rem,22rem)]',
+          !useTwoColumn && 'content-page__grid--single',
+        ]}
+      >
+        <div class="content-page__main">
+          <div class:list={['content-markdown', data.heroImage && data.route === '/' && 'product-hero-after-h1']}>
+            {data.heroImage && data.route === '/' ? (
+              <ContentHeroImage
+                src={data.heroImage.src}
+                alt={data.heroImage.alt}
+                priority={true}
+                class="hero-after-title"
+              />
+            ) : null}
+            {FullContent ? <FullContent /> : null}
+            {data.heroImage && data.route !== '/' ? (
+              <ContentHeroImage
+                src={data.heroImage.src}
+                alt={data.heroImage.alt}
+                priority={false}
+                class="mt-8"
+              />
+            ) : null}
+            <ContentFigures figures={data.figures} />
+          </div>
+          {
+            useTwoColumn ? (
+              <div class="not-prose mt-8 lg:hidden">
+                {
+                  lockedProduct ? (
+                    <CheckoutPanel
+                      productSlug={lockedProduct}
+                      buyUrl={checkoutHrefForProduct(lockedProduct)}
+                      heading={checkoutPanelHeading(lockedProduct)}
+                    />
+                  ) : (
+                    <CheckoutProductPicker defaultProduct={checkoutDefaultProduct} />
+                  )
+                }
+              </div>
+            ) : null
+          }
+          {data.showAdditionalCostsCallout ? (
+            <AdditionalCostsCallout class="not-prose mt-8" />
+          ) : null}
         </div>
-        <div class="mx-auto grid max-w-6xl items-start gap-10 px-5 lg:grid-cols-[1fr_minmax(18rem,22rem)]">
-          <div class="min-w-0">
-            <div class:list={['content-markdown', data.heroImage && data.route === '/' && 'product-hero-after-h1']}>
-              {data.heroImage && data.route === '/' ? (
-                <ContentHeroImage
-                  src={data.heroImage.src}
-                  alt={data.heroImage.alt}
-                  priority={true}
-                  class="hero-after-title"
-                />
-              ) : null}
-              {FullContent ? <FullContent /> : null}
-              {data.heroImage && data.route !== '/' ? (
-                <ContentHeroImage
-                  src={data.heroImage.src}
-                  alt={data.heroImage.alt}
-                  priority={false}
-                  class="mt-8"
-                />
-              ) : null}
-              <ContentFigures figures={data.figures} />
-            </div>
-            <div class="not-prose mt-8 lg:hidden">
+        {
+          useTwoColumn ? (
+            <aside class="content-page__aside hidden lg:block" aria-label="Checkout and plan options">
               {
                 lockedProduct ? (
                   <CheckoutPanel
@@ -134,44 +171,15 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
                     heading={checkoutPanelHeading(lockedProduct)}
                   />
                 ) : (
-                  <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
+                  <CheckoutProductPicker defaultProduct={checkoutDefaultProduct} />
                 )
               }
-            </div>
-            {data.showAdditionalCostsCallout ? (
-              <AdditionalCostsCallout class="not-prose mt-8" />
-            ) : null}
-          </div>
-          <div class="hidden lg:block">
-            {
-              lockedProduct ? (
-                <CheckoutPanel
-                  productSlug={lockedProduct}
-                  buyUrl={checkoutHrefForProduct(lockedProduct)}
-                  heading={checkoutPanelHeading(lockedProduct)}
-                />
-              ) : (
-                <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
-              )
-            }
-          </div>
-        </div>
-      </section>
-    ) : (
-      <article class="border-b border-border bg-muted/20 py-10 md:py-14">
-        <div class="mx-auto max-w-6xl px-5">
-          <Breadcrumbs items={breadcrumbs} class="mb-6 md:mb-8" />
-          <div class="content-markdown mt-2 max-w-3xl">
-            {FullContent ? <FullContent /> : null}
-            <ContentFigures figures={data.figures} />
-            {data.showAdditionalCostsCallout ? (
-              <AdditionalCostsCallout class="not-prose my-10" />
-            ) : null}
-          </div>
-        </div>
-      </article>
-    )
-  }
+            </aside>
+          ) : null
+        }
+      </div>
+    </div>
+  </section>
 
   {
     pageFaqs && pageFaqs.length > 0 ? (
@@ -190,7 +198,7 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
   {
     data.endCtaLabel ? (
       <div class="border-t border-border bg-muted/20 py-10 md:py-12">
-        <div class="mx-auto flex max-w-6xl flex-col items-stretch gap-4 px-5 sm:items-start">
+        <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5">
           <Button
             as="a"
             href={ctaHref}

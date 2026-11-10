@@ -33,7 +33,10 @@ const heroMarqueePills = [
       <div class="w-full max-w-xl space-y-6 text-left md:space-y-7 lg:max-w-2xl">
         <Badge variant="secondary" class="normal-case tracking-normal">{h.eyebrow}</Badge>
 
-        <h1 id="hero-title" class="text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.25rem]">
+        <h1
+          id="hero-title"
+          class="max-w-full text-4xl font-bold leading-[1.08] tracking-tight break-words md:text-5xl lg:text-[3.25rem]"
+        >
           <span class="block text-foreground">{h.titleLine1}</span>
           <span class="mt-1 block text-primary">{h.titleLine2}</span>
         </h1>

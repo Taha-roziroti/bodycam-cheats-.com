@@ -1,5 +1,16 @@
 /* Prose for content collection pages — imported only where .content-markdown is used. */
 
+.content-markdown {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.content-markdown :where(pre, code) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .content-markdown :where(h1) {
   font-family: var(--font-heading, inherit);
   font-size: clamp(1.875rem, 4vw, 2.5rem);
@@ -59,16 +70,30 @@
 }
 
 .content-markdown :where(table) {
+  display: block;
   width: 100%;
-  border-collapse: collapse;
+  max-width: 100%;
   margin-top: 1rem;
   font-size: 0.875rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+}
+
+.content-markdown :where(table) thead,
+.content-markdown :where(table) tbody,
+.content-markdown :where(table) tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
 .content-markdown :where(th, td) {
   border: 1px solid var(--border);
   padding: 0.5rem 0.75rem;
   text-align: left;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .content-markdown :where(th) {

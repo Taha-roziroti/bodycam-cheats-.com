@@ -61,7 +61,13 @@ const filters = filterTopics ?? (['all', 'plans', 'esp', 'scripts', 'safety', 'p
   data-faq-section={showFilters ? '' : undefined}
 >
   <div class="mx-auto max-w-6xl px-5">
-    <div class:list={[contentAlign === 'center' && 'mx-auto max-w-3xl', contentAlign === 'left' && 'product-detail__narrow max-w-3xl']}>
+    <div
+      class:list={[
+        'w-full',
+        contentAlign === 'center' && 'mx-auto max-w-3xl',
+        contentAlign === 'left' && 'mx-auto w-full max-w-3xl',
+      ]}
+    >
     <SectionHeader
       eyebrow={eyebrow}
       title={title}

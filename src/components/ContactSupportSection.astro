@@ -5,6 +5,7 @@ import { CHECKOUT_HUB_PATH } from '../config/checkout';
 import Icon from './icons/Icon.astro';
 import type { IconName } from './icons/types';
 import { Button } from '@/components/starwind/button';
+import SectionHeader from './SectionHeader.astro';
 import {
   Card,
   CardContent,
@@ -29,22 +30,27 @@ const c = t.support;
   aria-labelledby={titleId}
 >
   <div class="support-section__inner mx-auto max-w-6xl px-5">
-    <header class="section-header section-header--wide support-section__header">
-      <p class="section-header__eyebrow">{c.eyebrow}</p>
-      <h1 id={titleId} class="section-header__title">{c.title}</h1>
-      <p class="section-header__subtitle">{c.subtitle}</p>
-    </header>
+    <SectionHeader
+      class="support-section__header"
+      eyebrow={c.eyebrow}
+      title={c.title}
+      desc={c.subtitle}
+      titleId={titleId}
+      wide
+      centered
+      readableTitle
+    />
 
     <ul class="support-section__cards">
       {
         c.channels.map((channel) => (
           <li>
-            <Card class="group flex h-full flex-col transition-shadow hover:shadow-md">
-              <CardHeader class="space-y-3">
+            <Card class="support-section__card group flex h-full flex-col transition-shadow hover:shadow-md">
+              <CardHeader class="space-y-4">
                 <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10">
                   <Icon name={channel.icon as IconName} size={22} class="support-section__icon" />
                 </div>
-                <CardTitle class="text-lg normal-case">{channel.title}</CardTitle>
+                <CardTitle class="text-base font-semibold normal-case leading-snug">{channel.title}</CardTitle>
               </CardHeader>
               <CardContent class="flex-1">
                 <p class="text-sm leading-relaxed text-muted-foreground">{channel.desc}</p>
@@ -55,7 +61,8 @@ const c = t.support;
                   href={channel.href}
                   variant="outline"
                   size="sm"
-                  class="w-full"
+                  title={channel.linkLabel}
+                  class="support-section__cta"
                   {...(channel.href === CHECKOUT_HUB_PATH ? { 'data-checkout-hub': '' } : {})}
                 >
                   {channel.linkLabel}
