@@ -600,7 +600,7 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About Bodycam Cheats — guides, pricing & cloud',
+      title: 'Independent Bodycam Cheats guides, pricing & Cloud DMA',
       description:
         'Bodycam Cheats publishes PC feature guides, Cloud DMA setup, pricing, and support resources at bodycam-cheats.com.',
       sections: [

@@ -75,8 +75,11 @@ function checkPage(route) {
     errors.push(`${route}: og:description must match meta description`);
   }
 
-  if (!html.includes('hreflang="en"') || !html.includes('hreflang="x-default"')) {
-    errors.push(`${route}: missing hreflang=en and hreflang=x-default`);
+  const expected = `${SITE_URL}${route === '/' ? '/' : route}`;
+  for (const lang of ['en', 'en-US', 'x-default']) {
+    if (!html.includes(`hreflang="${lang}" href="${expected}"`)) {
+      errors.push(`${route}: missing or wrong hreflang=${lang} → ${expected}`);
+    }
   }
 
   if (html.includes('FAQPage')) {

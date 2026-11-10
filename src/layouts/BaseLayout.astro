@@ -19,6 +19,8 @@ import CheckoutHubDialog from '../components/CheckoutHubDialog.astro';
 import ShareLinks from '../components/ShareLinks.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { INDEXABLE_MONEY_ROUTES } from '../data/site';
+import { opensCheckoutHub } from '../utils/checkoutContext';
+import { hreflangAlternates } from '../config/hreflang';
 
 interface Props {
   title?: string;
@@ -59,6 +61,7 @@ const robotsContent = resolvedNoindex
   : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
 const canonical = canonicalUrl(pathname);
+const hreflangs = hreflangAlternates(pathname);
 const ogImageUrl = absoluteAssetUrl(ogImage);
 const identityGraph = siteIdentityGraph();
 const mergedJsonLd = jsonLd
@@ -75,6 +78,7 @@ const sharePaths = new Set<string>([
   '/support/',
 ]);
 const showShareLinks = sharePaths.has(pathname.endsWith('/') ? pathname : `${pathname}/`);
+const showCheckoutHub = opensCheckoutHub(pathname);
 ---
 
 <!doctype html>
@@ -99,6 +103,16 @@ const showShareLinks = sharePaths.has(pathname.endsWith('/') ? pathname : `${pat
         background: var(--background);
         color: var(--foreground);
       }
+      body {
+        min-height: 100vh;
+      }
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+      }
+      main {
+        display: block;
+      }
     </style>
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -108,8 +122,11 @@ const showShareLinks = sharePaths.has(pathname.endsWith('/') ? pathname : `${pat
     <meta name="theme-color" content="#0d0a14" />
     <link rel="canonical" href={canonical} />
     <link rel="image_src" href={ogImageUrl} />
-    <link rel="alternate" hreflang="en" href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={canonical} />
+    {
+      hreflangs.map((alt) => (
+        <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+      ))
+    }
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -159,6 +176,7 @@ const showShareLinks = sharePaths.has(pathname.endsWith('/') ? pathname : `${pat
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {GA_MEASUREMENT_ID ? <link rel="dns-prefetch" href="https://www.googletagmanager.com" /> : null}
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Bebas+Neue&display=optional"
       rel="stylesheet"
@@ -184,7 +202,7 @@ const showShareLinks = sharePaths.has(pathname.endsWith('/') ? pathname : `${pat
     </main>
     {showShareLinks ? <ShareLinks path={pathname} shareTitle={title} /> : null}
     <Footer logoAlt={logoAlt} />
-    {!pathname.startsWith('/go/') ? <CheckoutHubDialog /> : null}
+    {showCheckoutHub ? <CheckoutHubDialog /> : null}
     <script>
       const loadSite = () => import('../scripts/site.ts');
       if (typeof requestIdleCallback === 'function') {

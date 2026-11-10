@@ -18,7 +18,7 @@ figures:
     src: /images/bodycam/bodycam-aimbot-fov-snapline.webp
 ---
 
-# Bodycam Aimbot Features
+# Bodycam aimbot for PC: bones, smooth targeting, and FOV controls
 
 In BODYCAM, aiming is a major part of every encounter. Its close-range firefights, unpredictable engagements and tactical environments make aiming one of the most interesting aspects of the game to explore.
 

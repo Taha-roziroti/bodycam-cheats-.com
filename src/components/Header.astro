@@ -49,6 +49,7 @@ const useCheckoutHub = opensCheckoutHub(Astro.url.pathname);
           href={link.href}
           class="nav-link inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium leading-none text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
           data-nav-link
+          {...(link.href.startsWith('/') && !link.href.includes('#') ? { 'data-astro-prefetch': true } : {})}
           {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
         >
           <Icon name={navIcons[link.href] ?? 'navFeatures'} size={16} class="shrink-0 opacity-90" />

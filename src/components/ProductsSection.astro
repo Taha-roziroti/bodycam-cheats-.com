@@ -68,6 +68,11 @@ function cardLabel(product: (typeof landingProducts)[number]) {
 </section>
 
 <script>
-  import { setupProductsCarousel } from '../scripts/products-carousel.ts';
-  setupProductsCarousel();
+  const bootProductsCarousel = () =>
+    import('../scripts/products-carousel.ts').then((m) => m.setupProductsCarousel());
+  if (typeof requestIdleCallback === 'function') {
+    requestIdleCallback(() => bootProductsCarousel(), { timeout: 2500 });
+  } else {
+    setTimeout(() => bootProductsCarousel(), 150);
+  }
 </script>

@@ -26,7 +26,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/bodycam-cheats-price/': {
     title: 'Bodycam Cheats Price | $35 Monthly & $150 Lifetime',
     description:
-      'Compare Bodycam cheat pricing: 30-day access for $35 or lifetime for $150. Same ESP and aimbot list; Cloud DMA license sold separately.',
+      'Bodycam cheats price: $35 monthly or $150 lifetime for the same ESP and aimbot list. Cloud DMA is a separate $50 license—compare plans before checkout.',
   },
   '/bodycam-requirements/': {
     title: 'Bodycam Cheat Requirements | Windows 10 & 11 PC Guide',

@@ -209,6 +209,12 @@ if (!run('node', ['scripts/audit-anchor-text.mjs'])) process.exit(1);
 console.log('seo-audit: heading density…');
 if (!run('node', ['scripts/audit-heading-density.mjs'])) process.exit(1);
 
+console.log('seo-audit: performance budgets…');
+if (!run('node', ['scripts/audit-performance.mjs'])) process.exit(1);
+
+console.log('seo-audit: hreflang…');
+if (!run('node', ['scripts/audit-hreflang.mjs'])) process.exit(1);
+
 // Sitemap URLs should resolve
 const sitemapPath = path.join(dist, 'sitemap.xml');
 if (fs.existsSync(sitemapPath)) {

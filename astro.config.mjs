@@ -50,6 +50,7 @@ export default defineConfig({
     },
   },
   build: {
-    inlineStylesheets: 'always',
+    /** Keep HTML small; browsers cache external CSS across routes. */
+    inlineStylesheets: 'auto',
   },
 });

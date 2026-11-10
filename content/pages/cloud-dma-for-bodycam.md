@@ -19,20 +19,21 @@ figures:
 
 # Cloud DMA for Bodycam
 
-Cloud DMA is an important part of the published Bodycam configuration. It is specified as required for full functionality on supported builds, and its setup is based around a virtualized environment on a single gaming PC.
+Cloud DMA is required on supported Bodycam builds. The published stack is a **single-PC Hyper-V** guest on your gaming machine—not a second tower, PCIe DMA card, or USB bridge. This page lists the **$50 lifetime license offer**, what it does not include, setup proof, and FAQ links.
 
-The underlying architecture is particularly interesting because it uses Hyper-V rather than relying on a second physical computer or an external DMA box. Understanding how this arrangement works and what the system requires is useful when reviewing the overall Bodycam setup.
+## Offer snapshot
 
-This guide explains the Cloud DMA concept, its single-PC configuration, the main Windows requirements and the additional components listed for the setup.
+| Item | Listed price | Notes |
+|------|--------------|--------|
+| Cloud DMA lifetime license | **$50** one-time | Infrastructure license on this site’s checkout (`/go/cloud-dma/`) |
+| Bodycam cheat access | $35 monthly or $150 lifetime | Sold separately on [cheat plan pricing](/bodycam-cheats-price/) |
+| GREENWARD | Vendor-priced | Activation/routing; not in the $50 license |
+| Static server + AWS | Vendor-priced | Required add-ons per vendor docs |
 
-## Hyper-V on one PC and why it is required
+The hero screenshot on this page matches the Bodycam package branding used on the [homepage](/); step-by-step Hyper-V proof lives on the [Cloud DMA setup walkthrough](/guides/cloud-dma-setup/) with a hallway POV capture from the build.
 
-Cloud DMA is the virtualized infrastructure layer Bodycam lists for supported builds—not an unrelated upsell. The published design provisions a Hyper-V guest on the same Windows machine you game on, then completes activation through an encrypted service connection. That differs from a second tower, a PCIe DMA card, or a USB bridge, and it is why virtualization must be available before the cheat client pairs.
+## Hyper-V requirements and FAQs
 
-Because the stack shares the host, edition and firmware checks matter as much as the $50 lifetime license line item.
+Windows 10/11 Pro or Enterprise (64-bit), **Intel VT-x or AMD-V** enabled in firmware, **8 GB RAM minimum (16 GB recommended)**, stable broadband, and the same HVCI, Core Isolation, TPM, and Secure Boot gates listed for the cheat package.
 
-## Requirements, add-ons, and how it fits the Bodycam package
-
-Windows 10 or 11 (64-bit) with Intel VT-x or AMD-V enabled in firmware is mandatory. Windows Pro, Enterprise, or Education is recommended so Hyper-V can install. Budget 8 GB RAM minimum (16 GB recommended), reliable broadband for activation, and the same HVCI, Core Isolation, TPM, and Secure Boot posture required for the base cheat package.
-
-GREENWARD, a static server subscription, and AWS usage are separate purchases called out in vendor documentation—none of them are bundled into the Cloud DMA checkout. Once the guest is healthy, the main Bodycam client consumes the same ESP, aimbot, and weapon categories documented on the [Bodycam cheats homepage](/), with day-to-day hardware checks summarized on the [Bodycam Windows hardware checklist](/bodycam-requirements/).
+Common questions—renewal vs lifetime cheat plans, whether Cloud DMA is mandatory, and checkout delivery—are answered on the [Bodycam FAQ](/faq/) and in the Cloud DMA band on the [requirements checklist](/bodycam-requirements/). For support after purchase, use [Bodycam cheat support](/support/) with your order email and any Hyper-V Manager errors.

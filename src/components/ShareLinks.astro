@@ -11,7 +11,11 @@ const pageUrl = encodeURIComponent(canonicalUrl(path));
 const text = encodeURIComponent(shareTitle);
 ---
 
-<nav aria-label="Share this page" class="share-links not-prose mx-auto max-w-6xl px-5 pb-10 text-sm text-muted-foreground">
+<nav
+  aria-label="Share this page"
+  class="share-links not-prose mx-auto max-w-6xl px-5 pb-10 text-sm text-muted-foreground"
+  style="content-visibility: auto; contain-intrinsic-size: auto 120px;"
+>
   <p class="mb-2 font-medium text-foreground">Share this page</p>
   <ul class="flex flex-wrap gap-x-4 gap-y-2">
     <li>
