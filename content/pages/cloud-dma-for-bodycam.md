@@ -8,7 +8,6 @@ schemaTypes:
   - BreadcrumbList
 layout: article
 articlePublished: '2026-03-01'
-showAdditionalCostsCallout: true
 checkout: cloud-dma
 endCtaLabel: Explore Cloud DMA
 endCtaHref: /go/cloud-dma/

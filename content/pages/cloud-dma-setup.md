@@ -9,7 +9,6 @@ schemaTypes:
 layout: article
 articlePublished: '2026-01-01'
 checkout: cloud-dma
-showAdditionalCostsCallout: true
 endCtaHref: /go/cloud-dma/
 figures:
   - alt: Bodycam first-person hallway view with tactical flashlight and weapon silhouette

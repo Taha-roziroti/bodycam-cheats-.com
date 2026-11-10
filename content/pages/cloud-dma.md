@@ -8,7 +8,6 @@ schemaTypes:
   - BreadcrumbList
 layout: product
 checkout: cloud-dma
-showAdditionalCostsCallout: true
 heroImage:
   src: /images/placeholders/hero.svg
   alt: Cloud DMA hero placeholder

@@ -10,7 +10,6 @@ import {
   lockedCheckoutProduct,
   type CheckoutProductId,
 } from '../../utils/checkoutContext';
-import AdditionalCostsCallout from '../product/AdditionalCostsCallout.astro';
 import ContentFigures from './ContentFigures.astro';
 import ContentHeroImage from './ContentHeroImage.astro';
 import { defaultWebpSrc, HERO_IMAGE_WIDTHS, isRasterImageSrc } from '../../utils/responsiveImage';
@@ -156,9 +155,6 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
               </div>
             ) : null
           }
-          {data.showAdditionalCostsCallout ? (
-            <AdditionalCostsCallout class="not-prose mt-8" />
-          ) : null}
         </div>
         {
           useTwoColumn ? (

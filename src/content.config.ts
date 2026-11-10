@@ -11,7 +11,6 @@ const pages = defineCollection({
     layout: z.enum(['product', 'pricing', 'article']),
     checkout: z.enum(['main-product', 'cloud-dma', 'hwid-spoofer']).optional(),
     articlePublished: z.string().optional(),
-    showAdditionalCostsCallout: z.boolean().optional(),
     endCtaLabel: z.string().optional(),
     endCtaHref: z.string().optional(),
     heroImage: z
