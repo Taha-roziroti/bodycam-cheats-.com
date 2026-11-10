@@ -9,69 +9,69 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Bodycam Cheats for PC | ESP & Aimbot',
+    title: 'Bodycam Cheats for PC | ESP, Aimbot & Plan Pricing',
     description:
-      'Explore Bodycam cheats for PC, including ESP, aimbot and gameplay options. Compare access plans and review system requirements.',
+      'Bodycam cheats for PC: ESP, aimbot, pricing from $35 monthly or $150 lifetime, and Windows requirements. Compare plans before checkout.',
   },
   '/bodycam-aimbot/': {
-    title: 'Bodycam Aimbot Features and Options | PC',
+    title: 'Bodycam Aimbot for PC | FOV, Bones & Smooth Targeting',
     description:
-      'Explore Bodycam aimbot options, including head and chest targeting, FOV, aim line and more. See the feature breakdown and access options.',
+      'Bodycam aimbot options for PC: head and chest bones, FOV circle, snaplines, smoothness sliders, and recoil control. See plans and requirements.',
   },
   '/bodycam-esp/': {
-    title: 'Bodycam ESP & Wallhack Features for PC',
+    title: 'Bodycam ESP & Wallhack for PC | Boxes, Chams & Radar',
     description:
-      'See Bodycam ESP features, from player boxes and skeletons to distance, health and chams. Explore visual options and access details.',
+      'Bodycam ESP and wallhack features: player boxes, skeletons, distance, health, chams, and radar overlays for Windows PC. Review access options.',
   },
   '/bodycam-cheats-price/': {
-    title: 'Bodycam Cheats Price | Monthly vs Lifetime',
+    title: 'Bodycam Cheats Price | $35 Monthly & $150 Lifetime',
     description:
-      'Compare Bodycam cheats pricing: 30-day access for $35 or lifetime access for $150. Review included features and current options.',
+      'Compare Bodycam cheat pricing: 30-day access for $35 or lifetime for $150. Same ESP and aimbot list; Cloud DMA license sold separately.',
   },
   '/bodycam-requirements/': {
-    title: 'Bodycam Cheat Requirements | Windows 10/11',
+    title: 'Bodycam Cheat Requirements | Windows 10 & 11 PC Guide',
     description:
-      'Check Bodycam cheat requirements for Windows 10/11, memory, GPU and security settings. Review the Cloud DMA prerequisites before setup.',
+      'Bodycam cheat requirements for Windows 10/11: RAM, GPU, HVCI, virtualization for Cloud DMA, and security settings to verify before install.',
   },
   '/cloud-dma-for-bodycam/': {
-    title: 'Cloud DMA for Bodycam | Setup & Requirements',
+    title: 'Cloud DMA for Bodycam Cheats | Hyper-V One-PC Setup',
     description:
-      'Learn how Cloud DMA for Bodycam works, what a single-PC Hyper-V setup needs, and which additional components are required.',
+      'Cloud DMA for Bodycam explains the required Hyper-V single-PC stack, $50 lifetime license, GREENWARD/AWS add-ons, and Windows prerequisites.',
   },
   '/faq/': {
-    title: 'Bodycam Cheats FAQ – plans, Cloud DMA & requirements',
+    title: 'Bodycam Cheats FAQ | Plans, Cloud DMA & Requirements',
     description:
-      'Answers on Bodycam cheat monthly and lifetime plans, Cloud DMA licensing, Windows 10/11 requirements, checkout delivery, and Hyper-V setup before you buy.',
+      'Bodycam FAQ: monthly vs lifetime plans, Cloud DMA licensing, Windows 10/11 specs, checkout delivery, and Hyper-V setup before you buy.',
   },
   '/support/': {
-    title: 'Bodycam Cheats support – checkout & setup help',
+    title: 'Bodycam Cheat Support | Checkout & License Delivery',
     description:
-      'Get help with Bodycam cheat checkout, license delivery email, Cloud DMA Hyper-V setup, Windows requirements, and common install issues before you launch the game.',
+      'Bodycam support for checkout errors, license email delivery, Cloud DMA Hyper-V setup, and Windows compatibility checks before launch.',
   },
   '/about/': {
-    title: 'About Bodycam Cheats – independent PC guides',
+    title: 'About Bodycam Cheats | Independent PC Guides & FAQs',
     description:
-      'Bodycam Cheats is an independent resource for Windows PC players comparing ESP, aimbot features, pricing tiers, Cloud DMA setup, and honest system requirement checklists.',
+      'Independent Bodycam Cheats publishes ESP, aimbot, pricing, Cloud DMA, and requirements guides for Windows players—no official game affiliation.',
   },
   '/privacy/': {
-    title: 'Privacy – Bodycam Cheats analytics & cookies',
+    title: 'Bodycam Cheats Privacy Policy | Cookies & Analytics',
     description:
-      'Privacy policy for bodycam-cheats.com: what analytics and cookies we use, how support email is handled, and how long basic usage data is retained on this static site.',
+      'How bodycam-cheats.com uses privacy-friendly analytics, cookies, support email, and retention on this static Bodycam guides site.',
   },
   '/terms/': {
-    title: 'Terms – Bodycam Cheats purchase & license rules',
+    title: 'Terms of Use | Bodycam Cheats & Cloud DMA Licenses',
     description:
-      'Terms of use for Bodycam cheat and Cloud DMA purchases through external checkout, including license delivery, refund limits, and acceptable use of guides on this site.',
+      'Terms for Bodycam cheat and Cloud DMA purchases via external checkout, license delivery, refund limits, and acceptable use of our guides.',
   },
   '/guides/cloud-dma-setup/': {
-    title: 'Cloud DMA setup guide – Hyper-V & virtualization',
+    title: 'Cloud DMA Setup for Bodycam | Hyper-V Guide Steps',
     description:
-      'Hyper-V setup for the single-PC Cloud DMA stack with Bodycam—RAM, CPU, virtualization, and security checks before you install the client.',
+      'Hyper-V setup for Bodycam Cloud DMA on one PC: enable virtualization, allocate RAM, finish activation, and verify before loading the client.',
   },
   '/hwid-spoofer/': {
-    title: 'HWID Spoofer utility – hardware ID recovery (placeholder)',
+    title: 'HWID Spoofer for Bodycam Players | Hardware ID Utility',
     description:
-      'Overview placeholder for an HWID spoofer utility: supported Windows builds, when players use hardware ID recovery, and how it relates to the main Bodycam cheat stack.',
+      'HWID spoofer utility overview for Bodycam users: when to use hardware ID recovery, Windows builds supported, and limits vs the main cheat license.',
   },
 };
 

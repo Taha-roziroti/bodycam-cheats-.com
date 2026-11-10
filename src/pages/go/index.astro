@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CheckoutProductChooser from '../../components/product/CheckoutProductChooser.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
 ---
 
 <BaseLayout
@@ -9,23 +8,9 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
   description="Select your main product, Cloud DMA, or HWID Spoofer, then continue to checkout."
   noindex={true}
 >
-  <article class="py-10 md:py-14">
-    <div class="mx-auto max-w-3xl px-5">
-      <Breadcrumbs
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Checkout', path: '/go/' },
-        ]}
-      />
-      <header class="mt-6">
-        <h1 class="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">Choose a product</h1>
-        <p class="mt-3 text-muted-foreground">
-          Pick your main product, Cloud DMA license, or HWID Spoofer, then continue to checkout.
-        </p>
-      </header>
-      <div class="mt-8">
-        <CheckoutProductChooser />
-      </div>
+  <section class="flex min-h-[50vh] items-center border-b border-border bg-muted/20 py-12 md:py-16">
+    <div class="mx-auto w-full max-w-lg px-5">
+      <CheckoutProductChooser />
     </div>
-  </article>
+  </section>
 </BaseLayout>

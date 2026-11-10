@@ -5,7 +5,8 @@ import { RadioGroup, RadioGroupItem } from '@/components/starwind/radio-group';
 import { MAIN_PRODUCT_CHECKOUT, CLOUD_DMA_CHECKOUT, HWID_SPOOFER_CHECKOUT } from '../../data/productSite';
 import { formatPlanPrice, getProductPlans } from '../../data/productPricing';
 
-export type CheckoutProductId = 'main-product' | 'cloud-dma' | 'hwid-spoofer';
+import type { CheckoutProductId } from '../../utils/checkoutContext';
+export type { CheckoutProductId };
 
 interface Props {
   defaultProduct?: CheckoutProductId;

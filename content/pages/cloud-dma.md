@@ -19,4 +19,4 @@ endCtaHref: /go/cloud-dma/
 
 Describe the Hyper-V environment, single-PC workflow, and what the license includes.
 
-Follow the [setup guide](/guides/cloud-dma-setup/) after purchase.
+Follow the [Hyper-V Cloud DMA walkthrough](/guides/cloud-dma-setup/) after purchase.

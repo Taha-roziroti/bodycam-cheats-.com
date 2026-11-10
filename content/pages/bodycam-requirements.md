@@ -1,7 +1,7 @@
 ---
 route: /bodycam-requirements/
-seoTitle: Bodycam Cheat Requirements | Windows 10/11
-metaDescription: Check Bodycam cheat requirements for Windows 10/11, memory, GPU and security settings. Review the Cloud DMA prerequisites before setup.
+seoTitle: 'Bodycam Cheat Requirements | Windows 10 & 11 PC Guide'
+metaDescription: 'Bodycam cheat requirements for Windows 10/11: RAM, GPU, HVCI, virtualization for Cloud DMA, and security settings to verify before install.'
 schemaTypes:
   - WebPage
   - Article
@@ -12,9 +12,9 @@ checkout: main-product
 endCtaLabel: Explore Bodycam Features
 endCtaHref: /go/bodycam/
 figures:
-  - alt: Bodycam first-person hallway view with tactical flashlight — typical in-game POV
+  - alt: Bodycam first-person hallway view with tactical flashlight and weapon silhouette
     src: /images/bodycam/bodycam-pov-hallway.webp
-  - alt: Bodycam scoped gameplay showing ESP overlays on supported Windows builds
+  - alt: Bodycam scoped view with red ESP boxes, snaplines and radar minimap
     src: /images/bodycam/bodycam-esp-scope.webp
 ---
 
@@ -24,21 +24,9 @@ Before exploring the full Bodycam feature collection, it is worth checking that 
 
 The good news is that the published specifications are laid out clearly. This guide brings them together in one place, explains the important Windows settings and covers the additional Cloud DMA requirements associated with supported builds.
 
-## Supported Windows Versions
+## Windows, hardware, and security settings
 
-The listed Bodycam package supports both Windows 10 and Windows 11. These are the two operating systems specified in the published requirements.
-
-The Windows environment also has a number of required configuration settings. HVCI, Core Isolation, TPM and Secure Boot are all listed as enabled requirements.
-
-Checking your Windows edition and configuration before setup is a useful first step. It helps establish whether the PC matches the intended environment before moving on to the remaining hardware and software details.
-
-## Minimum Hardware Requirements
-
-Hardware is another important part of the compatibility checklist. The published Bodycam requirements specify at least 8 GB of RAM and a dedicated GPU.
-
-The listed minimum memory requirement is straightforward, while the dedicated graphics requirement is important to keep in mind when checking the specifications of a gaming PC.
-
-Here is a concise overview of the stated requirements:
+The supported operating systems are Windows 10 and Windows 11 (64-bit). Hardware minimums are 8 GB RAM and a dedicated GPU. HVCI (Hypervisor-Protected Code Integrity), Core Isolation, TPM, and Secure Boot must be enabled in Windows and firmware where applicable—these are named explicitly in the vendor checklist rather than optional tuning.
 
 - Windows 10 or Windows 11
 - Minimum 8 GB RAM
@@ -49,32 +37,8 @@ Here is a concise overview of the stated requirements:
 - Secure Boot enabled
 - Cloud DMA required for full functionality on supported builds
 
-## HVCI, Core Isolation, TPM and Secure Boot
+## Cloud DMA, virtualization, and pre-install checks
 
-Several Windows security settings are specifically mentioned in the configuration requirements. Understanding what these names refer to makes it easier to follow the setup information.
+Cloud DMA is mandatory on supported Bodycam builds and runs as a single-PC Hyper-V stack. CPU virtualization (Intel VT-x or AMD-V) must be on in BIOS, and Windows Pro, Enterprise, or Education is recommended so the Hyper-V role can install. Plan for 8 GB RAM minimum with 16 GB recommended, stable broadband for activation, plus the same HVCI/Core Isolation/TPM/Secure Boot posture listed above. GREENWARD, a static server tier, and AWS resources are billed separately from the cheat license—the [Cloud DMA license and add-ons guide](/cloud-dma-for-bodycam/) covers those costs.
 
-HVCI stands for Hypervisor-Protected Code Integrity. It is associated with Windows memory integrity and virtualization-based security.
-
-Core Isolation is the Windows security feature area where Memory Integrity can be managed. TPM refers to the Trusted Platform Module, while Secure Boot is a firmware security feature used during the system startup process.
-
-All four are listed as enabled in the Bodycam configuration requirements. Their status should be checked in Windows and in the appropriate firmware settings before proceeding.
-
-## Cloud DMA Requirements and Compatibility
-
-Cloud DMA is specified as required for full functionality on supported Bodycam builds. It has its own technical requirements and is built around a single-PC Hyper-V environment.
-
-The Cloud DMA configuration calls for Windows 10 or Windows 11 64-bit, CPU virtualization enabled in firmware and the ability to enable the Hyper-V role during setup.
-
-Intel VT-x or AMD-V virtualization support is required. Windows Pro, Enterprise or Education editions are recommended for the Hyper-V setup, with the relevant installer notes used to check individual Windows editions.
-
-The Cloud DMA requirements specify a minimum of 8 GB RAM, with 16 GB recommended, along with stable broadband internet for activation and service connectivity.
-
-Read the complete [Cloud DMA for Bodycam](/cloud-dma-for-bodycam/) guide for setup detail.
-
-## Things to Check Before Getting Started
-
-A quick compatibility review can make the entire setup process easier to understand. Start by confirming your Windows version and checking the amount of installed memory. Next, verify that your system has a dedicated GPU and that the required Windows security settings are enabled.
-
-For Cloud DMA, also check CPU virtualization in the firmware settings and confirm that your Windows edition supports the intended Hyper-V configuration.
-
-It is useful to look at the hardware and software requirements together rather than treating them as separate questions. The full configuration includes both the base Bodycam requirements and the additional Cloud DMA environment for supported builds.
+Before you load the client, confirm OS edition, RAM, GPU, the four security toggles, firmware virtualization, and Hyper-V readiness in one pass. If anything fails, fix it before purchase rather than treating hardware, Windows, and Cloud DMA as unrelated checklists.

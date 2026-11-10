@@ -33,4 +33,4 @@ Add recommended hardware when you have tested configurations.
 
 ## Cloud DMA note
 
-If your stack uses Hyper-V, point readers to the [Cloud DMA setup guide](/guides/cloud-dma-setup/).
+If your stack uses Hyper-V, point readers to the [Hyper-V setup walkthrough for Cloud DMA](/guides/cloud-dma-setup/).

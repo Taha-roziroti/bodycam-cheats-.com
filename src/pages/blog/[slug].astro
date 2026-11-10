@@ -23,6 +23,7 @@ import { Button } from '@/components/starwind/button';
 import { Prose } from '@/components/starwind/prose';
 import BlogPostCta from '../../components/BlogPostCta.astro';
 import { normalizeInternalPath, ROUTES } from '../../utils/path';
+import { resolveImageAlt } from '../../utils/bodycamImageAlt';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -43,6 +44,7 @@ const breadcrumbs = [
 ];
 
 const related = getRelatedBlogPosts(post.slug, 3);
+const heroAlt = resolveImageAlt(post.image, post.title);
 
 function linkify(text: string): string {
   return text
@@ -99,7 +101,7 @@ const published = parseBlogDate(post.date);
           <figure class="blog-article__hero">
             <ResponsiveImage
               src={post.image}
-              alt={post.title}
+              alt={heroAlt}
               width={960}
               height={540}
               loading="eager"

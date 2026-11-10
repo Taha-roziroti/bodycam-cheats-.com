@@ -15,6 +15,7 @@ import { ogImageForPath } from '../data/site';
 import { siteIdentityGraph } from '../utils/siteIdentityGraph';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CheckoutHubDialog from '../components/CheckoutHubDialog.astro';
 import ShareLinks from '../components/ShareLinks.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { INDEXABLE_MONEY_ROUTES } from '../data/site';
@@ -66,6 +67,8 @@ const mergedJsonLd = jsonLd
 
 const sharePaths = new Set<string>([
   ...INDEXABLE_MONEY_ROUTES,
+  '/faq/',
+  '/guides/cloud-dma-setup/',
   '/about/',
   '/privacy/',
   '/terms/',
@@ -84,6 +87,19 @@ const showShareLinks = sharePaths.has(pathname.endsWith('/') ? pathname : `${pat
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style is:inline>
+      :root {
+        color-scheme: dark;
+        --background: #0d0a14;
+        --foreground: #ece8f4;
+      }
+      html,
+      body {
+        margin: 0;
+        background: var(--background);
+        color: var(--foreground);
+      }
+    </style>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={t.site.name} />
@@ -168,8 +184,14 @@ const showShareLinks = sharePaths.has(pathname.endsWith('/') ? pathname : `${pat
     </main>
     {showShareLinks ? <ShareLinks path={pathname} shareTitle={title} /> : null}
     <Footer logoAlt={logoAlt} />
+    {!pathname.startsWith('/go/') ? <CheckoutHubDialog /> : null}
     <script>
-      import '../scripts/site.ts';
+      const loadSite = () => import('../scripts/site.ts');
+      if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(loadSite, { timeout: 2500 });
+      } else {
+        window.setTimeout(loadSite, 150);
+      }
     </script>
     {
       GA_MEASUREMENT_ID && (

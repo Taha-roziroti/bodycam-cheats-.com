@@ -194,7 +194,7 @@ export const bodycamPageFaqsByRoute: Record<string, SiteFaqItem[]> = {
       'products',
       'faqProductsPage',
       'Is Cloud DMA required for Bodycam?',
-      'Cloud DMA is specified as required for full functionality on supported Bodycam builds. It also has additional virtualization and Windows configuration requirements.',
+      'Yes. Supported Bodycam builds list Cloud DMA as mandatory infrastructure—see the requirements checklist here for RAM, HVCI, and GPU gates before you buy the cheat license.',
     ),
     faq(
       'bodycam-req-cloud-ram',
@@ -217,7 +217,7 @@ export const bodycamPageFaqsByRoute: Record<string, SiteFaqItem[]> = {
       'products',
       'faqProductsPage',
       'Is Cloud DMA required for Bodycam?',
-      'Yes. Cloud DMA is specified as required for full functionality on supported Bodycam builds.',
+      'Yes. The published Bodycam stack expects Cloud DMA on a single Hyper-V host—this product page explains license cost and add-ons, not the Windows checklist on the requirements route.',
     ),
     faq(
       'bodycam-cdma-second-pc',
@@ -253,6 +253,29 @@ export const bodycamPageFaqsByRoute: Record<string, SiteFaqItem[]> = {
       'faqUgcWhat',
       'Are additional components required?',
       'Yes. The published requirements list GREENWARD, Static Server and AWS as separate purchases. Static Server and AWS are two different components, and both are required.',
+    ),
+  ],
+  '/guides/cloud-dma-setup/': [
+    faq(
+      'bodycam-setup-hyperv',
+      'setup',
+      'faqDiscordHelp',
+      'Which Windows feature enables Cloud DMA on one PC?',
+      'Hyper-V and the Windows Hypervisor Platform must be enabled, then rebooted, before the guest partition is created for Cloud DMA.',
+    ),
+    faq(
+      'bodycam-setup-order',
+      'setup',
+      'faqAfterBuy',
+      'Should I install Bodycam before Cloud DMA activates?',
+      'No. Finish Cloud DMA activation from your order email, confirm the virtual environment is healthy, then install the Bodycam client on the host.',
+    ),
+    faq(
+      'bodycam-setup-pricing',
+      'plans',
+      'faqComparePlans',
+      'Is Cloud DMA bundled with the $35 cheat plan?',
+      'No. Cheat access and the Cloud DMA lifetime license are separate checkouts—compare both on the pricing and Cloud DMA product pages.',
     ),
   ],
 };

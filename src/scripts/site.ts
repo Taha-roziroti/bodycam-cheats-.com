@@ -102,6 +102,7 @@ function bootSite() {
   initInPageScroll();
   initSkipLink();
   initThemeMetaColor();
+  import('./checkoutHub').then((m) => m.initCheckoutHub());
 }
 
 if (document.readyState === 'loading') {

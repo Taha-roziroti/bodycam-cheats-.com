@@ -30,6 +30,6 @@ Placeholder: describe one-time purchase terms and update expectations.
 
 ## Add-on products
 
-Link to [Cloud DMA](/cloud-dma-for-bodycam/) and [HWID Spoofer](/hwid-spoofer/) when those pages are filled in.
+Link to the [Cloud DMA for Bodycam product page](/cloud-dma-for-bodycam/) and the [HWID recovery utility overview](/hwid-spoofer/) when those pages are filled in.
 
-Review [system requirements](/bodycam-requirements/) before checkout.
+Review the [Bodycam compatibility checklist](/bodycam-requirements/) before checkout.

@@ -54,16 +54,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'esp',
     icon: 'faqWhatIsEsp',
     q: 'What features are included with Bodycam cheats?',
-    a: a(
-      'Soft aim, enemy ESP, loot ESP, radar, no recoil, no spread, and a stream-proof overlay. See the homepage feature section for an overview.',
-    ),
+    a: `Aimbot, ESP, chams, movement, and weapon modules are broken down on the homepage and on the dedicated ${link('Bodycam aimbot guide', '/bodycam-aimbot/')} and ${link('Bodycam ESP guide', '/bodycam-esp/')}—this FAQ stays high level so we do not repeat the full feature matrix here.`,
   },
   {
     id: 'after-buy',
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: `Checkout runs through our secure partner. After purchase, follow delivery instructions from your order email and review the ${link('post-purchase Hyper-V setup guide', '/guides/cloud-dma-setup/')} before launching the game.`,
+    a: `Checkout runs through our secure partner. After purchase, follow delivery instructions from your order email and review the ${link('Bodycam post-purchase Cloud DMA steps', '/guides/cloud-dma-setup/')} before launching the game.`,
   },
   {
     id: 'ban-risk',
@@ -111,7 +109,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqProductsPage',
     q: 'Is Cloud DMA included in the setup?',
-    a: `Cloud DMA is required on supported builds. Review the ${cloudDmaPage} and ${link('single-PC Hyper-V setup steps', '/guides/cloud-dma-setup/')} for Hyper-V, RAM, and add-on services such as GREENWARD or AWS.`,
+    a: `Cloud DMA is required on supported builds. Review the ${cloudDmaPage} and the ${setupGuide} for Hyper-V, RAM, and add-on services such as GREENWARD or AWS.`,
   },
   {
     id: 'cloud-dma-cost',
@@ -132,7 +130,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'setup',
     icon: 'faqDiscordHelp',
     q: 'What Windows version do I need?',
-    a: `Windows 10 or 11 with virtualization enabled for Cloud DMA. See the ${link('system requirements checklist', '/bodycam-requirements/')} for RAM, CPU, and client compatibility.`,
+    a: `Windows 10 or 11 with virtualization enabled for Cloud DMA. See the ${requirementsGuide} for RAM, CPU, and client compatibility.`,
   },
   {
     id: 'soft-aim',
@@ -199,22 +197,10 @@ export function getLandingFaqs(): SiteFaqItem[] {
   return bodycamPageFaqsByRoute['/'] ?? [];
 }
 
-const CONTENT_PAGE_FAQ_IDS: Record<string, string[]> = {
-  '/bodycam-cheats-price/': ['pricing-plans', 'plan-prices', 'features', 'after-buy', 'checkout-help'],
-  '/bodycam-requirements/': ['windows-req', 'cloud-dma', 'platforms', 'features', 'checkout-help'],
-  '/cloud-dma-for-bodycam/': ['cloud-dma', 'cloud-dma-cost', 'windows-req', 'platforms', 'after-buy'],
-  '/bodycam-aimbot/': ['features', 'pricing-plans', 'windows-req', 'checkout-help'],
-  '/bodycam-esp/': ['features', 'pricing-plans', 'windows-req', 'checkout-help'],
-};
-
 export function getContentPageFaqs(route: string): SiteFaqItem[] | null {
   const bodycam = bodycamPageFaqsByRoute[route];
   if (bodycam?.length) return bodycam;
-  const ids = CONTENT_PAGE_FAQ_IDS[route];
-  if (!ids) return null;
-  return ids
-    .map((id) => siteFaqs.find((f) => f.id === id))
-    .filter((f): f is SiteFaqItem => Boolean(f));
+  return null;
 }
 
 export function getAllFaqs(): SiteFaqItem[] {

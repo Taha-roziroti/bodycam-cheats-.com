@@ -1,7 +1,7 @@
 ---
 route: /bodycam-esp/
-seoTitle: Bodycam ESP & Wallhack Features for PC
-metaDescription: See Bodycam ESP features, from player boxes and skeletons to distance, health and chams. Explore visual options and access details.
+seoTitle: 'Bodycam ESP & Wallhack for PC | Boxes, Chams & Radar'
+metaDescription: 'Bodycam ESP and wallhack features: player boxes, skeletons, distance, health, chams, and radar overlays for Windows PC. Review access options.'
 schemaTypes:
   - WebPage
   - Article
@@ -12,11 +12,11 @@ checkout: main-product
 endCtaLabel: Explore Bodycam ESP Access
 endCtaHref: /go/bodycam/
 figures:
-  - alt: Bodycam cheat menu Visuals tab showing Player ESP, skeleton and radar toggles
+  - alt: Bodycam cheat menu Visuals tab showing Player ESP, skeleton, radar and distance toggles
     src: /images/bodycam/bodycam-menu-visuals.webp
-  - alt: Bodycam ESP wallhack-style enemy icons visible through wooden walls
+  - alt: Bodycam ESP wallhack-style enemy markers visible through wooden walls
     src: /images/bodycam/bodycam-esp-wallhack-icons.webp
-  - alt: Bodycam player ESP cyan skeletons and snaplines in outdoor map
+  - alt: Bodycam player ESP cyan skeletons and snaplines in charred forest map
     src: /images/bodycam/bodycam-esp-forest-cyan.webp
   - alt: Bodycam ESP red bounding boxes and teal skeletons through trees
     src: /images/bodycam/bodycam-esp-forest-boxes.webp
@@ -30,13 +30,9 @@ Bodycam ESP brings together a selection of player indicators, visual displays an
 
 This guide explores the different ESP features, explains the visual options and provides a closer look at the wallhack-style terminology associated with Bodycam ESP.
 
-## Bodycam Player ESP and Visual Features
+## Player ESP, wallhack-style visibility, and on-screen indicators
 
-Player ESP is one of the main entries in the visual category. It sits alongside several other display options, allowing the feature collection to cover different kinds of on-screen information.
-
-Box ESP provides box-style player indicators, while Skeleton adds skeletal visual displays. Snaplines are another listed feature, giving the collection additional ways to represent player positions on screen.
-
-The interface also includes nicknames, health bars and distance indicators. These options give the visual menu a broad selection, with each feature representing a different type of player information.
+Searches for Bodycam wallhack and Bodycam ESP usually describe the same visual category: extra player information on screen. The menu lists Box ESP, Skeleton, Snaplines, Nicknames, Health Bar, Distance, and Team Check alongside core Player ESP. Together they cover boxes, skeletal outlines, connection lines, and basic player metadata rather than a single overlay type.
 
 - Player ESP
 - Box ESP
@@ -47,34 +43,10 @@ The interface also includes nicknames, health bars and distance indicators. Thes
 - Distance
 - Team Check
 
-## Bodycam Wallhack and Player Visibility Options
+Rather than treating wallhack and ESP as separate products, it helps to read them as labels people use for this one visuals tab.
 
-Bodycam wallhack is a closely related search term to Bodycam ESP. Both are associated with visual features and player visibility, which is why they are covered together on this page.
+## Chams, color control, drones, bombs, and radar-related options
 
-The listed visual category includes Player ESP, Box ESP, skeleton displays and several additional indicators. These provide the foundation of the available visual feature collection.
+Player Chams, Local Chams, and Weapon Chams extend the menu beyond flat boxes. Full Color Customization sits in the miscellaneous section for tinting those layers. Drone ESP and Bomb ESP add entries for non-player objects, while No Flash, Radar, and stream-proof options appear in the wider product overview.
 
-Rather than treating Bodycam ESP and Bodycam wallhack as two separate products, it makes more sense to explore them as part of the same overall visual category. This page covers the related options together so visitors can understand the available features in one place.
-
-## Skeleton, Snaplines and Player Indicators
-
-The smaller visual features are what give the ESP menu much of its detail. Skeleton displays add another type of player indicator, while snaplines provide a separate visual element.
-
-Nicknames, health bars and distance indicators are also included. Each contributes a different piece of information to the visual interface, giving players several distinct options to explore.
-
-Team Check is another entry in the published feature list. Alongside the other player indicators, it rounds out a visual category that extends beyond basic box displays.
-
-## Player Chams, Weapon Chams and Color Customization
-
-Chams are another major part of the visual feature collection. The listed options include Player Chams, Local Chams and Weapon Chams.
-
-Full Color Customization is also available in the miscellaneous category, providing an additional visual customization option within the wider interface.
-
-For anyone exploring the full visual feature list, these entries are worth looking at alongside the more familiar ESP indicators. Together, they give the Bodycam ESP category considerably more depth than a basic overlay menu.
-
-## Drone ESP, Bomb ESP and Additional Visual Features
-
-The Bodycam visual collection extends beyond player indicators. Drone ESP and Bomb ESP are both included in the published feature list, adding dedicated entries for these in-game elements.
-
-No Flash is another available visual option. Radar and stream-proof functionality are also described in the product overview, making the visual category one of the most comprehensive parts of the package.
-
-With player indicators, chams, environmental elements and additional visual controls, Bodycam ESP offers plenty to explore within one feature collection.
+For anyone comparing plans, these entries sit in the same package as aimbot and weapon tools on the [Bodycam cheats homepage](/). Requirements for Windows, HVCI, and Cloud DMA are unchanged; see the [Bodycam Windows hardware checklist](/bodycam-requirements/) before install.

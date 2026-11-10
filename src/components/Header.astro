@@ -1,6 +1,6 @@
 ---
 import { t } from '../i18n';
-import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
+import { opensCheckoutHub, primaryBuyHref } from '../utils/checkoutContext';
 import { Button } from '@/components/starwind/button';
 import {
   Sheet,
@@ -25,7 +25,8 @@ const navIcons: Record<string, IconName> = {
   '/support/': 'navSupport',
 };
 
-const purchaseUrl = PRIMARY_CHECKOUT_PATH;
+const purchaseUrl = primaryBuyHref(Astro.url.pathname);
+const useCheckoutHub = opensCheckoutHub(Astro.url.pathname);
 ---
 
 <header class="pointer-events-none fixed inset-x-0 top-0 z-50">
@@ -34,7 +35,7 @@ const purchaseUrl = PRIMARY_CHECKOUT_PATH;
       class="pointer-events-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 rounded-xl border border-border bg-card/95 px-4 text-foreground shadow-sm sm:px-5 xl:grid xl:h-[4.25rem] xl:max-w-[84rem] xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:items-center xl:gap-4 xl:px-6"
     >
     <a href="/" class="inline-flex min-w-0 max-w-[46%] shrink-0 items-center gap-2 font-[family-name:var(--font-heading)] text-base font-semibold tracking-tight sm:max-w-none xl:justify-self-start xl:text-lg" aria-label={t.ui.homeAria}>
-      <img src="/apple-touch-icon.png" alt="" width="32" height="32" class="size-8 shrink-0 rounded-md" />
+      <img src="/apple-touch-icon.png" alt="" width="32" height="32" class="size-8 shrink-0 rounded-md" aria-hidden="true" />
       <span class="truncate" aria-hidden="true">{t.site.name}</span>
       <span class="sr-only"> site header</span>
     </a>
@@ -59,7 +60,15 @@ const purchaseUrl = PRIMARY_CHECKOUT_PATH;
 
     <div class="flex shrink-0 items-center gap-2 xl:justify-self-end">
       <div class="hidden items-center xl:flex">
-        <Button as="a" href={purchaseUrl} variant="primary" size="sm" class="shrink-0 rounded-lg" aria-label={t.ui.checkoutAria}>
+        <Button
+          as="a"
+          href={purchaseUrl}
+          variant="primary"
+          size="sm"
+          class="shrink-0 rounded-lg"
+          aria-label={t.ui.checkoutAria}
+          {...(useCheckoutHub ? { 'data-checkout-hub': '' } : {})}
+        >
           {t.ui.browseCheats}
         </Button>
       </div>
@@ -89,7 +98,14 @@ const purchaseUrl = PRIMARY_CHECKOUT_PATH;
               </a>
             ))}
           </nav>
-          <Button as="a" href={purchaseUrl} variant="primary" class="w-full justify-center" aria-label={t.ui.checkoutAria}>
+          <Button
+            as="a"
+            href={purchaseUrl}
+            variant="primary"
+            class="w-full justify-center"
+            aria-label={t.ui.checkoutAria}
+            {...(useCheckoutHub ? { 'data-checkout-hub': '' } : {})}
+          >
             {t.ui.browseCheatsMobile}
           </Button>
         </SheetContent>

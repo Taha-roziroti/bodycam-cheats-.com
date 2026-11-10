@@ -14,6 +14,8 @@ export interface LandingCatalogProduct {
   icon: IconName;
   badge?: string;
   variant?: 'essential' | 'popular' | 'limited';
+  buyLabel?: string;
+  viewLabel?: string;
 }
 
 export const landingHeroSlides: ProductSlide[] = [
@@ -67,6 +69,8 @@ export const landingProducts: LandingCatalogProduct[] = [
     icon: 'coreProduct',
     features: ['ESP & aimbot', 'Chams & radar', 'Recoil options', 'Saveable configs'],
     more: 3,
+    buyLabel: 'Checkout Bodycam plan',
+    viewLabel: 'Open monthly vs lifetime pricing',
   },
   {
     slug: 'cloud-dma',
@@ -79,6 +83,8 @@ export const landingProducts: LandingCatalogProduct[] = [
     icon: 'reqCpu',
     features: ['Hyper-V single-PC', 'Windows 10 & 11', 'Lifetime $50 license', 'Add-ons priced separately'],
     more: 1,
+    buyLabel: 'Buy Cloud DMA license',
+    viewLabel: 'Read Cloud DMA requirements',
   },
 ];
 

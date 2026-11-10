@@ -16,6 +16,8 @@ interface Props {
   widths?: readonly number[];
   class?: string;
   desktopOnly?: boolean;
+  /** Decorative thumbs/icons: empty alt + aria-hidden for accessibility. */
+  decorative?: boolean;
 }
 
 const {
@@ -29,6 +31,7 @@ const {
   widths = DEFAULT_IMAGE_WIDTHS,
   class: className,
   desktopOnly = false,
+  decorative = false,
 } = Astro.props;
 
 const isRaster = /\.(png|jpe?g|webp)$/i.test(src);
@@ -55,6 +58,7 @@ const pictureMedia = desktopOnly ? '(min-width: 1024px)' : undefined;
         fetchpriority={fetchPriority}
         sizes={pictureSizes}
         class={className}
+        aria-hidden={decorative ? 'true' : undefined}
       />
     </picture>
   ) : (
@@ -67,6 +71,7 @@ const pictureMedia = desktopOnly ? '(min-width: 1024px)' : undefined;
       decoding="async"
       fetchpriority={fetchPriority}
       class={className}
+      aria-hidden={decorative ? 'true' : undefined}
     />
   )
 }

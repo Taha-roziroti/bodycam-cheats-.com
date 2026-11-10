@@ -8,9 +8,9 @@ export const en: Translations = {
   site: {
     name: 'Bodycam Cheats',
     domain: 'bodycam-cheats.com',
-    title: 'Bodycam Cheats for PC | ESP & Aimbot',
+    title: 'Bodycam Cheats for PC | ESP, Aimbot & Plan Pricing',
     description:
-      'Explore Bodycam cheats for PC, including ESP, aimbot and visual options. Review features, requirements and plans before you buy.',
+      'Bodycam cheats for PC: ESP, aimbot, pricing from $35 monthly or $150 lifetime, and Windows requirements. Compare plans before checkout.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [

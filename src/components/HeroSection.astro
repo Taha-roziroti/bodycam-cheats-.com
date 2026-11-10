@@ -1,6 +1,6 @@
 ---
 import { t } from '../i18n';
-import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
+import { opensCheckoutHub, primaryBuyHref } from '../utils/checkoutContext';
 import { landingHeroSlides } from '../data/landing';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
 import ImageSlider from './ImageSlider.astro';
@@ -9,6 +9,8 @@ import { Button } from '@/components/starwind/button';
 import { Badge } from '@/components/starwind/badge';
 
 const h = t.hero;
+const heroBuyHref = primaryBuyHref(Astro.url.pathname);
+const heroOpensHub = opensCheckoutHub(Astro.url.pathname);
 
 const heroMarqueePills = [
   ...heroStatusPills,
@@ -43,7 +45,8 @@ const heroMarqueePills = [
         <div class="flex flex-wrap justify-start gap-3 sm:gap-4">
           <Button
             as="a"
-            href={PRIMARY_CHECKOUT_PATH}
+            href={heroBuyHref}
+            {...(heroOpensHub ? { 'data-checkout-hub': '' } : {})}
             variant="primary"
             size="lg"
             class="rounded-xl"

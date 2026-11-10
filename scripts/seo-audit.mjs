@@ -168,8 +168,8 @@ function auditHtmlFile(file) {
     const desc = html.match(/name="description" content="([^"]*)"/i)?.[1] ?? '';
     const lenT = titleLen(title);
     const lenD = titleLen(desc);
-    if (lenT < 30 || lenT > 70) warnings.push(`${route}: title length ${lenT} (target ~50-60)`);
-    if (lenD < 120 || lenD > 170) warnings.push(`${route}: meta description length ${lenD} (target ~140-160)`);
+    if (lenT < 50 || lenT > 60) warnings.push(`${route}: title length ${lenT} (target 50-60)`);
+    if (lenD < 120 || lenD > 155) warnings.push(`${route}: meta description length ${lenD} (target 120-155)`);
 
     if (!html.includes('lang="en-US"') && html.includes('lang="en"')) {
       warnings.push(`${route}: html lang is "en" not "en-US" (audit prefers en-US)`);
@@ -191,14 +191,23 @@ if (!skipBuild) {
 
 for (const f of collectHtmlFiles(dist)) auditHtmlFile(f);
 
-console.log('seo-audit: bodycam images…');
-if (!run('node', ['scripts/audit-bodycam-images.mjs'])) process.exit(1);
+console.log('seo-audit: images & alt text…');
+if (!run('node', ['scripts/audit-images.mjs'])) process.exit(1);
 
 console.log('seo-audit: spelling…');
 if (!run('node', ['scripts/audit-spelling.mjs'])) process.exit(1);
 
 console.log('seo-audit: responsive layout…');
 if (!run('node', ['scripts/audit-responsive.mjs'])) process.exit(1);
+
+console.log('seo-audit: duplicate content…');
+if (!run('node', ['scripts/audit-duplicate-content.mjs'])) process.exit(1);
+
+console.log('seo-audit: anchor text…');
+if (!run('node', ['scripts/audit-anchor-text.mjs'])) process.exit(1);
+
+console.log('seo-audit: heading density…');
+if (!run('node', ['scripts/audit-heading-density.mjs'])) process.exit(1);
 
 // Sitemap URLs should resolve
 const sitemapPath = path.join(dist, 'sitemap.xml');

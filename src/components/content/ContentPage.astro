@@ -2,7 +2,14 @@
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
-import CheckoutProductPicker, { type CheckoutProductId } from '../product/CheckoutProductPicker.astro';
+import CheckoutProductPicker from '../product/CheckoutProductPicker.astro';
+import CheckoutPanel from '../product/CheckoutPanel.astro';
+import {
+  checkoutHrefForProduct,
+  checkoutPanelHeading,
+  lockedCheckoutProduct,
+  type CheckoutProductId,
+} from '../../utils/checkoutContext';
 import AdditionalCostsCallout from '../product/AdditionalCostsCallout.astro';
 import ContentFigures from './ContentFigures.astro';
 import ContentHeroImage from './ContentHeroImage.astro';
@@ -14,6 +21,7 @@ import {
 } from '../../utils/contentPageJsonLd';
 import { Button } from '@/components/starwind/button';
 import { loadContentPage } from '../../utils/loadContentPage';
+import { resolvePageSeo } from '../../config/seo';
 import SiteFaqSection from '../SiteFaqSection.astro';
 import { faqFilterTopicsForItems, getContentPageFaqs } from '../../data/faq';
 
@@ -26,22 +34,26 @@ const entry = await loadContentPage(id);
 
 const data = entry.data;
 const { Content: FullContent } = await render(entry);
+const seoMeta = resolvePageSeo(data.route);
 
 const breadcrumbs = breadcrumbsForRoute(data.route);
 const jsonLd = jsonLdForContentPage({
   route: data.route,
-  seoTitle: data.seoTitle,
-  metaDescription: data.metaDescription,
+  seoTitle: seoMeta.title,
+  metaDescription: seoMeta.description,
   schemaTypes: data.schemaTypes,
   articlePublished: data.articlePublished,
 });
 const ctaHref = data.endCtaHref ?? defaultEndCtaHref(data.route, data.checkout);
+const lockedProduct = lockedCheckoutProduct(data.route);
 const sidebarDefaultProduct: CheckoutProductId =
-  data.checkout === 'cloud-dma'
+  lockedProduct ??
+  (data.checkout === 'cloud-dma'
     ? 'cloud-dma'
     : data.checkout === 'hwid-spoofer'
       ? 'hwid-spoofer'
-      : 'main-product';
+      : 'main-product');
+
 const useProductShell = data.layout === 'product' || data.layout === 'pricing';
 const ogType = data.layout === 'article' ? 'article' : 'website';
 const lcpPreload =
@@ -64,8 +76,8 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
 ---
 
 <BaseLayout
-  title={data.seoTitle}
-  description={data.metaDescription}
+  title={seoMeta.title}
+  description={seoMeta.description}
   jsonLd={jsonLd}
   ogType={ogType}
   ogImage={data.ogImage}
@@ -105,14 +117,34 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
               <ContentFigures figures={data.figures} />
             </div>
             <div class="not-prose mt-8 lg:hidden">
-              <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
+              {
+                lockedProduct ? (
+                  <CheckoutPanel
+                    productSlug={lockedProduct}
+                    buyUrl={checkoutHrefForProduct(lockedProduct)}
+                    heading={checkoutPanelHeading(lockedProduct)}
+                  />
+                ) : (
+                  <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
+                )
+              }
             </div>
             {data.showAdditionalCostsCallout ? (
               <AdditionalCostsCallout class="not-prose mt-8" />
             ) : null}
           </div>
           <div class="hidden lg:block">
-            <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
+            {
+              lockedProduct ? (
+                <CheckoutPanel
+                  productSlug={lockedProduct}
+                  buyUrl={checkoutHrefForProduct(lockedProduct)}
+                  heading={checkoutPanelHeading(lockedProduct)}
+                />
+              ) : (
+                <CheckoutProductPicker defaultProduct={sidebarDefaultProduct} />
+              )
+            }
           </div>
         </div>
       </section>

@@ -16,8 +16,8 @@ const data = entry.data;
 const { Content: HomeContent } = await render(entry);
 const jsonLd = jsonLdForContentPage({
   route: data.route,
-  seoTitle: data.seoTitle,
-  metaDescription: data.metaDescription,
+  seoTitle: seo.title,
+  metaDescription: seo.description,
   schemaTypes: data.schemaTypes,
 });
 const lcpPreload = defaultWebpSrc(BODYCAM_HERO, HERO_IMAGE_WIDTHS);

@@ -1,4 +1,5 @@
 import { checkoutPath } from '../config/checkout';
+import { checkoutHrefForProduct, lockedCheckoutProduct } from './checkoutContext';
 import {
   MAIN_PRODUCT_CHECKOUT,
   mainProductOffers,
@@ -16,46 +17,33 @@ import {
   type BreadcrumbItem,
 } from './schema';
 
+const HOME_CRUMB: BreadcrumbItem = { name: 'Bodycam cheats home', path: '/' };
+
 export function breadcrumbsForRoute(route: string): BreadcrumbItem[] {
-  if (route === '/') return [{ name: 'Home', path: '/' }];
+  if (route === '/') return [HOME_CRUMB];
   if (route === '/bodycam-cheats-price/') {
-    return [
-      { name: 'Home', path: '/' },
-      { name: 'Pricing', path: '/bodycam-cheats-price/' },
-    ];
+    return [HOME_CRUMB, { name: 'Bodycam monthly and lifetime pricing', path: '/bodycam-cheats-price/' }];
   }
   if (route === '/bodycam-aimbot/') {
-    return [
-      { name: 'Home', path: '/' },
-      { name: 'Aimbot', path: '/bodycam-aimbot/' },
-    ];
+    return [HOME_CRUMB, { name: 'Bodycam aimbot features', path: '/bodycam-aimbot/' }];
   }
   if (route === '/bodycam-esp/') {
-    return [
-      { name: 'Home', path: '/' },
-      { name: 'ESP', path: '/bodycam-esp/' },
-    ];
+    return [HOME_CRUMB, { name: 'Bodycam ESP and wallhack', path: '/bodycam-esp/' }];
   }
   if (route === '/bodycam-requirements/') {
-    return [
-      { name: 'Home', path: '/' },
-      { name: 'Requirements', path: '/bodycam-requirements/' },
-    ];
+    return [HOME_CRUMB, { name: 'Bodycam system requirements', path: '/bodycam-requirements/' }];
   }
   if (route === '/cloud-dma-for-bodycam/') {
-    return [
-      { name: 'Home', path: '/' },
-      { name: 'Cloud DMA', path: '/cloud-dma-for-bodycam/' },
-    ];
+    return [HOME_CRUMB, { name: 'Cloud DMA for Bodycam license', path: '/cloud-dma-for-bodycam/' }];
   }
   if (route === '/guides/cloud-dma-setup/') {
     return [
-      { name: 'Home', path: '/' },
-      { name: 'Cloud DMA', path: '/cloud-dma-for-bodycam/' },
-      { name: 'Setup guide', path: '/guides/cloud-dma-setup/' },
+      HOME_CRUMB,
+      { name: 'Cloud DMA for Bodycam overview', path: '/cloud-dma-for-bodycam/' },
+      { name: 'Hyper-V setup walkthrough', path: '/guides/cloud-dma-setup/' },
     ];
   }
-  return [{ name: 'Home', path: '/' }];
+  return [HOME_CRUMB];
 }
 
 function productSchemaImage(route: string): string {
@@ -169,7 +157,9 @@ export function defaultEndCtaHref(
   if (checkout === 'cloud-dma') return checkoutPath('cloudDma');
   if (checkout === 'hwid-spoofer') return checkoutPath('hwidSpoofer');
   if (checkout === 'main-product') return checkoutPath('mainProduct');
-  if (route === '/bodycam-cheats-price/') return checkoutPath('mainProduct');
-  if (route === '/cloud-dma-for-bodycam/') return checkoutPath('cloudDma');
+
+  const locked = lockedCheckoutProduct(route);
+  if (locked) return checkoutHrefForProduct(locked);
+
   return checkoutPath('mainProduct');
 }
